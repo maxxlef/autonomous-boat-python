@@ -22,36 +22,50 @@ gps.set_filter_speed("0")
 
 
 def depart():
-    t0=time.time()
+    """
+    Attend qu'une accélération supérieure à 8 m/s² soit détectée sur l'axe x pour déclencher un départ.
+
+    Input: None
+    Output: None
+    """
+    t0 = time.time()
     while True:
-        xaccel=accel()
-        print(abs(time.time()-t0))
-        if abs(xaccel[0])>8:
+        xaccel = accel()
+        print(abs(time.time() - t0))
+        if abs(xaccel[0]) > 8:
             break
         time.sleep(0.1)
 
-def attendre_exact_heure(heure, minute):
-    # Obtenir l'heure actuelle
-    maintenant = datetime.datetime.now()
-    heure_actuelle = maintenant.hour
-    minute_actuelle = maintenant.minute
 
-    # Calculer le temps restant avant l'heure exacte
+def attendre_exact_heure(heure, minute):
+    """
+    Attend jusqu'à atteindre une heure précise (heure et minute) et affiche un compte à rebours.
+
+    Input: heure (int), minute (int)
+    Output: bool (True lorsque l'heure est atteinte)
+    """
+    maintenant = datetime.datetime.now()
     while True:      
         maintenant = datetime.datetime.now()
         heure_actuelle = maintenant.hour
         minute_actuelle = maintenant.minute
-
         delta = ((heure - heure_actuelle) * 3600) + ((minute - minute_actuelle) * 60) - maintenant.second
         if delta > 0:
-            print("Attente de {} secondes pour atteindre {}h{}.".format(delta,heure,minute))
+            print("Attente de {} secondes pour atteindre {}h{}.".format(delta, heure, minute))
             time.sleep(1)
         else:
             break
-    print("Il est {}h{} !".format(heure,minute))
+    print("Il est {}h{} !".format(heure, minute))
     return True
 
+
 def sawtooth(x):
+    """
+    Permet de limiter la valeur de x entre -pi et pi
+
+    Input: x (float)
+    Output: x (float)
+    """
     return (x+np.pi)%(2*np.pi)-np.pi
 
 def mag():
