@@ -36,7 +36,6 @@ def depart():
             break
         time.sleep(0.1)
 
-
 def attendre_exact_heure(heure, minute):
     """
     Attend jusqu'à atteindre une heure précise (heure et minute) et affiche un compte à rebours.
@@ -58,7 +57,6 @@ def attendre_exact_heure(heure, minute):
     print("Il est {}h{} !".format(heure, minute))
     return True
 
-
 def sawtooth(x):
     """
     Permet de limiter la valeur de x entre -pi et pi
@@ -69,6 +67,13 @@ def sawtooth(x):
     return (x+np.pi)%(2*np.pi)-np.pi
 
 def mag():
+    """
+    Lit les données brutes du magnétomètre et les corrige avec les matrices de calibration.
+    
+    Input: None
+    
+    Output: y (np.array)
+    """
     xmag, ymag, zmag = imu.read_mag_raw()
     x = np.array([xmag, ymag, zmag])
     b = np.load("b_mag.npy")
@@ -78,6 +83,13 @@ def mag():
     return y # [x, y, z]
 
 def accel():
+    """
+    Lit les données brutes de l'accéléromètre et les corrige avec les matrices de calibration.
+
+    Input: None
+
+    Output: y (np.array)
+    """
     xaccel, yaccel, zaccel = imu.read_accel_raw()
     x = np.array([xaccel, yaccel, zaccel])
     b = np.load("b_accel.npy")
@@ -87,7 +99,13 @@ def accel():
     return y # [x, y, z]
 
 def angles_euler(acc, mag):
-
+    """
+    Calcule les angles d'Euler (tangage, roulis, cap) à partir des données d'accélération et de magnétomètre.
+    
+    Input: acc (np.array), mag (np.array)
+    
+    Output: euler (np.array)
+    """
     norm_acc = np.linalg.norm(acc)
     if norm_acc == 0:
         raise ValueError("La norme de l'accélération est nulle. Vérifie les données.")
@@ -104,7 +122,7 @@ def angles_euler(acc, mag):
 
     return np.array([phi, theta, psi]) # [Tangage, Roulis, Cap]
 
-def maintien_cap(acc,mag,cap,spd_base,debug=False):
+def maintien_cap(acc,mag,cap,spd_base,debug=True):
     psi = angles_euler(acc,mag)[2]
     err = sawtooth(cap-psi)
     Kd = 100
@@ -120,12 +138,24 @@ def maintien_cap(acc,mag,cap,spd_base,debug=False):
     if spd_right > 255:
         spd_right = 255
     if debug:
-        print("Cap actuel du bateau: {}°, erreur: {}°".format(np.degrees(psi), np.degrees(err)))
+        print("-----------------------------")
+        print("Cap actuel du bateau: {}°".format(np.degrees(psi)))
+        print("Cap voulu: {}°".format(np.degrees(cap)))
+        print("Erreur: {}°".format(np.degrees(err)))
+        print("---")
+        print("Speed de base: {}".format(spd_base))
         print("Speed left = {}".format(spd_left))
         print("Speed right = {}".format(spd_right))
     ard.send_arduino_cmd_motor(spd_left,spd_right)
 
 def dd_to_dms(dd, direction):
+    """
+    Convertit des coordonnées au format degrés décimaux en degrés minutes secondes.
+
+    Input: dd (float), direction (str)
+
+    Output: dms (float)
+    """
     minutes = (dd - int(dd)) * 60
     secondes = (minutes - int(minutes)) * 60
     if direction in ['S', 'W']:
@@ -134,6 +164,14 @@ def dd_to_dms(dd, direction):
     return dms
 
 def dm_to_dd(dm,direction):
+    """
+    Convertit des coordonnées au format degrés minutes en degrés décimaux.
+
+    Input: dm (float), direction (str)
+
+    Output: dd (float)
+    """
+
     degrees = int(dm // 100)
     minutes = dm - degrees * 100
     dd = degrees + (minutes / 60)
@@ -142,6 +180,13 @@ def dm_to_dd(dm,direction):
     return dd
 
 def dms_to_dd(dms, direction): # format: dms = '{}°{}\'{:.2f}"'.format(int(dd), int(minutes), secondes)'
+    """
+    Convertit des coordonnées au format degrés minutes secondes en degrés décimaux.
+
+    Input: dms (str) (format: '{}°{}\'{:.2f}"'.format(int(dd), int(minutes), secondes)), direction (str)
+
+    Output: dd (float)
+    """
     dms = dms.replace('°', ' ').replace('\'', ' ').replace('"', ' ')
     d, m, s = map(float, dms.split())
     dd = d + m / 60 + s / 3600
@@ -150,6 +195,13 @@ def dms_to_dd(dms, direction): # format: dms = '{}°{}\'{:.2f}"'.format(int(dd),
     return dd
 
 def mesure_gps(fichier="/mesures/gps_data.txt"):
+    """
+    Lit les données GPS brutes et les écrit dans un fichier .txt
+
+    Input: fichier (str)
+
+    Output: gll_data (tuple)
+    """
     with open(fichier, "a") as file:  # Ouvrir le fichier en mode ajout (append)
         while True:
             gll_ok, gll_data = gps.read_gll_non_blocking()
@@ -158,7 +210,13 @@ def mesure_gps(fichier="/mesures/gps_data.txt"):
                 return gll_data
     
 def create_csv(input_file, output_csv_path):
+    """
+    Convertir un fichier .txt contenant des données GPS brutes en un fichier CSV
 
+    Input: input_file (str), output_csv_path (str)
+    
+    Output: None (enregistre un fichier CSV)
+    """
     with open(input_file, 'r') as file:
         file_content = file.read()
     with open(output_csv_path, mode='w', newline='') as csv_file:
@@ -175,11 +233,18 @@ def create_csv(input_file, output_csv_path):
             latitude = dm_to_dd(latitude_dm, lat_dir)
             longitude = dm_to_dd(longitude_dm, long_dir)
 
-            csv_writer.writerow([latitude, longitude])
-
-    print("Fichier CSV généré avec succès : {}".format(output_csv_path))
+            csv_writer.writerow([latitude, longitude]) # Écrire les données en format degrés décimaux
 
 def afficher_data(csv_file, output_geojson_file):
+    """
+    Convertit un fichier CSV contenant des coordonnées GPS en un fichier GeoJSON.
+    Le fichier CSV doit contenir les colonnes 'Latitude' et 'Longitude',
+    en format degrés décimaux.
+
+    Input: csv_file (str), output_geojson_file (str)
+
+    Output: None (enregistre un fichier GeoJSON)
+    """
     # Initialiser une structure GeoJSON
     geojson_data = {
         "type": "FeatureCollection",
@@ -209,14 +274,15 @@ def afficher_data(csv_file, output_geojson_file):
     with open(output_geojson_file, 'w') as geojson_file:
         json.dump(geojson_data, geojson_file, indent=4)
 
-    print("Fichier GeoJSON généré avec succès : {}".format(output_geojson_file))
-
 def projection(lat,long, lat_m = 48.199170, long_m = -3.014700):# Format degrés decimaux
-    
     """
     Convertit les coordonnées GPS (latitude, longitude en format degrés décimaux) 
     en coordonnées cartésiennes locales par rapport à un point M défini par
     lat_m et long_m (en degrés décimaux), en ne retournant que x et y.
+
+    Input: lat (float), long (float), lat_m (float), long_m (float)
+
+    Output: p (np.array)
     """
 
     rho = 6371009.7714
@@ -244,7 +310,7 @@ def cap_waypoint(a,p):
     """
     d = a - p
     n = d / np.linalg.norm(d)
-    cap_d = -np.arctan2(n[1],n[0]) # Sans le " - " le bateau tourne dans le sens trigonométrique
+    cap_d = np.pi/2 - np.arctan2(n[1],n[0]) # À vérifier si c'est bien pi/2 - arctan2(n[1],n[0])
     return cap_d
 
 def arret_waypoint(a,p, distance_min = 2):
@@ -258,7 +324,127 @@ def regulation_vitesse(distance, vmax=200, vmin=45, coef=1, middle=4):
     """
     Régulation de la vitesse en fonction de la distance
     Peut être ajustée avec test_regulation_vitesse.py
+
+    Input: distance (float), vmax (float), vmin (float), coef (float), middle (float)
+
+    Output: vitesse (float)
     """
     vitesse = (vmax-vmin) * (0.5 * (1 - np.tanh(coef * (middle - distance)))) + vmin
     return max(0, min(vmax, vitesse))
 
+def reach_point(lat_a, long_a, debug=True):
+    """
+    Rejoindre un point GPS donné par le point A en format degrés décimaux.
+
+    Input: lat_a (float), long_a (float)
+
+    Output: None
+    """
+    a = projection(lat_a, long_a)
+
+    while True:
+        time.sleep(0.5)
+        lat, long = mesure_gps()
+        p = projection(lat, long)
+        d = a - p # Vecteur de P vers A
+
+        # Correction du cap
+        cap_d = cap_waypoint(a, p)
+        distance = np.linalg.norm(d)
+        acc = accel()
+        bouss = mag()
+        spd = regulation_vitesse(distance)
+        maintien_cap(acc, bouss, cap_d, spd)
+
+        # Condition d'arrêt
+        if arret_waypoint(a, p) == True:
+            print("La bouée à atteint le point gps")
+            ard.send_arduino_cmd_motor(0, 0)
+
+        if debug:
+            print("-----------------------------")
+            print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_a, long_a))
+            print("Ces coordonnées dans le plan sont : x = {}, y = {}".format(a[0], a[1]))
+            print("---")
+            print("Mesure GPS du point p: lat ={}, long ={}".format(lat, long))
+            print("Les coordonnées de P dans le plan : {}".format(p))
+            print("---")
+            print("Distance au point A : {}".format(distance))
+            print("Cap visé par cap_d : {}°".format(np.degrees(cap_d)))
+
+def cap_waypoint_2(m,n,p, debug=False):
+    """
+    Calcule le cap pour suivre une droite définie par
+    un point A et un vecteur directeur n, depuis un point P.
+
+    Input: a (np.array), p (np.array), n (np.array)
+
+    Output: cap_d (float)
+    """
+    e = n[0]*(p[1]-m[1]) - n[1]*(p[0]-m[0]) 
+    phi = np.arctan2(n[1],n[0]) 
+    phi = np.pi/2 - phi
+    # phi était l'angle entre l'axe x et le vecteur n (arctan2(n[1],n[0]))
+    # mais x est dirigé vers l'Est et non vers le Nord
+    # donc on doit le tourner de 90° dans le sens trigonométrique
+    # pour avoir le bon cap (avec 0° vers le Nord)
+    k = 2
+    cap_d = phi - k*np.tanh(e/4) # k est un coefficient à ajuster et vérifier le signe - ou +
+    if debug:
+        print("Erreur: {}".format(e))
+        print("Phi: {}".format(np.degrees(phi)))
+        print("Cap à suivre: {}".format(np.degrees(cap_d)))
+    return cap_d
+
+def suivre_droite(M, A, debug=True): #  M (départ) et A (fin) en format degrés décimaux
+    """
+    Permet de suivre une droite définie par un point M et un point A
+    en format degrés décimaux.
+
+    Input: M (list), A (list)
+
+    Output: None
+    """
+    m = projection(M[0],M[1])
+    a = projection(A[0], A[1])
+    n = (a - m) / np.linalg.norm(a - m) # de M vers A
+
+    while True:
+        lat_p, long_p = mesure_gps()
+        p = projection(lat_p,long_p)
+
+        # Calcul du cap désiré
+        cap_d = cap_waypoint_2(m, n, p)
+
+        distance = distance_droite(a, n, p)
+        if distance < 0:
+            ard.send_arduino_cmd_motor(0, 0)
+            print("La bouée est passée, fin du suivi.")
+            return
+
+        acc = accel()
+        bouss = mag()
+        maintien_cap(acc, bouss, cap_d, 150)
+        time.sleep(0.2)
+
+        if debug:
+            print("-----------------------------")
+            print("Les coordonnées de P dans le plan : {}".format(p))
+            print("Les coordonnées de A dans le plan : {}".format(a))
+            print("---")
+            print("Distance au point A : {}".format(distance))
+            print("Cap visé par cap_d : {}°".format(np.degrees(cap_d)))
+    
+def distance_droite(a, n, p):
+    """
+    Calcule la distance entre un point P et une droite définie
+    par un point A et un vecteur normal n. La distance est positive
+    si le point P est à gauche de la droite (sens du vecteur n),
+
+    Input: a (np.array), n (np.array), p (np.array)
+
+    Output: distance (float)
+    """
+    vecteur_pa = a - p
+    distance = np.cross(n, vecteur_pa) / np.linalg.norm(n)
+    return distance

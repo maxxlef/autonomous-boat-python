@@ -1,4 +1,8 @@
 
+## Notes ##
+Les données GPS sont automatiquement sauvegardées à la suite d'un fichier .txt avec `mesure_gps()`, il faut donc penser à le supprimer avant de vouloir faire une mesure propre.
+
+
 ## **quoicouroblib.py**
 ### `depart()`
 Attend qu'une accélération supérieure à 8 m/s² soit détectée sur l'axe x pour déclencher un départ.
@@ -167,3 +171,53 @@ Régule la vitesse en fonction de la distance à un point de référence. La vit
   - `vitesse` (float): Vitesse régulée entre `vmin` et `vmax`
 
 ---
+
+### `reach_point()`
+Rejoindre un point GPS donné par le point A en format degrés décimaux.
+
+- **Input**: 
+  - `lat_a` (float): Latitude du point A.
+  - `long_a` (float): Longitude du point A.
+  - `debug` (bool, optionnel): Affiche les messages de débogage si `True`. Par défaut `True`.
+
+- **Output**: `None`
+
+---
+
+### `cap_waypoint_2()`
+Calcule le cap pour suivre une droite définie par un point A et un vecteur directeur n, depuis un point P.
+
+- **Input**: 
+  - `m` (np.array): Point A.
+  - `n` (np.array): Vecteur directeur de la droite.
+  - `p` (np.array): Point P.
+  - `debug` (bool, optionnel): Affiche les messages de débogage si `True`. Par défaut `False`.
+
+- **Output**: 
+  - `cap_d` (float): Cap calculé en radians.
+
+---
+
+### `suivre_droite()`
+Permet de suivre une droite définie par un point M et un point A, exprimés en format degrés décimaux.
+
+- **Input**: 
+  - `M` (list): Coordonnées GPS du point de départ `[lat, long]`.
+  - `A` (list): Coordonnées GPS du point d’arrivée `[lat, long]`.
+  - `debug` (bool, optionnel): Affiche les messages de débogage si `True`. Par défaut `True`.
+
+- **Output**: `None`
+
+---
+
+### `distance_droite()`
+Calcule la distance entre un point P et une droite définie par un point A et un vecteur normal n.
+
+- **Input**: 
+  - `a` (np.array): Point A sur la droite.
+  - `n` (np.array): Vecteur normal à la droite.
+  - `p` (np.array): Point P.
+
+- **Output**: 
+  - `distance` (float): Distance entre le point P et la droite. La distance est positive si P est à gauche de la droite dans le sens du vecteur n.
+

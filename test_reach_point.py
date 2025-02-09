@@ -63,10 +63,10 @@ with open(filename, mode='w', newline='') as file:
             d = a - p # Vecteur de P vers A
             distance = np.linalg.norm(d)
             print("Distance au point A : {}".format(distance))
-            # Calcul du cap
-            cap_d = rb.cap_waypoint(a, p)
-            print("Cap visé par cap_d : {}°".format(cap_d * 180 / np.pi))
 
+            # Correction du cap
+            cap_d = rb.cap_waypoint(a, p)
+            print("Cap visé par cap_d : {}°".format(np.degrees(cap_d)))
             acc = rb.accel()
             bouss = rb.mag()
             spd = rb.regulation_vitesse(distance)

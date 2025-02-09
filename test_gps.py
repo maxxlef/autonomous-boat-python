@@ -35,7 +35,7 @@ try:
             print("Données brutes :")
             print(gll_data)
 
-            ### Données converties en degrés décimals ###
+            ### Données converties en degrés décimaux ###
             lattitude = rb.dm_to_dd(gll_data[0], gll_data[1])
             longitude = rb.dm_to_dd(gll_data[2], gll_data[3])
             print("Données en degrés décimaux :")
