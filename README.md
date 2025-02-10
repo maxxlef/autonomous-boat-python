@@ -59,6 +59,25 @@ Calcule les angles d'Euler (Tangage, Roulis, Cap) à partir des données d'accé
 
 ---
 
+### `rotuv(u, v)`:
+Retourne la rotation avec l'angle minimal tel que \( v = R \cdot u \).
+- **Input**: 
+  - `u` : Vecteur 3D d'entrée
+  - `v` : Vecteur 3D cible
+- **Output**: Matrice de rotation \( R \in \mathbb{R}^{3 \times 3} \)
+
+---
+
+### `angles_euler_2(a1, y1, w1, g1_hat)`:
+Calcule les angles d'Euler (tangage, roulis, cap) à partir des données d'accélération, de magnétomètre et de gyroscope.
+- **Input**: 
+  - `a1` : Vecteur accélération
+  - `y1` : Vecteur magnétomètre
+  - `w1` : Vecteur gyroscope
+  - `g1_hat` : Estimation précédente de \( g_1 \)
+- **Output**: Angles d'Euler \( \varphi \) (tangage), \( \theta \) (roulis), et \( \psi \) (cap)
+
+
 ### `maintien_cap(acc, mag, cap, spd_base, debug=False)`:
 Maintient le cap en ajustant la vitesse des moteurs gauche et droite pour compenser l'erreur angulaire.
 - **Input**:

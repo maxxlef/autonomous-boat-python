@@ -27,6 +27,10 @@ Fonctions utilisées dans quoicouroblib.py:
     def mag():
     
     def maintien_cap(acc, bouss, cap_voulu, spd, debug=False):
+        
+        def angles_euler_2(a1, y1, w1, g1_hat):
+        ou
+        def angles_euler(acc, mag):
     
 """
 

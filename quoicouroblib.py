@@ -148,6 +148,7 @@ def angles_euler_2(a1, y1, w1, g1_hat):
     Rh = rotuv(g1_n,g0)
     yh = Rh@y1_n
     ψ = -np.arctan2(yh[1],yh[0])
+    return ϕ,θ,ψ
 
 
 def maintien_cap(acc,mag,cap,spd_base,debug=True):
