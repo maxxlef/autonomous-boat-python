@@ -34,11 +34,11 @@ Fonctions utilisées dans quoicouroblib.py:
     
 """
 
-cap_desire_deg = input("Rentrer le cap désiré en degrés :")
+cap_desire_deg = float(input("Rentrer le cap désiré en degrés :"))
 cap_desire = np.radians(cap_desire_deg)
 
 rb.depart()
-print("Début")
+print("Debut")
 
 try:
     while True:

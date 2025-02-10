@@ -58,15 +58,15 @@ with open(filename, mode='w', newline='') as file:
             print("Mesure GPS du point p: lx ={}, ly ={}".format(lat, long))
             p = rb.projection(lat, long)
             writer.writerow([p[0], p[1]]) # Écrire les coordonnées
-            print("Les coordonnées de P dans le plan : {}".format(p))
-            print("Les coordonnées de A dans le plan : {}".format(a))
+            print("Les coordonnees de P dans le plan : {}".format(p))
+            print("Les coordonnees de A dans le plan : {}".format(a))
             d = a - p # Vecteur de P vers A
             distance = np.linalg.norm(d)
             print("Distance au point A : {}".format(distance))
 
             # Correction du cap
             cap_d = rb.cap_waypoint(a, p)
-            print("Cap visé par cap_d : {}°".format(np.degrees(cap_d)))
+            print("Cap vise par cap_d : {}°".format(np.degrees(cap_d)))
             acc = rb.accel()
             bouss = rb.mag()
             spd = rb.regulation_vitesse(distance)
@@ -74,7 +74,7 @@ with open(filename, mode='w', newline='') as file:
 
             # Condition d'arrêt
             if rb.arret_waypoint(a, p) == True:
-                print("La bouée à atteint le point gps")
+                print("La bouee à atteint le point gps")
                 ard.send_arduino_cmd_motor(0, 0)
 
     except KeyboardInterrupt:

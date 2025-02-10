@@ -22,7 +22,7 @@ plt.plot(distances, vitesses, label=f"Vitesse de {vmin} à {vmax}" , color='dodg
 plt.axvline(x=middle, color='orange', linestyle='--', label='Vitesse moyenne')
 plt.xlabel("Distance (m)")
 plt.ylabel(f"Vitesse de {vmin} à {vmax}")
-plt.title("Régulation de la vitesse en fonction de la distance")
+plt.title("Regulation de la vitesse en fonction de la distance")
 plt.legend()
 plt.grid(True)
 plt.show()

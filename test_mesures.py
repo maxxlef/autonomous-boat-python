@@ -2,6 +2,7 @@ import sys
 import os
 import time
 import quoicouroblib as rb
+import numpy as np
 
 # Assure-toi que les modules sont correctement importés
 sys.path.append(os.path.join(os.path.dirname(__file__), 'drivers-ddboat-v2'))
@@ -34,9 +35,12 @@ try:
         x_mag = rb.mag()
         print("Boussole : {}".format(x_mag))
         x_accel = rb.accel()
-        print("Accélération : {}".format(x_accel))
+        print("Acceleration : {}".format(x_accel))
         euler = rb.angles_euler(x_accel, x_mag)
-        print("Tangage : {} Roulis : {} Cap : {}".format(euler[0], euler[1], euler[2]))
+        phi = np.degrees(euler[0])
+        theta = np.degrees(euler[1])
+        psi = np.degrees(euler[2])
+        print("Tangage : {} Roulis : {} Cap : {}".format(phi,theta,psi))
         time.sleep(1)
 except KeyboardInterrupt:
     print("Programme interrompu par l'utilisateur.")

@@ -24,7 +24,7 @@ gps=gpsdrv.GpsIO()
 gps.set_filter_speed("0")
 
 rb.depart()
-print("Début")
+print("Debut")
 
 try:
     while True:
@@ -32,26 +32,26 @@ try:
         if gll_ok:
             
             ### Données brutes ### -> DD*100 ou DM ????
-            print("Données brutes :")
+            print("Donnees brutes :")
             print(gll_data)
 
             ### Données converties en degrés décimaux ###
             lattitude = rb.dm_to_dd(gll_data[0], gll_data[1])
             longitude = rb.dm_to_dd(gll_data[2], gll_data[3])
-            print("Données en degrés décimaux :")
+            print("Donnees en degrés décimaux :")
             print("Lattitude : {}".format(lattitude))
             print("Longitude : {}".format(longitude))
 
             ### Données converties en degrés minutes secondes ###
             lattitude = rb.dd_to_dms(gll_data[0], 'N')
             longitude = rb.dd_to_dms(gll_data[2], 'W')
-            print("Données en degrés minutes secondes :")
+            print("Donnees en degrés minutes secondes :")
             print("Lattitude : {}".format(lattitude))
             print("Longitude : {}".format(longitude))
 
         #### Récupérer les données brutes et les écrire dans un fichier .txt ###
         lat, dir_lat, long, dir_long = rb.mesure_gps()
-        print("Données brutes enregistrées:")
+        print("Donnees brutes enregistrees:")
         print("Lattitude : {}, Direction: {} ".format(lattitude, dir_lat))
         print("Longitude : {}, Direction {}".format(longitude, dir_long))
 

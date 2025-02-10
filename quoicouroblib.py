@@ -98,6 +98,10 @@ def accel():
     y = np.dot(A_inv,(x+b))
     return y # [x, y, z]
 
+def gyro():
+    xgyro, ygyro, zgyro = imu.read_gyro_raw()
+    return np.array([xgyro, ygyro, zgyro])
+
 def angles_euler(acc, mag):
     """
     Calcule les angles d'Euler (tangage, roulis, cap) à partir des données d'accélération et de magnétomètre.
@@ -106,23 +110,32 @@ def angles_euler(acc, mag):
     
     Output: euler (np.array)
     """
-    norm_acc = np.linalg.norm(acc)
-    if norm_acc == 0:
-        raise ValueError("La norme de l'accélération est nulle. Vérifie les données.")
-
-    I = np.radians(64)  # Inclinaison magnétique locale
-    mag_h = np.array([
-        mag[0] * np.cos(I) + mag[2] * np.sin(I),  # Composante horizontale corrigée
-        mag[1]
-    ])
-
-    psi = np.arctan2(mag_h[1], mag_h[0])
-    phi = np.arcsin(acc[1] / norm_acc)
-    theta = -np.arcsin(acc[0] / norm_acc)
-
-    return np.array([phi, theta, psi]) # [Tangage, Roulis, Cap]
+    I = np.radians(64)
+    a0 = np.array([[0], [0], [1]])  # Vecteur vertical
+    y0 = np.array([[np.cos(I)], [0], [-np.sin(I)]])  # Vecteur magnétique
+    # Calcul des angles phi (roulis) et theta (tangage)
+    #print("acc[1]: {}".format(acc[1]))
+    #print("acc[0]: {}".format(acc[0]))
+    phi = np.arcsin(acc[1]/np.linalg.norm(acc))  # Angle de roulis
+    theta = -np.arcsin(acc[0]/np.linalg.norm(acc))  # Angle de tangage
+    # Calcul de la matrice de rotation à partir de l'accéléromètre
+    #  
+    # Rotation du vecteur magnétique
+    yh2 = mag
+    yh1 = y0
+    # Calcul de l'angle de lacet (psi)
+    psi = -np.arctan2(yh2[0], yh1[0])
+    psi = np.arctan2(mag[1],mag[0])
+    return [phi, theta, psi]
 
 def rotuv(u,v): #returns rotation with minimal angle  such that  v=R*u
+    """
+    Retourne la matrice de rotation R telle que v = R*u.
+    
+    Input: u (np.array), v (np.array)
+    
+    Output: R (np.array)
+    """
     u=np.array(u).reshape(3,1)
     v=np.array(v).reshape(3,1)
     u=(1/np.linalg.norm(u))*u
@@ -130,6 +143,18 @@ def rotuv(u,v): #returns rotation with minimal angle  such that  v=R*u
     c=np.dot(u,v)
     A=v@u.T-u@v.T
     return np.eye(3,3)+A+(1/(1+c))*A@A
+
+def adjoint(w):
+    """
+    Retourne la matrice adjointe de w.
+
+    Input: w (np.array) ou (float)
+
+    Output: np.array(3,3) ou np.array(2,2) si float
+    """
+    if isinstance(w, (float, int)): return np.array([[0,-w] , [w,0]])
+    #print('tolist(w)=',w)
+    return np.array([[0,-w[2],w[1]] , [w[2],0,-w[0]] , [-w[1],w[0],0]])
 
 def angles_euler_2(a1, y1, w1, g1_hat):
     """
@@ -141,7 +166,7 @@ def angles_euler_2(a1, y1, w1, g1_hat):
     λ = 0.99
     I = np.radians(64)
     dt = 0.01
-    g1_hat = λ*(I-dt*w1)*g1_hat + (1-λ)*a1
+    g1_hat = λ*(np.eye(3,3)-dt*adjoint(w1))*g1_hat + (1-λ)*a1
     g1_n = g1_hat/ np.linalg.norm(g1_hat)
     ϕ = np.arcsin([0,1,0]@g1_n)
     θ = -np.arcsin([1,0,0]@g1_n)
@@ -394,19 +419,19 @@ def reach_point(lat_a, long_a, debug=True):
 
         # Condition d'arrêt
         if arret_waypoint(a, p) == True:
-            print("La bouée à atteint le point gps")
+            print("La bouee a atteint le point gps")
             ard.send_arduino_cmd_motor(0, 0)
 
         if debug:
             print("-----------------------------")
             print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_a, long_a))
-            print("Ces coordonnées dans le plan sont : x = {}, y = {}".format(a[0], a[1]))
+            print("Ces coordonnees dans le plan sont : x = {}, y = {}".format(a[0], a[1]))
             print("---")
             print("Mesure GPS du point p: lat ={}, long ={}".format(lat, long))
-            print("Les coordonnées de P dans le plan : {}".format(p))
+            print("Les coordonnees de P dans le plan : {}".format(p))
             print("---")
             print("Distance au point A : {}".format(distance))
-            print("Cap visé par cap_d : {}°".format(np.degrees(cap_d)))
+            print("Cap vise par cap_d : {}°".format(np.degrees(cap_d)))
 
 def cap_waypoint_2(m,n,p, debug=False):
     """
@@ -429,7 +454,7 @@ def cap_waypoint_2(m,n,p, debug=False):
     if debug:
         print("Erreur: {}".format(e))
         print("Phi: {}".format(np.degrees(phi)))
-        print("Cap à suivre: {}".format(np.degrees(cap_d)))
+        print("Cap a suivre: {}".format(np.degrees(cap_d)))
     return cap_d
 
 def suivre_droite(M, A, debug=True): #  M (départ) et A (fin) en format degrés décimaux
@@ -455,7 +480,7 @@ def suivre_droite(M, A, debug=True): #  M (départ) et A (fin) en format degrés
         distance = distance_droite(a, n, p)
         if distance < 0:
             ard.send_arduino_cmd_motor(0, 0)
-            print("La bouée est passée, fin du suivi.")
+            print("La bouee est passee, fin du suivi.")
             return
 
         acc = accel()
@@ -465,11 +490,11 @@ def suivre_droite(M, A, debug=True): #  M (départ) et A (fin) en format degrés
 
         if debug:
             print("-----------------------------")
-            print("Les coordonnées de P dans le plan : {}".format(p))
-            print("Les coordonnées de A dans le plan : {}".format(a))
+            print("Les coordonnees de P dans le plan : {}".format(p))
+            print("Les coordonnees de A dans le plan : {}".format(a))
             print("---")
             print("Distance au point A : {}".format(distance))
-            print("Cap visé par cap_d : {}°".format(np.degrees(cap_d)))
+            print("Cap vise par cap_d : {}°".format(np.degrees(cap_d)))
     
 def distance_droite(a, n, p):
     """

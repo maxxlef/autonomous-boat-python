@@ -59,7 +59,7 @@ with open(filename, mode='w', newline='') as file:
 
             # Condition d'arrêt
             if rb.arret_waypoint(a, p) == True:
-                print("La bouée à atteint le point gps")
+                print("La bouee à atteint le point gps")
 
 
     except KeyboardInterrupt:

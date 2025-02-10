@@ -30,31 +30,31 @@ def average_measurements_mag(imu, n=10):
     return np.array([x_total / n, y_total / n, z_total / n])  # Retourne un vecteur 3x1
 
 def calib_mag():
-    print("### Début de la calibration de la boussole ###")
+    print("### Debut de la calibration de la boussole ###")
     # Préparation pour les mesures
-    print("Placez le bateau vers le Nord, puis appuyez sur Entrée.")
+    print("Placez le bateau vers le Nord, puis appuyez sur Entree.")
     input()
     x_nord = average_measurements_mag(imu)
     print("Mesure x_nord prise : {}".format(x_nord))
 
-    print("Placez le bateau vers le Sud, puis appuyez sur Entrée.")
+    print("Placez le bateau vers le Sud, puis appuyez sur Entree.")
     input()
     x_sud = average_measurements_mag(imu)
     print("Mesure x_sud prise : {}".format(x_sud))
 
-    print("Placez le bateau vers l'Ouest, puis appuyez sur Entrée.")
+    print("Placez le bateau vers l'Ouest, puis appuyez sur Entree.")
     input()
     x_west = average_measurements_mag(imu)
     print("Mesure x_west prise : {}".format(x_west))
 
-    print("Placez le bateau vers le Haut, puis appuyez sur Entrée.")
+    print("Placez le bateau vers le Haut, puis appuyez sur Entree.")
     input()
     x_up = average_measurements_mag(imu)
     print("Mesure x_up prise : {}".format(x_up))
 
     # Calcul du biais b (vecteur 3x1)
     b = -0.5 * (x_nord + x_sud)
-    print("Biais calculé : b = {}".format(b))
+    print("Biais calcule : b = {}".format(b))
 
     # Calcul de B et I
     B = 46 * 10**(-6)  # T
@@ -81,7 +81,7 @@ def calib_mag():
 
     # Calcul de la matrice A (produit matriciel entre X et Y_inv)
     A = np.dot(X, Y_inv)
-    print("Matrice A calculée : {}".format(A))
+    print("Matrice A calculee : {}".format(A))
 
     return b, A
 
@@ -98,31 +98,31 @@ def average_measurements_accel(imu, n=10):
     return np.array([x_total / n, y_total / n, z_total / n])  # Retourne un vecteur 3x1
 
 def calib_accel():
-    print("### Début de la calibration de l'accéléromètre ###")
+    print("### Debut de la calibration de l'accelerometre ###")
     # Préparation pour les mesures
-    print("Placez le x du bateau vers le haut, puis appuyez sur Entrée.")
+    print("Placez le x du bateau vers le haut, puis appuyez sur Entree.")
     input()
     x_x = average_measurements_accel(imu)
     print("Mesure x_x prise : {}".format(x_x))
 
-    print("Placez le z du bateau vers le haut, puis appuyez sur Entrée.")
+    print("Placez le z du bateau vers le haut, puis appuyez sur Entree.")
     input()
     x_z = average_measurements_accel(imu)
     print("Mesure x_z prise : {}".format(x_z))
 
-    print("Placez le y du bateau vers le haut, puis appuyez sur Entrée.")
+    print("Placez le y du bateau vers le haut, puis appuyez sur Entree.")
     input()
     x_y = average_measurements_accel(imu)
     print("Mesure x_y prise : {}".format(x_y))
 
-    print("Placez le z du bateau vers le bas, puis appuyez sur Entrée.")
+    print("Placez le z du bateau vers le bas, puis appuyez sur Entree.")
     input()
     x_bas = average_measurements_accel(imu)
     print("Mesure x_bas prise : {}".format(x_bas))
 
     # Calcul du biais b (vecteur 3x1)
     b = -0.5 * (x_z + x_bas)
-    print("Biais calculé : b = {}".format(b))
+    print("Biais calcule : b = {}".format(b))
 
     # Calcul de B
     B = 9.81  # m.s**-2
@@ -137,7 +137,7 @@ def calib_accel():
 
     # Calcul de la matrice A (produit matriciel entre X et Y_inv)
     A = 1 / B * X
-    print("Matrice A calculée : {}".format(A))
+    print("Matrice A calculee : {}".format(A))
 
     return b, A
 

@@ -37,13 +37,13 @@ while True:
 
     # Distance à la bouée
     distance = rb.distance_droite(a, n, p)
-    print("Distance de la bouée: {}".format(distance))
+    print("Distance de la bouee: {}".format(distance))
     if distance < 0:
         if temps_bouee is None:
             temps_bouee = time.time
         if time.time() - temps_bouee > temps_suivi:
             ard.send_arduino_cmd_motor(0,0)
-            print("La bouée est passée, fin du suivi.")
+            print("La bouée est passee, fin du suivi.")
             break
     # Calcul de la correction de cap et ajustement de la vitesse
     acc = rb.accel()
