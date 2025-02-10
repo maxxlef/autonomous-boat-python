@@ -100,7 +100,7 @@ def accel():
 
 def gyro():
     xgyro, ygyro, zgyro = imu.read_gyro_raw()
-    return np.array([xgyro, ygyro, zgyro])
+    return np.array([xgyro, ygyro, zgyro])/938.0
 
 def angles_euler(acc, mag):
     """
@@ -110,39 +110,24 @@ def angles_euler(acc, mag):
     
     Output: euler (np.array)
     """
-    I = np.radians(64)
-    a0 = np.array([[0], [0], [1]])  # Vecteur vertical
-    y0 = np.array([[np.cos(I)], [0], [-np.sin(I)]])  # Vecteur magnétique
-    # Calcul des angles phi (roulis) et theta (tangage)
-    #print("acc[1]: {}".format(acc[1]))
-    #print("acc[0]: {}".format(acc[0]))
     phi = np.arcsin(acc[1]/np.linalg.norm(acc))  # Angle de roulis
     theta = -np.arcsin(acc[0]/np.linalg.norm(acc))  # Angle de tangage
-    # Calcul de la matrice de rotation à partir de l'accéléromètre
-    #  
-    # Rotation du vecteur magnétique
-    yh2 = mag
-    yh1 = y0
-    # Calcul de l'angle de lacet (psi)
-    psi = -np.arctan2(yh2[0], yh1[0])
     psi = np.arctan2(mag[1],mag[0])
     return [phi, theta, psi]
 
 def rotuv(u,v): #returns rotation with minimal angle  such that  v=R*u
-    """
-    Retourne la matrice de rotation R telle que v = R*u.
-    
-    Input: u (np.array), v (np.array)
-    
-    Output: R (np.array)
-    """
+            # see https://en.wikipedia.org/wiki/Rotation_matrix#Vector_to_vector_formulation
     u=np.array(u).reshape(3,1)
     v=np.array(v).reshape(3,1)
     u=(1/np.linalg.norm(u))*u
     v=(1/np.linalg.norm(v))*v
-    c=np.dot(u,v)
+    c=scalarprod(u,v)
     A=v@u.T-u@v.T
     return np.eye(3,3)+A+(1/(1+c))*A@A
+
+def scalarprod(u,v): # scalar product
+    u,v=u.flatten(),v.flatten()
+    return sum(u[:]*v[:])
 
 def adjoint(w):
     """
@@ -170,7 +155,7 @@ def angles_euler_2(a1, y1, w1, g1_hat):
     g0 = np.array([0, 0, 1])  # Direction de la gravité dans le repère de référence
     y1_n = y1 / np.linalg.norm(y1)  # Normalisation du vecteur magnétomètre
     λ = 0.99  # Coefficient de filtrage
-    dt = 0.01  # Pas de temps
+    dt = 0.01
 
     # Mise à jour de l'estimation de la gravité
     g1_hat = λ * (np.eye(3) - dt * adjoint(w1)) @ g1_hat + (1 - λ) * a1
@@ -185,7 +170,7 @@ def angles_euler_2(a1, y1, w1, g1_hat):
     yh = Rh @ y1_n
 
     # Calcul du cap (ψ) en utilisant l'arctangente
-    ψ = -np.arctan2(yh[1], yh[0])
+    ψ = np.arctan2(yh[1], yh[0])
 
     return [ϕ, θ, ψ, g1_hat]
 
