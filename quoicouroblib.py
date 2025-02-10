@@ -160,20 +160,35 @@ def angles_euler_2(a1, y1, w1, g1_hat):
     """
     Calcule les angles d'Euler (tangage, roulis, cap) à partir des données
     d'accélération, de magnétomètre et de gyroscope.
+
+    - a1 : vecteur d'accélération mesuré (3,)
+    - y1 : vecteur du magnétomètre mesuré (3,)
+    - w1 : vecteur de vitesse angulaire (gyroscope) (3,)
+    - g1_hat : estimation précédente de la direction de la gravité (3,)
+    Retourne : (ϕ, θ, ψ) correspondant aux angles d'Euler (roulis, tangage, cap)
     """
-    g0 = np.array([0, 0, 1])
-    y1_n = y1 / np.linalg.norm(y1)
-    λ = 0.99
-    I = np.radians(64)
-    dt = 0.01
-    g1_hat = λ*(np.eye(3,3)-dt*adjoint(w1))*g1_hat + (1-λ)*a1
-    g1_n = g1_hat/ np.linalg.norm(g1_hat)
-    ϕ = np.arcsin([0,1,0]@g1_n)
-    θ = -np.arcsin([1,0,0]@g1_n)
-    Rh = rotuv(g1_n,g0)
-    yh = Rh@y1_n
-    ψ = -np.arctan2(yh[1],yh[0])
-    return ϕ,θ,ψ
+    g0 = np.array([0, 0, 1])  # Direction de la gravité dans le repère de référence
+    y1_n = y1 / np.linalg.norm(y1)  # Normalisation du vecteur magnétomètre
+    λ = 0.99  # Coefficient de filtrage
+    dt = 0.01  # Pas de temps
+
+    # Mise à jour de l'estimation de la gravité
+    g1_hat = λ * (np.eye(3) - dt * adjoint(w1)) @ g1_hat + (1 - λ) * a1
+    g1_n = g1_hat / np.linalg.norm(g1_hat)  # Normalisation de g1_hat
+
+    # Calcul des angles d'Euler
+    ϕ = np.arcsin(np.dot([0, 1, 0], g1_n))  # Roulis
+    θ = -np.arcsin(np.dot([1, 0, 0], g1_n))  # Tangage
+
+    # Rotation du vecteur magnétomètre pour alignement avec le repère de référence
+    Rh = rotuv(g1_n, g0)
+    yh = Rh @ y1_n
+
+    # Calcul du cap (ψ) en utilisant l'arctangente
+    ψ = -np.arctan2(yh[1], yh[0])
+
+    return [ϕ, θ, ψ, g1_hat]
+
 
 
 def maintien_cap(acc,mag,cap,spd_base,debug=True):

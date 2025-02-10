@@ -49,6 +49,14 @@ Calcule la valeur corrigée de l'accélération brute en utilisant les matrices 
 
 ---
 
+### `gyro()`:
+Lit les données brutes du gyroscope.
+
+- **Input**: Aucune
+- **Output**: Retourne un tableau NumPy contenant les valeurs brutes du gyroscope dans les directions x, y et z.
+
+---
+
 ### `angles_euler(acc, mag)`:
 Calcule les angles d'Euler (Tangage, Roulis, Cap) à partir des données d'accélération et de magnétomètre.
 - **Input**:

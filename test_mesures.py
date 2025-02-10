@@ -31,16 +31,21 @@ Fonction utilisée dans quoicouroblib.py:
 
 print("Début")
 try:
+    g1_hat = np.array([0,0,0])
     while True:
-        x_mag = rb.mag()
-        print("Boussole : {}".format(x_mag))
-        x_accel = rb.accel()
-        print("Acceleration : {}".format(x_accel))
-        euler = rb.angles_euler(x_accel, x_mag)
+        mag = rb.mag()
+        print("Boussole : {}".format(mag))
+        accel = rb.accel()
+        print("Acceleration : {}".format(accel))
+        euler = rb.angles_euler(accel, mag)
         phi = np.degrees(euler[0])
         theta = np.degrees(euler[1])
         psi = np.degrees(euler[2])
-        print("Tangage : {} Roulis : {} Cap : {}".format(phi,theta,psi))
+        print("Tangage1 : {} Roulis1 : {} Cap1 : {}".format(phi,theta,psi))
+        gyro = rb.gyro()
+        euler = rb.angles_euler_2(accel, mag,gyro,g1_hat)
+        g1_hat = euler[3]
+        print("Tangage2 : {} Roulis2 : {} Cap2 : {}".format(np.degrees(euler[0]),np.degrees(euler[1]),np.degrees(euler[2])))
         time.sleep(1)
 except KeyboardInterrupt:
     print("Programme interrompu par l'utilisateur.")
