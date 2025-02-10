@@ -122,7 +122,42 @@ def angles_euler(acc, mag):
 
     return np.array([phi, theta, psi]) # [Tangage, Roulis, Cap]
 
+def rotuv(u,v): #returns rotation with minimal angle  such that  v=R*u
+    u=np.array(u).reshape(3,1)
+    v=np.array(v).reshape(3,1)
+    u=(1/np.linalg.norm(u))*u
+    v=(1/np.linalg.norm(v))*v
+    c=np.dot(u,v)
+    A=v@u.T-u@v.T
+    return np.eye(3,3)+A+(1/(1+c))*A@A
+
+def angles_euler_2(a1, y1, w1, g1_hat):
+    """
+    Calcule les angles d'Euler (tangage, roulis, cap) à partir des données
+    d'accélération, de magnétomètre et de gyroscope.
+    """
+    g0 = np.array([0, 0, 1])
+    y1_n = y1 / np.linalg.norm(y1)
+    λ = 0.99
+    I = np.radians(64)
+    dt = 0.01
+    g1_hat = λ*(I-dt*w1)*g1_hat + (1-λ)*a1
+    g1_n = g1_hat/ np.linalg.norm(g1_hat)
+    ϕ = np.arcsin([0,1,0]@g1_n)
+    θ = -np.arcsin([1,0,0]@g1_n)
+    Rh = rotuv(g1_n,g0)
+    yh = Rh@y1_n
+    ψ = -np.arctan2(yh[1],yh[0])
+
+
 def maintien_cap(acc,mag,cap,spd_base,debug=True):
+    """
+    Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
+
+    Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
+
+    Output: None
+    """
     psi = angles_euler(acc,mag)[2]
     err = sawtooth(cap-psi)
     Kd = 100
