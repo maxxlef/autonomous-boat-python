@@ -6,6 +6,7 @@ import numpy as np
 import datetime
 import csv
 import json
+from filtre import *
 
 # Assure-toi que les modules sont correctement importés
 sys.path.append(os.path.join(os.path.dirname(__file__), 'drivers-ddboat-v2'))
@@ -98,9 +99,12 @@ def accel():
     y = np.dot(A_inv,(x+b))
     return y # [x, y, z]
 
-def gyro():
+def gyro(filtre):
     xgyro, ygyro, zgyro = imu.read_gyro_raw()
-    return np.array([xgyro, ygyro, zgyro])/938.0
+    filtered_x = filtre.update_x(xgyro)
+    filtered_y = filtre.update_y(ygyro)
+    filtered_z = filtre.update_z(zgyro)
+    return np.array([filtered_x, filtered_y, filtered_z])/938.0
 
 def angles_euler(acc, mag):
     """
@@ -532,13 +536,14 @@ def maintien_cap_2(rb,cap,spd_base,debug=True):
     Output: None
     """
     g1_hat = np.array([0,0,0])
-    bouss = rb.mag()
+    mag = rb.mag()
     #print("Boussole : {}".format(mag))
     accel = rb.accel()
     #print("Acceleration : {}".format(accel))
-    gyro = rb.gyro()
+    sensor_filter = SensorFilter(window_size=10)
+    gyro = rb.gyro(sensor_filter)
     #print("Gyroscope : {}".format(gyro))
-    euler = rb.angles_euler_2(accel, bouss,gyro,g1_hat)
+    euler = rb.angles_euler_2(accel, mag,gyro,g1_hat)
     psi=euler[2]
     err = sawtooth(cap-psi)
     Kd = 100
@@ -557,13 +562,14 @@ def maintien_cap_2(rb,cap,spd_base,debug=True):
         print("-----------------------------")
         print("Cap actuel du bateau: {}".format(np.degrees(psi)))
         print("Cap voulu: {}".format(np.degrees(cap)))
-        print("Erreur: {}".format(np.degrees(err)))
+        print("Erreur_cap: {}".format(np.degrees(err)))
         print("---")
         print("Speed de base: {}".format(spd_base))
         print("Speed left = {}".format(spd_left))
         print("Speed right = {}".format(spd_right))
     ard.send_arduino_cmd_motor(spd_left,spd_right)
     time.sleep(0.1)
+
 
 def give_cap():
     bouss = mag()
@@ -572,7 +578,7 @@ def give_cap():
     psi = angles_euler(acc,mag)[2]
     return psi
 
-def cercle(t,lat_boue,long_boue,k1=1,k2 = 1, r=10, T=450,debug=True):
+def cercle(t,lat_boue,long_boue,k1=10,k2 = 20, r=20, T=60,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
 
@@ -587,7 +593,7 @@ def cercle(t,lat_boue,long_boue,k1=1,k2 = 1, r=10, T=450,debug=True):
     v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T))],
                                          [np.cos(2*np.pi*((t)/T))]])
     
-    speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p))
+    speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p), vmax=200, vmin=35, coef=0.5, middle=6)
     
     d = e + k2 * v_tilde
     phi = np.arctan2(d[1,0],d[0,0])

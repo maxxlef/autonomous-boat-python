@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def regulation_vitesse(distance, vmax=200, vmin=45, coef=1, middle=4):
+def regulation_vitesse(distance, vmax=200, vmin=35, coef=0.5, middle=6):
     """
     Régulation de la vitesse en fonction de la distance
     """
@@ -10,7 +10,7 @@ def regulation_vitesse(distance, vmax=200, vmin=45, coef=1, middle=4):
 
 # Paramètres de la régulation:
 vmax = 200
-coef = 1 # Particie à l'écrasement de la tangente hyperbolique (en le résuisant)
+coef = 50 # Particie à l'écrasement de la tangente hyperbolique (en le résuisant)
 middle = 4 # Distance à laquelle la vitesse est moyenne
 vmin = 45
 distances = np.linspace(0, 20, 500)
