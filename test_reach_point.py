@@ -38,7 +38,7 @@ Fonctions utilisées dans quoicouroblib.py:
     def maintien_cap(acc, bouss, cap_voulu, spd, debug=False):
 """
 
-lat_a, long_a = 48.198724, -3.014025
+lat_a, long_a = 48.199014999999996, -3.01479833333333
 a = rb.projection(lat_a, long_a)
 
 print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_a, long_a))
@@ -54,22 +54,24 @@ with open(filename, mode='w', newline='') as file:
     try:
         while True:
             time.sleep(0.5)
-            lat, long = rb.mesure_gps()
+            lat, long = rb.gps_dd()
             print("Mesure GPS du point p: lx ={}, ly ={}".format(lat, long))
             p = rb.projection(lat, long)
             writer.writerow([p[0], p[1]]) # Écrire les coordonnées
             print("Les coordonnees de P dans le plan : {}".format(p))
             print("Les coordonnees de A dans le plan : {}".format(a))
             d = a - p # Vecteur de P vers A
-            distance = np.linalg.norm(d)
+            n = d/np.linalg.norm(d)
+            northo = np.array([-n[1], n[0]])
+            distance = rb.distance_droite(a,northo,p)
             print("Distance au point A : {}".format(distance))
 
             # Correction du cap
-            cap_d = rb.cap_waypoint(a, p)
+            cap_d = rb.cap_waypoint(a, p) + np.pi/2
             print("Cap vise par cap_d : {}°".format(np.degrees(cap_d)))
             acc = rb.accel()
             bouss = rb.mag()
-            spd = rb.regulation_vitesse(distance)
+            spd = 120
             rb.maintien_cap(acc, bouss, cap_d, spd)
 
             # Condition d'arrêt
@@ -79,6 +81,3 @@ with open(filename, mode='w', newline='') as file:
 
     except KeyboardInterrupt:
         print("Programme interrompu par l'utilisateur.")
-    finally:
-        rb.create_csv("/mesures/gps_data.txt", "/mesures/gps_data.csv")
-        rb.afficher_data("/mesures/gps_data.csv", "/mesures/gps_data.geojson")
