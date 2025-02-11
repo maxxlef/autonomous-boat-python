@@ -33,19 +33,20 @@ def create_csv(input_file, output_csv_path):
                 try:
                     data = ast.literal_eval(line.strip())  # Plus sûr que eval
                     latitude_dm, lat_dir, longitude_dm, long_dir = data[:4]
-                    
+                    print("Latitude: {}, Direction: {}".format(latitude_dm, lat_dir))
+                    print("Longitude: {}, Direction: {}".format(longitude_dm, long_dir))
                     latitude = dm_to_dd(latitude_dm, lat_dir)
                     longitude = dm_to_dd(longitude_dm, long_dir)
                     
                     if latitude is not None and longitude is not None:
                         csv_writer.writerow([latitude, longitude])
                 except (SyntaxError, ValueError) as e:
-                    print(f"Erreur lors du traitement de la ligne : {line}, {e}")
-        print(f"Fichier CSV généré avec succès : {output_csv_path}")
+                    print("Erreur lors du traitement de la ligne : {}".format(line))
+        print("Fichier CSV généré avec succès : {}".format(output_csv_path))
     except FileNotFoundError:
-        print(f"Erreur : fichier {input_file} introuvable.")
+        print("Erreur : fichier {} introuvable.".format(input_file))
     except Exception as e:
-        print(f"Erreur : {e}")
+        print("Erreur : {}".format(e))
 
 
 def afficher_data(csv_file, output_geojson_file):

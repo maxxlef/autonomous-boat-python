@@ -30,4 +30,4 @@ def tracer_gps_from_csv(filename):
     plt.show()
 
 # Exemple d'utilisation
-tracer_gps_from_csv('points_epreuve_2.csv')
+tracer_gps_from_csv('points_projection.csv')

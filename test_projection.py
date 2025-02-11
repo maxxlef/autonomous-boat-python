@@ -31,7 +31,7 @@ Fonctions utilisées dans quoicouroblib.py:
 
 """
 
-lat_a, long_a = 48.198724, -3.014025
+lat_a, long_a = 48.19891500000001, -3.013958333333333
 a = rb.projection(lat_a, long_a)
 
 print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_a, long_a))
@@ -46,8 +46,8 @@ with open(filename, mode='w', newline='') as file:
     
     try:
         while True:
-            time.sleep(0.5)
-            lat, long = rb.mesure_gps()
+            time.sleep(0.1)
+            lat, long = rb.gps_dd()
             print("Mesure GPS du point p: lx ={}, ly ={}".format(lat, long))
             p = rb.projection(lat, long)
             writer.writerow([p[0], p[1]]) # Écrire les coordonnées
@@ -58,13 +58,9 @@ with open(filename, mode='w', newline='') as file:
             print("Distance au point A : {}".format(distance))
 
             # Condition d'arrêt
-            if rb.arret_waypoint(a, p) == True:
+            if rb.arret_waypoint(a, p, distance_min=1) == True:
                 print("La bouee à atteint le point gps")
 
 
     except KeyboardInterrupt:
         print("Programme interrompu par l'utilisateur.")
-
-    finally:
-        rb.create_csv("/mesures/gps_data.txt", "/mesures/gps_data.csv")
-        rb.afficher_data("/mesures/gps_data.csv", "/mesures/gps_data.geojson")
