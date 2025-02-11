@@ -209,6 +209,48 @@ def maintien_cap(acc,mag,cap,spd_base,debug=True):
         print("Speed right = {}".format(spd_right))
     ard.send_arduino_cmd_motor(spd_left,spd_right)
 
+def maintien_cap_2(rb,cap,spd_base,debug=True):
+    """
+    Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
+
+    Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
+
+    Output: None
+    """
+    g1_hat = np.array([0,0,0])
+    mag = rb.mag()
+    #print("Boussole : {}".format(mag))
+    accel = rb.accel()
+    #print("Acceleration : {}".format(accel))
+    gyro = rb.gyro()
+    #print("Gyroscope : {}".format(gyro))
+    euler = rb.angles_euler_2(accel, mag,gyro,g1_hat)
+    psi=euler[2]
+    err = sawtooth(cap-psi)
+    Kd = 100
+    correction = Kd*err
+    spd_left = spd_base + correction
+    spd_right = spd_base - correction
+    if spd_left < 0:
+        spd_left = 0
+    if spd_right < 0:
+        spd_right = 0
+    if spd_left > 255:
+        spd_left = 255
+    if spd_right > 255:
+        spd_right = 255
+    if debug:
+        print("-----------------------------")
+        print("Cap actuel du bateau: {}".format(np.degrees(psi)))
+        print("Cap voulu: {}".format(np.degrees(cap)))
+        print("Erreur: {}".format(np.degrees(err)))
+        print("---")
+        print("Speed de base: {}".format(spd_base))
+        print("Speed left = {}".format(spd_left))
+        print("Speed right = {}".format(spd_right))
+    ard.send_arduino_cmd_motor(spd_left,spd_right)
+    time.sleep(0.1)
+
 def dd_to_dms(dd, direction):
     """
     Convertit des coordonnées au format degrés décimaux en degrés minutes secondes.
