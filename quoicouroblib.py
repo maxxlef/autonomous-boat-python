@@ -313,7 +313,7 @@ def afficher_data(csv_file, output_geojson_file):
     with open(output_geojson_file, 'w') as geojson_file:
         json.dump(geojson_data, geojson_file, indent=4)
 
-def projection(lat,long, lat_m = 48.199170, long_m = -3.014700):# Format degrés decimaux
+def projection(lat,long, lat_m = 48.199014999999996, long_m = -3.0147983333333336):# Format degrés decimaux
     """
     Convertit les coordonnées GPS (latitude, longitude en format degrés décimaux) 
     en coordonnées cartésiennes locales par rapport à un point M défini par
@@ -411,7 +411,7 @@ def reach_point(lat_a, long_a, debug=True):
             print("Les coordonnees de P dans le plan : {}".format(p))
             print("---")
             print("Distance au point A : {}".format(distance))
-            print("Cap vise par cap_d : {}°".format(np.degrees(cap_d)))
+            print("Cap vise par cap_d : {}".format(np.degrees(cap_d)))
 
 def cap_waypoint_2(m,n,p, debug=False):
     """
@@ -580,9 +580,18 @@ def cercle(t,lat_boue,long_boue,k=0,debug=True):
     r=40 # en m
     T=200 # en s
     N=10
-    p_tilde=np.array([lat_boue,long_boue])+r*np.array([np.cos(2*np.pi*((t)/T+k/N)),np.sin(2*np.pi*((t)/T+k/N))])
-    v_tilde=r*2*np.pi/T*np.array([-np.sin(2*np.pi*((t)/T+k/N)),np.cos(2*np.pi*((t)/T+k/N))])
-    w=np.tanh(p_tilde-np.array([lx,ly])) + v_tilde
+    m = np.array([[lat_boue],[long_boue]])
+
+    p = np.array([[lx],[ly]])
+
+    p_tilde= m +r * np.array([[np.cos(2*np.pi*((t)/T+k/N))],
+                             [np.sin(2*np.pi*((t)/T+k/N))]])
+    
+    v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T+k/N))],
+                                         [np.cos(2*np.pi*((t)/T+k/N))]])
+    
+    w= np.tanh(p_tilde - p) + v_tilde
+
     if debug:
         print("vecteur vitesse : {}".format(v_tilde))
         print("vecteur a suivre : {}".format(w))

@@ -67,7 +67,7 @@ with open(filename, mode='w', newline='') as file:
             print("Distance au point A : {}".format(distance))
 
             # Correction du cap
-            cap_d = rb.cap_waypoint(a, p) + np.pi/2
+            cap_d = rb.cap_waypoint(a, p)
             print("Cap vise par cap_d : {}°".format(np.degrees(cap_d)))
             acc = rb.accel()
             bouss = rb.mag()
