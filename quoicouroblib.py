@@ -176,7 +176,7 @@ def angles_euler_2(a1, y1, w1, g1_hat):
 
 
 
-def maintien_cap(rb,acc,mag,cap,spd_base,debug=True):
+def maintien_cap(acc,mag,cap,spd_base,debug=True):
     """
     Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
 
@@ -200,56 +200,14 @@ def maintien_cap(rb,acc,mag,cap,spd_base,debug=True):
         spd_right = 255
     if debug:
         print("-----------------------------")
-        print("Cap actuel du bateau: {}".format(np.degrees(psi)))
-        print("Cap voulu: {}".format(np.degrees(cap)))
-        print("Erreur: {}".format(np.degrees(err)))
+        print("Cap actuel du bateau: {}°".format(np.degrees(psi)))
+        print("Cap voulu: {}°".format(np.degrees(cap)))
+        print("Erreur: {}°".format(np.degrees(err)))
         print("---")
         print("Speed de base: {}".format(spd_base))
         print("Speed left = {}".format(spd_left))
         print("Speed right = {}".format(spd_right))
     ard.send_arduino_cmd_motor(spd_left,spd_right)
-
-def maintien_cap_2(rb,cap,spd_base,debug=True):
-    """
-    Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
-
-    Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
-
-    Output: None
-    """
-    g1_hat = np.array([0,0,0])
-    mag = rb.mag()
-    #print("Boussole : {}".format(mag))
-    accel = rb.accel()
-    #print("Acceleration : {}".format(accel))
-    gyro = rb.gyro()
-    #print("Gyroscope : {}".format(gyro))
-    euler = rb.angles_euler_2(accel, mag,gyro,g1_hat)
-    psi=euler[2]
-    err = sawtooth(cap-psi)
-    Kd = 100
-    correction = Kd*err
-    spd_left = spd_base + correction
-    spd_right = spd_base - correction
-    if spd_left < 0:
-        spd_left = 0
-    if spd_right < 0:
-        spd_right = 0
-    if spd_left > 255:
-        spd_left = 255
-    if spd_right > 255:
-        spd_right = 255
-    if debug:
-        print("-----------------------------")
-        print("Cap actuel du bateau: {}".format(np.degrees(psi)))
-        print("Cap voulu: {}".format(np.degrees(cap)))
-        print("Erreur: {}".format(np.degrees(err)))
-        print("---")
-        print("Speed de base: {}".format(spd_base))
-        print("Speed left = {}".format(spd_left))
-        print("Speed right = {}".format(spd_right))
-    ard.send_arduino_cmd_motor(spd_left,spd_right)
-    time.sleep(0.1)
 
 def dd_to_dms(dd, direction):
     """
@@ -297,20 +255,33 @@ def dms_to_dd(dms, direction): # format: dms = '{}°{}\'{:.2f}"'.format(int(dd),
         dd *= -1
     return dd
 
-def mesure_gps(fichier="/mesures/gps_data.txt"):
-    """
-    Lit les données GPS brutes et les écrit dans un fichier .txt
+import os
 
-    Input: fichier (str)
-
-    Output: gll_data (tuple)
+def mesure_gps(fichier="gps_data.txt"):
     """
-    with open(fichier, "a") as file:  # Ouvrir le fichier en mode ajout (append)
+    Lit les données GPS brutes et les écrit dans un fichier .txt.
+
+    Input: 
+        - fichier (str) : Chemin du fichier où les données seront écrites.
+    
+    Output: 
+        - gll_data (tuple) : Données GPS lues.
+    """
+    # Ouvrir le fichier en mode ajout (append) et écrire les données
+    with open(fichier, "a") as file:
         while True:
             gll_ok, gll_data = gps.read_gll_non_blocking()
             if gll_ok:
-                file.write("{}\n".format(gll_data)) # Écrire les données brutes
-                return gll_data
+                file.write("{}\n".format(gll_data))  # Écrire les données brutes
+                print(gll_data)
+                return gll_data[0],gll_data[1],gll_data[2],gll_data[3]
+            
+def gps_dd():
+    lat,dir_lat,long,dir_long = mesure_gps()
+    lat= dm_to_dd(lat,dir_lat)
+    long = dm_to_dd(long,dir_long)
+    return lat,long
+
     
 def create_csv(input_file, output_csv_path):
     """
@@ -389,7 +360,6 @@ def projection(lat,long, lat_m = 48.199170, long_m = -3.014700):# Format degrés
     """
 
     rho = 6371009.7714
-
     # Conversion des latitudes et longitudes en radians
     lat_m_rad = np.radians(lat_m)
     long_m_rad = np.radians(long_m)
@@ -448,6 +418,8 @@ def reach_point(lat_a, long_a, debug=True):
     while True:
         time.sleep(0.5)
         lat, long = mesure_gps()
+        lat = dm_to_dd(lat)
+        long = dm_to_dd(long)
         p = projection(lat, long)
         d = a - p # Vecteur de P vers A
 
