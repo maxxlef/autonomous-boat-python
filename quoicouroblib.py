@@ -170,7 +170,7 @@ def angles_euler_2(a1, y1, w1, g1_hat):
     yh = Rh @ y1_n
 
     # Calcul du cap (ψ) en utilisant l'arctangente
-    ψ = -np.arctan2(yh[1], yh[0])
+    ψ = np.arctan2(yh[1], yh[0])
 
     return [ϕ, θ, ψ, g1_hat]
 
