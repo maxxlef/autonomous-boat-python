@@ -186,7 +186,7 @@ def dd_to_dms(dd, direction):
     secondes = (minutes - int(minutes)) * 60
     if direction in ['S', 'W']:
         dd *= -1
-    dms = '{}°{}\'{:.2f}"'.format(int(dd), int(minutes), secondes)
+    dms = '{} {}\'{:.2f}"'.format(int(dd), int(minutes), secondes)
     return dms
 
 def dm_to_dd(dm,direction):
@@ -385,14 +385,13 @@ def reach_point(lat_a, long_a, debug=True):
         lat, long = gps_dd()
         p = projection(lat, long)
         d = a - p # Vecteur de P vers A
-        n = (d)/np.linalg.norm(d)
-        northo = np.array([-n[1],n[0]])
+
         # Correction du cap
         cap_d = cap_waypoint(a, p)
-        distance = distance_droite(a,northo,p)
+        distance = np.linalg.norm(d)
         acc = accel()
         bouss = mag()
-        spd = 120
+        spd = regulation_vitesse(distance)
         maintien_cap(acc, bouss, cap_d, spd)
 
         # Condition d'arrêt
@@ -404,13 +403,13 @@ def reach_point(lat_a, long_a, debug=True):
         if debug:
             print("-----------------------------")
             print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_a, long_a))
-            print("Les coordonnées du bateau est : lattitude ={}, longitude ={}".format(lat, long))
             print("Ces coordonnees dans le plan sont : x = {}, y = {}".format(a[0], a[1]))
             print("---")
             print("Mesure GPS du point p: lat ={}, long ={}".format(lat, long))
             print("Les coordonnees de P dans le plan : {}".format(p))
             print("---")
             print("Distance au point A : {}".format(distance))
+            print("Cap vise par cap_d : {}".format(np.degrees(cap_d)))
             print("Cap vise par cap_d : {}".format(np.degrees(cap_d)))
 
 def cap_waypoint_2(m,n,p, debug=False):
@@ -474,7 +473,7 @@ def suivre_droite(M, A, debug=True): #  M (départ) et A (fin) en format degrés
             print("Les coordonnees de A dans le plan : {}".format(a))
             print("---")
             print("Distance au point A : {}".format(distance))
-            print("Cap vise par cap_d : {}°".format(np.degrees(cap_d)))
+            print("Cap vise par cap_d : {}".format(np.degrees(cap_d)))
     
 def distance_droite(a, n, p):
     """
@@ -515,9 +514,9 @@ def maintien_cap(acc,mag,cap,spd_base,debug=True):
         spd_right = 255
     if debug:
         print("-----------------------------")
-        print("Cap actuel du bateau: {}°".format(np.degrees(psi)))
-        print("Cap voulu: {}°".format(np.degrees(cap)))
-        print("Erreur: {}°".format(np.degrees(err)))
+        print("Cap actuel du bateau: {}".format(np.degrees(psi)))
+        print("Cap voulu: {}".format(np.degrees(cap)))
+        print("Erreur: {}".format(np.degrees(err)))
         print("---")
         print("Speed de base: {}".format(spd_base))
         print("Speed left = {}".format(spd_left))
@@ -533,13 +532,13 @@ def maintien_cap_2(rb,cap,spd_base,debug=True):
     Output: None
     """
     g1_hat = np.array([0,0,0])
-    mag = rb.mag()
+    bouss = rb.mag()
     #print("Boussole : {}".format(mag))
     accel = rb.accel()
     #print("Acceleration : {}".format(accel))
     gyro = rb.gyro()
     #print("Gyroscope : {}".format(gyro))
-    euler = rb.angles_euler_2(accel, mag,gyro,g1_hat)
+    euler = rb.angles_euler_2(accel, bouss,gyro,g1_hat)
     psi=euler[2]
     err = sawtooth(cap-psi)
     Kd = 100
@@ -567,7 +566,7 @@ def maintien_cap_2(rb,cap,spd_base,debug=True):
     time.sleep(0.1)
 
 def give_cap():
-    mag = mag()
+    bouss = mag()
     #print("Boussole : {}".format(mag))
     acc = accel()
     psi = angles_euler(acc,mag)[2]
@@ -577,8 +576,8 @@ def cercle(t,lat_boue,long_boue,k=0,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
     t0=time.time()
-    r=40 # en m
-    T=200 # en s
+    r=10 # en m
+    T=450 # en s
     N=10
     m = np.array([[lat_boue],[long_boue]])
 
@@ -603,7 +602,7 @@ def suivre_vecteur(lat_m,long_m):
         t=time.time()-t0
         vecteur = cercle(t,lat_m,long_m)
         cap_a_suivre = np.arctan2(vecteur[1],vecteur[0])
-        mag = mag()
+        bouss = mag()
         acc = accel()   
-        maintien_cap(acc,mag,cap_a_suivre,120)
+        maintien_cap(acc,bouss,cap_a_suivre,180)
         time.sleep(0.1)
