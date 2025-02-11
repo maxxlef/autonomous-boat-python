@@ -174,83 +174,6 @@ def angles_euler_2(a1, y1, w1, g1_hat):
 
     return [ϕ, θ, ψ, g1_hat]
 
-
-
-def maintien_cap(acc,mag,cap,spd_base,debug=True):
-    """
-    Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
-
-    Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
-
-    Output: None
-    """
-    psi = angles_euler(acc,mag)[2]
-    err = sawtooth(cap-psi)
-    Kd = 100
-    correction = Kd*err
-    spd_left = spd_base + correction
-    spd_right = spd_base - correction
-    if spd_left < 0:
-        spd_left = 0
-    if spd_right < 0:
-        spd_right = 0
-    if spd_left > 255:
-        spd_left = 255
-    if spd_right > 255:
-        spd_right = 255
-    if debug:
-        print("-----------------------------")
-        print("Cap actuel du bateau: {}°".format(np.degrees(psi)))
-        print("Cap voulu: {}°".format(np.degrees(cap)))
-        print("Erreur: {}°".format(np.degrees(err)))
-        print("---")
-        print("Speed de base: {}".format(spd_base))
-        print("Speed left = {}".format(spd_left))
-        print("Speed right = {}".format(spd_right))
-    ard.send_arduino_cmd_motor(spd_left,spd_right)
-
-def maintien_cap_2(rb,cap,spd_base,debug=True):
-    """
-    Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
-
-    Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
-
-    Output: None
-    """
-    g1_hat = np.array([0,0,0])
-    mag = rb.mag()
-    #print("Boussole : {}".format(mag))
-    accel = rb.accel()
-    #print("Acceleration : {}".format(accel))
-    gyro = rb.gyro()
-    #print("Gyroscope : {}".format(gyro))
-    euler = rb.angles_euler_2(accel, mag,gyro,g1_hat)
-    psi=euler[2]
-    err = sawtooth(cap-psi)
-    Kd = 100
-    correction = Kd*err
-    spd_left = spd_base + correction
-    spd_right = spd_base - correction
-    if spd_left < 0:
-        spd_left = 0
-    if spd_right < 0:
-        spd_right = 0
-    if spd_left > 255:
-        spd_left = 255
-    if spd_right > 255:
-        spd_right = 255
-    if debug:
-        print("-----------------------------")
-        print("Cap actuel du bateau: {}".format(np.degrees(psi)))
-        print("Cap voulu: {}".format(np.degrees(cap)))
-        print("Erreur: {}".format(np.degrees(err)))
-        print("---")
-        print("Speed de base: {}".format(spd_base))
-        print("Speed left = {}".format(spd_left))
-        print("Speed right = {}".format(spd_right))
-    ard.send_arduino_cmd_motor(spd_left,spd_right)
-    time.sleep(0.1)
-
 def dd_to_dms(dd, direction):
     """
     Convertit des coordonnées au format degrés décimaux en degrés minutes secondes.
@@ -425,7 +348,7 @@ def cap_waypoint(a,p):
     """
     d = a - p
     n = d / np.linalg.norm(d)
-    cap_d = np.pi/2 - np.arctan2(n[1],n[0]) # À vérifier si c'est bien pi/2 - arctan2(n[1],n[0])
+    cap_d = np.pi - np.arctan2(n[1],n[0]) # À vérifier si c'est bien pi/2 - arctan2(n[1],n[0])
     return cap_d
 
 def arret_waypoint(a,p, distance_min = 2):
@@ -459,28 +382,29 @@ def reach_point(lat_a, long_a, debug=True):
 
     while True:
         time.sleep(0.5)
-        lat, long = mesure_gps()
-        lat = dm_to_dd(lat)
-        long = dm_to_dd(long)
+        lat, long = gps_dd()
         p = projection(lat, long)
         d = a - p # Vecteur de P vers A
-
+        n = (d)/np.linalg.norm(d)
+        northo = np.array([-n[1],n[0]])
         # Correction du cap
         cap_d = cap_waypoint(a, p)
-        distance = np.linalg.norm(d)
+        distance = distance_droite(a,northo,p)
         acc = accel()
         bouss = mag()
-        spd = regulation_vitesse(distance)
+        spd = 120
         maintien_cap(acc, bouss, cap_d, spd)
 
         # Condition d'arrêt
         if arret_waypoint(a, p) == True:
             print("La bouee a atteint le point gps")
             ard.send_arduino_cmd_motor(0, 0)
+            break
 
         if debug:
             print("-----------------------------")
             print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_a, long_a))
+            print("Les coordonnées du bateau est : lattitude ={}, longitude ={}".format(lat, long))
             print("Ces coordonnees dans le plan sont : x = {}, y = {}".format(a[0], a[1]))
             print("---")
             print("Mesure GPS du point p: lat ={}, long ={}".format(lat, long))
@@ -565,3 +489,112 @@ def distance_droite(a, n, p):
     vecteur_pa = a - p
     distance = np.cross(n, vecteur_pa) / np.linalg.norm(n)
     return distance
+
+
+def maintien_cap(acc,mag,cap,spd_base,debug=True):
+    """
+    Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
+
+    Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
+
+    Output: None
+    """
+    psi = angles_euler(acc,mag)[2]
+    err = sawtooth(cap-psi)
+    Kd = 100
+    correction = Kd*err
+    spd_left = spd_base + correction
+    spd_right = spd_base - correction
+    if spd_left < 0:
+        spd_left = 0
+    if spd_right < 0:
+        spd_right = 0
+    if spd_left > 255:
+        spd_left = 255
+    if spd_right > 255:
+        spd_right = 255
+    if debug:
+        print("-----------------------------")
+        print("Cap actuel du bateau: {}°".format(np.degrees(psi)))
+        print("Cap voulu: {}°".format(np.degrees(cap)))
+        print("Erreur: {}°".format(np.degrees(err)))
+        print("---")
+        print("Speed de base: {}".format(spd_base))
+        print("Speed left = {}".format(spd_left))
+        print("Speed right = {}".format(spd_right))
+    ard.send_arduino_cmd_motor(spd_left,spd_right)
+
+def maintien_cap_2(rb,cap,spd_base,debug=True):
+    """
+    Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
+
+    Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
+
+    Output: None
+    """
+    g1_hat = np.array([0,0,0])
+    mag = rb.mag()
+    #print("Boussole : {}".format(mag))
+    accel = rb.accel()
+    #print("Acceleration : {}".format(accel))
+    gyro = rb.gyro()
+    #print("Gyroscope : {}".format(gyro))
+    euler = rb.angles_euler_2(accel, mag,gyro,g1_hat)
+    psi=euler[2]
+    err = sawtooth(cap-psi)
+    Kd = 100
+    correction = Kd*err
+    spd_left = spd_base + correction
+    spd_right = spd_base - correction
+    if spd_left < 0:
+        spd_left = 0
+    if spd_right < 0:
+        spd_right = 0
+    if spd_left > 255:
+        spd_left = 255
+    if spd_right > 255:
+        spd_right = 255
+    if debug:
+        print("-----------------------------")
+        print("Cap actuel du bateau: {}".format(np.degrees(psi)))
+        print("Cap voulu: {}".format(np.degrees(cap)))
+        print("Erreur: {}".format(np.degrees(err)))
+        print("---")
+        print("Speed de base: {}".format(spd_base))
+        print("Speed left = {}".format(spd_left))
+        print("Speed right = {}".format(spd_right))
+    ard.send_arduino_cmd_motor(spd_left,spd_right)
+    time.sleep(0.1)
+
+def give_cap():
+    mag = mag()
+    #print("Boussole : {}".format(mag))
+    acc = accel()
+    psi = angles_euler(acc,mag)[2]
+    return psi
+
+def cercle(t,lat_boue,long_boue,k=0,debug=True):
+    lat,long = gps_dd()
+    lx,ly=projection(lat,long)
+    t0=time.time()
+    r=40 # en m
+    T=200 # en s
+    N=10
+    p_tilde=np.array([lat_boue,long_boue])+r*np.array([np.cos(2*np.pi*((t)/T+k/N)),np.sin(2*np.pi*((t)/T+k/N))])
+    v_tilde=r*2*np.pi/T*np.array([-np.sin(2*np.pi*((t)/T+k/N)),np.cos(2*np.pi*((t)/T+k/N))])
+    w=np.tanh(p_tilde-np.array([lx,ly])) + v_tilde
+    if debug:
+        print("vecteur vitesse : {}".format(v_tilde))
+        print("vecteur a suivre : {}".format(w))
+    return w
+
+def suivre_vecteur(lat_m,long_m):
+    t0=time.time()
+    while time.time()-t0 < 450:
+        t=time.time()-t0
+        vecteur = cercle(t,lat_m,long_m)
+        cap_a_suivre = np.arctan2(vecteur[1],vecteur[0])
+        mag = mag()
+        acc = accel()   
+        maintien_cap(acc,mag,cap_a_suivre,120)
+        time.sleep(0.1)
