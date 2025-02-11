@@ -19,5 +19,10 @@ ard = arddrv.ArduinoIO()
 print("Debut")
 
 def mission_jour_2():
+    lat_m=48.20010  
+    long_m=-3.01573
     rb.reach_point(lat_m, long_m)
     rb.suivre_vecteur(lat_m,long_m)
+    
+# mission_jour_2()
+rb.reach_point(48.199014999999996, -3.0147983333333332)
