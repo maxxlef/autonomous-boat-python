@@ -516,7 +516,7 @@ def maintien_cap(acc,mag,cap,spd_base,debug=True):
         print("-----------------------------")
         print("Cap actuel du bateau: {}".format(np.degrees(psi)))
         print("Cap voulu: {}".format(np.degrees(cap)))
-        print("Erreur: {}".format(np.degrees(err)))
+        print("Erreur_cap: {}".format(np.degrees(err)))
         print("---")
         print("Speed de base: {}".format(spd_base))
         print("Speed left = {}".format(spd_left))
@@ -572,37 +572,40 @@ def give_cap():
     psi = angles_euler(acc,mag)[2]
     return psi
 
-def cercle(t,lat_boue,long_boue,k=0,debug=True):
+def cercle(t,lat_boue,long_boue,k1=1,k2 = 1, r=10, T=450,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
-    t0=time.time()
-    r=10 # en m
-    T=450 # en s
-    N=10
+
+    lat_boue,long_boue = projection(lat_boue,long_boue)
     m = np.array([[lat_boue],[long_boue]])
 
     p = np.array([[lx],[ly]])
-
-    p_tilde= m +r * np.array([[np.cos(2*np.pi*((t)/T+k/N))],
-                             [np.sin(2*np.pi*((t)/T+k/N))]])
+    p_tilde= m +r * np.array([[np.cos(2*np.pi*((t)/T))],
+                             [np.sin(2*np.pi*((t)/T))]])
+    e = p_tilde - p
     
-    v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T+k/N))],
-                                         [np.cos(2*np.pi*((t)/T+k/N))]])
+    v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T))],
+                                         [np.cos(2*np.pi*((t)/T))]])
     
-    w= np.tanh(p_tilde - p) + v_tilde
+    speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p))
+    
+    d = e + k2 * v_tilde
+    phi = np.arctan2(d[1,0],d[0,0])
+    cap_d = np.pi - phi
 
     if debug:
-        print("vecteur vitesse : {}".format(v_tilde))
-        print("vecteur a suivre : {}".format(w))
-    return w
+        print("norme du vecteur vitesse v : {}".format(np.linalg.norm(v_tilde)))
+        print("norme erreur : {}".format(np.linalg.norm(e)))
+        print("cap a suivre : {}".format(np.degrees(cap_d)))
+        print("speed bateau: {}".format(speed))
+    return speed, cap_d
 
 def suivre_vecteur(lat_m,long_m):
     t0=time.time()
     while time.time()-t0 < 450:
         t=time.time()-t0
-        vecteur = cercle(t,lat_m,long_m)
-        cap_a_suivre = np.arctan2(vecteur[1],vecteur[0])
+        speed, cap_d = cercle(t,lat_m,long_m)
         bouss = mag()
         acc = accel()   
-        maintien_cap(acc,bouss,cap_a_suivre,180)
+        maintien_cap(acc,bouss,cap_d,speed)
         time.sleep(0.1)
