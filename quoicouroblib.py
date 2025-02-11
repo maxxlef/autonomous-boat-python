@@ -100,7 +100,7 @@ def accel():
 
 def gyro():
     xgyro, ygyro, zgyro = imu.read_gyro_raw()
-    return np.array([xgyro, ygyro, zgyro])
+    return np.array([xgyro, ygyro, zgyro])/938.0
 
 def angles_euler(acc, mag):
     """
@@ -110,39 +110,24 @@ def angles_euler(acc, mag):
     
     Output: euler (np.array)
     """
-    I = np.radians(64)
-    a0 = np.array([[0], [0], [1]])  # Vecteur vertical
-    y0 = np.array([[np.cos(I)], [0], [-np.sin(I)]])  # Vecteur magnétique
-    # Calcul des angles phi (roulis) et theta (tangage)
-    #print("acc[1]: {}".format(acc[1]))
-    #print("acc[0]: {}".format(acc[0]))
     phi = np.arcsin(acc[1]/np.linalg.norm(acc))  # Angle de roulis
     theta = -np.arcsin(acc[0]/np.linalg.norm(acc))  # Angle de tangage
-    # Calcul de la matrice de rotation à partir de l'accéléromètre
-    #  
-    # Rotation du vecteur magnétique
-    yh2 = mag
-    yh1 = y0
-    # Calcul de l'angle de lacet (psi)
-    psi = -np.arctan2(yh2[0], yh1[0])
     psi = np.arctan2(mag[1],mag[0])
     return [phi, theta, psi]
 
 def rotuv(u,v): #returns rotation with minimal angle  such that  v=R*u
-    """
-    Retourne la matrice de rotation R telle que v = R*u.
-    
-    Input: u (np.array), v (np.array)
-    
-    Output: R (np.array)
-    """
+            # see https://en.wikipedia.org/wiki/Rotation_matrix#Vector_to_vector_formulation
     u=np.array(u).reshape(3,1)
     v=np.array(v).reshape(3,1)
     u=(1/np.linalg.norm(u))*u
     v=(1/np.linalg.norm(v))*v
-    c=np.dot(u,v)
+    c=scalarprod(u,v)
     A=v@u.T-u@v.T
     return np.eye(3,3)+A+(1/(1+c))*A@A
+
+def scalarprod(u,v): # scalar product
+    u,v=u.flatten(),v.flatten()
+    return sum(u[:]*v[:])
 
 def adjoint(w):
     """
@@ -170,7 +155,7 @@ def angles_euler_2(a1, y1, w1, g1_hat):
     g0 = np.array([0, 0, 1])  # Direction de la gravité dans le repère de référence
     y1_n = y1 / np.linalg.norm(y1)  # Normalisation du vecteur magnétomètre
     λ = 0.99  # Coefficient de filtrage
-    dt = 0.01  # Pas de temps
+    dt = 0.01
 
     # Mise à jour de l'estimation de la gravité
     g1_hat = λ * (np.eye(3) - dt * adjoint(w1)) @ g1_hat + (1 - λ) * a1
@@ -191,7 +176,7 @@ def angles_euler_2(a1, y1, w1, g1_hat):
 
 
 
-def maintien_cap(acc,mag,cap,spd_base,debug=True):
+def maintien_cap(rb,acc,mag,cap,spd_base,debug=True):
     """
     Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
 
@@ -215,14 +200,56 @@ def maintien_cap(acc,mag,cap,spd_base,debug=True):
         spd_right = 255
     if debug:
         print("-----------------------------")
-        print("Cap actuel du bateau: {}°".format(np.degrees(psi)))
-        print("Cap voulu: {}°".format(np.degrees(cap)))
-        print("Erreur: {}°".format(np.degrees(err)))
+        print("Cap actuel du bateau: {}".format(np.degrees(psi)))
+        print("Cap voulu: {}".format(np.degrees(cap)))
+        print("Erreur: {}".format(np.degrees(err)))
         print("---")
         print("Speed de base: {}".format(spd_base))
         print("Speed left = {}".format(spd_left))
         print("Speed right = {}".format(spd_right))
     ard.send_arduino_cmd_motor(spd_left,spd_right)
+
+def maintien_cap_2(rb,cap,spd_base,debug=True):
+    """
+    Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
+
+    Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
+
+    Output: None
+    """
+    g1_hat = np.array([0,0,0])
+    mag = rb.mag()
+    #print("Boussole : {}".format(mag))
+    accel = rb.accel()
+    #print("Acceleration : {}".format(accel))
+    gyro = rb.gyro()
+    #print("Gyroscope : {}".format(gyro))
+    euler = rb.angles_euler_2(accel, mag,gyro,g1_hat)
+    psi=euler[2]
+    err = sawtooth(cap-psi)
+    Kd = 100
+    correction = Kd*err
+    spd_left = spd_base + correction
+    spd_right = spd_base - correction
+    if spd_left < 0:
+        spd_left = 0
+    if spd_right < 0:
+        spd_right = 0
+    if spd_left > 255:
+        spd_left = 255
+    if spd_right > 255:
+        spd_right = 255
+    if debug:
+        print("-----------------------------")
+        print("Cap actuel du bateau: {}".format(np.degrees(psi)))
+        print("Cap voulu: {}".format(np.degrees(cap)))
+        print("Erreur: {}".format(np.degrees(err)))
+        print("---")
+        print("Speed de base: {}".format(spd_base))
+        print("Speed left = {}".format(spd_left))
+        print("Speed right = {}".format(spd_right))
+    ard.send_arduino_cmd_motor(spd_left,spd_right)
+    time.sleep(0.1)
 
 def dd_to_dms(dd, direction):
     """
