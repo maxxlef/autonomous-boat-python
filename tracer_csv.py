@@ -23,6 +23,8 @@ def tracer_gps_from_csv(filename):
     plt.figure(figsize=(10, 6))
     plt.plot(x, y, marker='o', linestyle='-', color='b', label='Coordonnées GPS')
     plt.title('Projection GPS')
+    plt.xlim(0,70)
+    plt.ylim(-20,50)
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.legend()

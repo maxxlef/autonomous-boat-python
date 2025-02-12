@@ -33,9 +33,15 @@ Fonctions utilisées dans quoicouroblib.py:
 """
 
 import numpy as np
+<<<<<<< HEAD
 from pyproj import Proj, transform
 
 projdegrestometers = Proj("+proj=utm +zone=30, +north +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+=======
+from pyproj import Proj
+
+proj_dd_to_meters = Proj("+proj=utm +zone=30, +north +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+>>>>>>> ca86be2d833adc13b39b8ca49535c625eeec2605
 
 def projection(lat, long, lat_m=48.199014999999996, long_m=-3.0147983333333336):
     """
@@ -47,9 +53,15 @@ def projection(lat, long, lat_m=48.199014999999996, long_m=-3.0147983333333336):
     """
 
     # Convertir le point de référence en mètres
+<<<<<<< HEAD
     x_m, y_m = projdegrestometers(long_m, lat_m)
     x_p, y_p = projdegrestometers(long,lat)
     
+=======
+    x_m, y_m = proj_dd_to_meters(long_m, lat_m)
+    x_p, y_p = proj_dd_to_meters(long,lat)
+
+>>>>>>> ca86be2d833adc13b39b8ca49535c625eeec2605
     # Calculer les coordonnées relatives
     x = x_p - x_m
     y = y_p - y_m

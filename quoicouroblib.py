@@ -600,6 +600,7 @@ def cercle(t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=330,debug=True):
     speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p), vmax=170, vmin=35, coef=0.3, middle=10)
     
     d =   e + k2 * v_tilde
+    d =   e + k2 * v_tilde
     phi = np.arctan2(d[1,0],d[0,0])
     cap_d = np.pi - phi
 
@@ -607,18 +608,25 @@ def cercle(t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=330,debug=True):
         print("norme v_tilde : {}".format(np.linalg.norm(v_tilde)))
         print("norme p_tilde moins p : {}".format(np.linalg.norm(e)))
         print("cap_d : {}".format(np.degrees(cap_d)))
+        print("norme v_tilde : {}".format(np.linalg.norm(v_tilde)))
+        print("norme p_tilde moins p : {}".format(np.linalg.norm(e)))
+        print("cap_d : {}".format(np.degrees(cap_d)))
         print("speed bateau: {}".format(speed))
+    return speed, cap_d , p_tilde , p
     return speed, cap_d , p_tilde , p
 
 def suivre_vecteur(t0,lat_m,long_m,boucle = True):
     while True:
         t=time.time()-t0
         speed, cap_d, p_tilde,p= cercle(t,lat_m,long_m)
+        speed, cap_d, p_tilde,p= cercle(t,lat_m,long_m)
         bouss = mag()
         acc = accel()   
         maintien_cap(acc,bouss,cap_d,speed)
         time.sleep(0.1)
         if not boucle:
+            return p_tilde ,p
+
             return p_tilde ,p
 
 
