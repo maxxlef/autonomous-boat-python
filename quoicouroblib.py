@@ -7,6 +7,7 @@ import datetime
 import csv
 import json
 from filtre import *
+import socket
 
 # Assure-toi que les modules sont correctement importés
 sys.path.append(os.path.join(os.path.dirname(__file__), 'drivers-ddboat-v2'))
@@ -395,7 +396,8 @@ def reach_point(lat_a, long_a, debug=True):
         distance = np.linalg.norm(d)
         acc = accel()
         bouss = mag()
-        spd = regulation_vitesse(distance)
+        if spd == None:
+            spd = regulation_vitesse(distance)
         maintien_cap(acc, bouss, cap_d, spd)
 
         # Condition d'arrêt
@@ -578,7 +580,7 @@ def give_cap():
     psi = angles_euler(acc,mag)[2]
     return psi
 
-def cercle(t,lat_boue,long_boue,k1=10,k2 = 20, r=20, T=60,debug=True):
+def cercle(t,lat_boue,long_boue,k1=10,k2 = 20, r=30, T=330,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
 
@@ -593,7 +595,7 @@ def cercle(t,lat_boue,long_boue,k1=10,k2 = 20, r=20, T=60,debug=True):
     v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T))],
                                          [np.cos(2*np.pi*((t)/T))]])
     
-    speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p), vmax=200, vmin=35, coef=0.5, middle=6)
+    speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p), vmax=200, vmin=35, coef=0.5, middle=3)
     
     d = e + k2 * v_tilde
     phi = np.arctan2(d[1,0],d[0,0])
@@ -615,3 +617,33 @@ def suivre_vecteur(lat_m,long_m):
         acc = accel()   
         maintien_cap(acc,bouss,cap_d,speed)
         time.sleep(0.1)
+
+def robot2_client_onetime(server_ip):
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client_socket.connect((server_ip, 5000))
+    print("Connected to DDBoat 17 (Server)")
+
+    # def signal_handler(sig, frame):
+    #     print("Closing client connection gracefully...")
+    #     client_socket.close()
+    #     sys.exit(0)
+    
+    # signal.signal(signal.SIGINT, signal_handler)
+
+    data = ""
+    try:
+        while True:
+            data = client_socket.recv(1024).decode()
+            if not data:
+                break
+            print("Received GPS Position from DDBoat 17: {}".format(data))
+            break
+    except Exception as e:
+        print("Client error: {}".format(e))
+    finally:
+        client_socket.close()
+    lat , dir_lat, long, dir_long = data
+    lat = dm_to_dd(lat,dir_lat)
+    long = dm_to_dd(long,dir_long)
+    return lat, long
+
