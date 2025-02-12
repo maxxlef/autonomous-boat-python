@@ -19,15 +19,28 @@ ard = arddrv.ArduinoIO()
 print("Debut")
 
 def mission_jour_3():
+    coord_p_tilde=[]
+    coord_p=[]
     """
     Tourne autour du bateau 
     """
-    #rb.attendre_exact_heure(11,30)
-    while True:
-        numero_bateau = "17"
-        ip_adresse = "172.20.25.2" + numero_bateau
-        lat_m, long_m = rb.robot2_client_onetime(ip_adresse) #En degrés décimaux
-        rb.suivre_vecteur(lat_m,long_m,boucle = False)
+    #rb.attendre_exact_heure(11,18)
+    i=-1
+    try:
+        while True:
+            i+=1
+            numero_bateau = "17"
+            ip_adresse = "172.20.25.2" + numero_bateau
+            if i%10==0:
+                print("new point")
+                lat_m, long_m = rb.robot2_client_onetime(ip_adresse) #En degrés décimaux
+            p_tilde,p=rb.suivre_vecteur(lat_m,long_m,boucle = False)
+            coord_p_tilde.append(p_tilde)
+            coord_p.append(p)
+    finally:
+        np.save("coord_ptilde.npy",coord_p_tilde)
+        np.save("coord_p.npy",coord_p)
+        return
     
 def mission2_jour_3():
     """
@@ -70,7 +83,11 @@ def mission2_jour_3():
             print("Cap vise par cap_d : {}".format(np.degrees(cap_d)))
             print("Cap vise par cap_d : {}".format(np.degrees(cap_d)))
 
-
 mission_jour_3()
+
 #mission2_jour_3()
 #rb.reach_point(48.199014999999996, -3.0147983333333332)
+# numero_bateau = "17"
+# ip_adresse = "172.20.25.2" + numero_bateau
+# lat_m, long_m = rb.robot2_client_onetime(ip_adresse)
+# rb.reach_point(lat_m,long_m)

@@ -57,26 +57,27 @@ def create_gpx(csv_file, output_gpx_path, start_time="2025-02-12T08:00:00Z"):
             reader = csv.DictReader(file)
             gpx_content = """<?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="MonScript" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>GPS Track</name>
+    <trkseg>
 """
-            # Convertir la chaîne de départ en objet datetime
             current_time = datetime.fromisoformat(start_time.replace("Z", "+00:00"))
-            
+
             for row in reader:
                 try:
                     latitude = float(row['Latitude'])
                     longitude = float(row['Longitude'])
-                    # Ajouter un waypoint avec une balise <time>
-                    gpx_content += f"""  <wpt lat="{latitude}" lon="{longitude}">
-    <name>Point</name>
-    <time>{current_time.isoformat()}Z</time>
-  </wpt>
+                    gpx_content += f"""      <trkpt lat="{latitude}" lon="{longitude}">
+        <time>{current_time.isoformat()}Z</time>
+      </trkpt>
 """
-                    # Incrémenter le temps d'une seconde pour le prochain point
                     current_time += timedelta(seconds=1)
                 except ValueError:
                     print(f"Erreur de conversion dans la ligne : {row}")
                     
-            gpx_content += "</gpx>"
+            gpx_content += """    </trkseg>
+  </trk>
+</gpx>"""
 
         with open(output_gpx_path, 'w') as gpx_file:
             gpx_file.write(gpx_content)

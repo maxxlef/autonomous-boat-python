@@ -9,10 +9,10 @@ def regulation_vitesse(distance, vmax, vmin, coef, middle):
     return max(0, min(vmax, vitesse))
 
 # Paramètres de la régulation:
-vmax = 200
-coef = 0.6 # Particie à l'écrasement de la tangente hyperbolique (en le résuisant)
-middle = 12 # Distance à laquelle la vitesse est moyenne
-vmin = 45
+vmax = 170
+coef = 0.3 # Particie à l'écrasement de la tangente hyperbolique (en le résuisant)
+middle = 17 # Distance à laquelle la vitesse est moyenne
+vmin = 35
 distances = np.linspace(0, 100, 1000)
 vitesses = [regulation_vitesse(d, vmax, vmin, coef, middle) for d in distances]
 
