@@ -22,10 +22,12 @@ def mission_jour_3():
     """
     Tourne autour du bateau 
     """
-    numero_bateau = "17"
-    ip_adresse = "172.20.25.2" + numero_bateau
-    lat_m, long_m = rb.robot2_client_onetime(ip_adresse) #En degrés décimaux
-    rb.suivre_vecteur(lat_m,long_m)
+    #rb.attendre_exact_heure(11,30)
+    while True:
+        numero_bateau = "17"
+        ip_adresse = "172.20.25.2" + numero_bateau
+        lat_m, long_m = rb.robot2_client_onetime(ip_adresse) #En degrés décimaux
+        rb.suivre_vecteur(lat_m,long_m,boucle = False)
     
 def mission2_jour_3():
     """
@@ -58,8 +60,8 @@ def mission2_jour_3():
 
         if debug:
             print("-----------------------------")
-            print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_a, long_a))
-            print("Ces coordonnees dans le plan sont : x = {}, y = {}".format(a[0], a[1]))
+            print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_m, long_m))
+            print("Ces coordonnees dans le plan sont : x = {}, y = {}".format(m[0], m[1]))
             print("---")
             print("Mesure GPS du point p: lat ={}, long ={}".format(lat, long))
             print("Les coordonnees de P dans le plan : {}".format(p))

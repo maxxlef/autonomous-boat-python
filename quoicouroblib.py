@@ -608,15 +608,17 @@ def cercle(t,lat_boue,long_boue,k1=10,k2 = 20, r=30, T=330,debug=True):
         print("speed bateau: {}".format(speed))
     return speed, cap_d
 
-def suivre_vecteur(lat_m,long_m):
+def suivre_vecteur(lat_m,long_m,boucle = True):
     t0=time.time()
-    while time.time()-t0 < 450:
+    while True:
         t=time.time()-t0
         speed, cap_d = cercle(t,lat_m,long_m)
         bouss = mag()
         acc = accel()   
         maintien_cap(acc,bouss,cap_d,speed)
         time.sleep(0.1)
+        if not boucle:
+            break
 
 def robot2_client_onetime(server_ip):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
