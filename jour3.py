@@ -30,7 +30,7 @@ def mission_jour_3():
     try:
         while True:
             i+=1
-            numero_bateau = "16"
+            numero_bateau = "17"
             ip_adresse = "172.20.25.2" + numero_bateau
             if i%10==0:
                 print("new point")
@@ -48,12 +48,14 @@ def mission2_jour_3():
     Rejoint un bateau
     """
     debug = True
-
+    i=0
 
     while True:
         numero_bateau = "17"
         ip_adresse = "172.20.25.2" + numero_bateau
-        lat_m, long_m = rb.robot2_client_onetime(ip_adresse) #En degrés décimaux
+        if i%2==0:
+            print("new point")
+            lat_m, long_m = rb.robot2_client_onetime(ip_adresse) #En degrés décimaux
         m = rb.projection(lat_m, long_m)
 
         lat, long = rb.gps_dd()
@@ -71,7 +73,8 @@ def mission2_jour_3():
         vmin = 35
         spd = rb.regulation_vitesse(distance, vmax, vmin, coef, middle)
         rb.maintien_cap(acc, bouss, cap_d, spd)
-
+        i+=1
+        print(i)
         if debug:
             print("-----------------------------")
             print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_m, long_m))
@@ -84,10 +87,10 @@ def mission2_jour_3():
             print("Cap vise par cap_d : {}".format(np.degrees(cap_d)))
             print("Cap vise par cap_d : {}".format(np.degrees(cap_d)))
 
-mission_jour_3()
-
+#mission_jour_3()
+#rb.attendre_exact_heure(18,30)
 #mission2_jour_3()
-#rb.reach_point(48.199014999999996, -3.0147983333333332)
+rb.reach_point(48.199014999999996, -3.0147983333333332)
 # numero_bateau = "17"
 # ip_adresse = "172.20.25.2" + numero_bateau
 # lat_m, long_m = rb.robot2_client_onetime(ip_adresse)

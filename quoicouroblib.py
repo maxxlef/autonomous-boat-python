@@ -646,11 +646,16 @@ def robot2_client_onetime(server_ip):
         print("Client error: {}".format(e))
     finally:
         client_socket.close()
-    list_data = data.split(";")
-    lat , dir_lat, long, dir_long = float(list_data[0]), str(list_data[1][0]), float(list_data[2]), str(list_data[3][0])
-    print("lat = {}, dir_lat = {}, long = {}, dir_long = {}".format(lat, dir_lat, long, dir_long))
-    lat = dm_to_dd(lat,dir_lat)
-    long = dm_to_dd(long,dir_long)
-    print("Lattiude = {}, Longitude = {}".format(lat, long))
-    return lat, long
+    try:
+        list_data = data.split(";")
+        lat , dir_lat, long, dir_long = float(list_data[0]), 'N', float(list_data[2]), 'W'
+        lat = dm_to_dd(lat,dir_lat)
+        long = dm_to_dd(long,dir_long)
+        print("Lattiude = {}, Longitude = {}".format(lat, long))
+        print("lat = {}, dir_lat = {}, long = {}, dir_long = {}".format(lat, dir_lat, long, dir_long))
+        print("Lattiude = {}, Longitude = {}".format(lat, long))
+        return lat, long
+    except:
+        pass
+    
 
