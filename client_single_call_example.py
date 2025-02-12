@@ -34,7 +34,7 @@ def robot2_client_onetime(server_ip):
 
 if __name__ == "__main__":
     # IP address of the server (e.g. 172.20.25.217 for DDBoat 17)
-    gps_pos = robot2_client_onetime("172.20.25.217")
+    gps_pos = robot2_client_onetime("172.20.25.216")
     #gps_pos = robot2_client_onetime("172.20.25.221") # test ddboat
     print ("GPS Position",gps_pos)
 

@@ -396,8 +396,7 @@ def reach_point(lat_a, long_a, debug=True):
         distance = np.linalg.norm(d)
         acc = accel()
         bouss = mag()
-        if spd == None:
-            spd = regulation_vitesse(distance)
+        spd = regulation_vitesse(distance)
         maintien_cap(acc, bouss, cap_d, spd)
 
         # Condition d'arrêt
@@ -503,10 +502,13 @@ def maintien_cap(acc,mag,cap,spd_base,debug=True):
     Input: acc (np.array), mag (np.array), cap (float), spd_base (int), debug (bool)
 
     Output: None
+
+    On a mis le kd à 50 lors du suivi de point extremement lent.
+    Initiallement kd=100 pour des vitesses plus vite
     """
     psi = angles_euler(acc,mag)[2]
     err = sawtooth(cap-psi)
-    Kd = 100
+    Kd = 50
     correction = Kd*err
     spd_left = spd_base + correction
     spd_right = spd_base - correction
@@ -580,7 +582,7 @@ def give_cap():
     psi = angles_euler(acc,mag)[2]
     return psi
 
-def cercle(t,lat_boue,long_boue,k1=10,k2 = 20, r=30, T=330,debug=True):
+def cercle(t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=330,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
 
@@ -595,30 +597,30 @@ def cercle(t,lat_boue,long_boue,k1=10,k2 = 20, r=30, T=330,debug=True):
     v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T))],
                                          [np.cos(2*np.pi*((t)/T))]])
     
-    speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p), vmax=200, vmin=35, coef=0.5, middle=3)
+    speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p), vmax=170, vmin=35, coef=0.3, middle=10)
     
-    d = e + k2 * v_tilde
+    d =   e + k2 * v_tilde
     phi = np.arctan2(d[1,0],d[0,0])
     cap_d = np.pi - phi
 
     if debug:
-        print("norme du vecteur vitesse v : {}".format(np.linalg.norm(v_tilde)))
-        print("norme erreur : {}".format(np.linalg.norm(e)))
-        print("cap a suivre : {}".format(np.degrees(cap_d)))
+        print("norme v_tilde : {}".format(np.linalg.norm(v_tilde)))
+        print("norme p_tilde moins p : {}".format(np.linalg.norm(e)))
+        print("cap_d : {}".format(np.degrees(cap_d)))
         print("speed bateau: {}".format(speed))
-    return speed, cap_d
+    return speed, cap_d , p_tilde , p
 
-def suivre_vecteur(lat_m,long_m,boucle = True):
-    t0=time.time()
+def suivre_vecteur(t0,lat_m,long_m,boucle = True):
     while True:
         t=time.time()-t0
-        speed, cap_d = cercle(t,lat_m,long_m)
+        speed, cap_d, p_tilde,p= cercle(t,lat_m,long_m)
         bouss = mag()
         acc = accel()   
         maintien_cap(acc,bouss,cap_d,speed)
         time.sleep(0.1)
         if not boucle:
-            break
+            return p_tilde ,p
+
 
 def robot2_client_onetime(server_ip):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -644,8 +646,11 @@ def robot2_client_onetime(server_ip):
         print("Client error: {}".format(e))
     finally:
         client_socket.close()
-    lat , dir_lat, long, dir_long = data
+    list_data = data.split(";")
+    lat , dir_lat, long, dir_long = float(list_data[0]), str(list_data[1][0]), float(list_data[2]), str(list_data[3][0])
+    print("lat = {}, dir_lat = {}, long = {}, dir_long = {}".format(lat, dir_lat, long, dir_long))
     lat = dm_to_dd(lat,dir_lat)
     long = dm_to_dd(long,dir_long)
+    print("Lattiude = {}, Longitude = {}".format(lat, long))
     return lat, long
 

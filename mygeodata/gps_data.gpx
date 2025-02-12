@@ -1,0 +1,2638 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.6.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="48.199110000000005" minlon="-3.015990000000000" maxlat="48.200296666666659" maxlon="-3.014401666666667"/></metadata>                  
+<wpt lat="48.199341666666669" lon="-3.014401666666667">
+  <extensions>
+    <ogr:Latitude>48.199341666666669</ogr:Latitude>
+    <ogr:Longitude>-3.014401666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199333333333335" lon="-3.014418333333333">
+  <extensions>
+    <ogr:Latitude>48.199333333333335</ogr:Latitude>
+    <ogr:Longitude>-3.014418333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199328333333341" lon="-3.01444">
+  <extensions>
+    <ogr:Latitude>48.199328333333341</ogr:Latitude>
+    <ogr:Longitude>-3.01444</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199331666666666" lon="-3.014466666666666">
+  <extensions>
+    <ogr:Latitude>48.199331666666666</ogr:Latitude>
+    <ogr:Longitude>-3.014466666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199341666666669" lon="-3.014495">
+  <extensions>
+    <ogr:Latitude>48.199341666666669</ogr:Latitude>
+    <ogr:Longitude>-3.014495</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199346666666663" lon="-3.01453">
+  <extensions>
+    <ogr:Latitude>48.199346666666663</ogr:Latitude>
+    <ogr:Longitude>-3.01453</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199353333333327" lon="-3.01456">
+  <extensions>
+    <ogr:Latitude>48.199353333333327</ogr:Latitude>
+    <ogr:Longitude>-3.01456</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199361666666661" lon="-3.014585">
+  <extensions>
+    <ogr:Latitude>48.199361666666661</ogr:Latitude>
+    <ogr:Longitude>-3.014585</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19937" lon="-3.01461">
+  <extensions>
+    <ogr:Latitude>48.19937</ogr:Latitude>
+    <ogr:Longitude>-3.01461</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199375" lon="-3.014638333333334">
+  <extensions>
+    <ogr:Latitude>48.199375</ogr:Latitude>
+    <ogr:Longitude>-3.014638333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199385" lon="-3.014658333333334">
+  <extensions>
+    <ogr:Latitude>48.199385</ogr:Latitude>
+    <ogr:Longitude>-3.014658333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199325" lon="-3.014781666666667">
+  <extensions>
+    <ogr:Latitude>48.199325</ogr:Latitude>
+    <ogr:Longitude>-3.014781666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199321666666677" lon="-3.01482">
+  <extensions>
+    <ogr:Latitude>48.199321666666677</ogr:Latitude>
+    <ogr:Longitude>-3.01482</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199323333333332" lon="-3.014848333333333">
+  <extensions>
+    <ogr:Latitude>48.199323333333332</ogr:Latitude>
+    <ogr:Longitude>-3.014848333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199323333333332" lon="-3.014871666666666">
+  <extensions>
+    <ogr:Latitude>48.199323333333332</ogr:Latitude>
+    <ogr:Longitude>-3.014871666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19933" lon="-3.01489">
+  <extensions>
+    <ogr:Latitude>48.19933</ogr:Latitude>
+    <ogr:Longitude>-3.01489</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199345" lon="-3.014898333333333">
+  <extensions>
+    <ogr:Latitude>48.199345</ogr:Latitude>
+    <ogr:Longitude>-3.014898333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199361666666661" lon="-3.014905">
+  <extensions>
+    <ogr:Latitude>48.199361666666661</ogr:Latitude>
+    <ogr:Longitude>-3.014905</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199376666666666" lon="-3.014913333333333">
+  <extensions>
+    <ogr:Latitude>48.199376666666666</ogr:Latitude>
+    <ogr:Longitude>-3.014913333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199393333333333" lon="-3.01492">
+  <extensions>
+    <ogr:Latitude>48.199393333333333</ogr:Latitude>
+    <ogr:Longitude>-3.01492</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199408333333331" lon="-3.014926666666667">
+  <extensions>
+    <ogr:Latitude>48.199408333333331</ogr:Latitude>
+    <ogr:Longitude>-3.014926666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199425" lon="-3.014936666666667">
+  <extensions>
+    <ogr:Latitude>48.199425</ogr:Latitude>
+    <ogr:Longitude>-3.014936666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199441666666672" lon="-3.014946666666666">
+  <extensions>
+    <ogr:Latitude>48.199441666666672</ogr:Latitude>
+    <ogr:Longitude>-3.014946666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199458333333332" lon="-3.014956666666667">
+  <extensions>
+    <ogr:Latitude>48.199458333333332</ogr:Latitude>
+    <ogr:Longitude>-3.014956666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19947333333333" lon="-3.014968333333333">
+  <extensions>
+    <ogr:Latitude>48.19947333333333</ogr:Latitude>
+    <ogr:Longitude>-3.014968333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19949" lon="-3.014981666666667">
+  <extensions>
+    <ogr:Latitude>48.19949</ogr:Latitude>
+    <ogr:Longitude>-3.014981666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199505" lon="-3.014995">
+  <extensions>
+    <ogr:Latitude>48.199505</ogr:Latitude>
+    <ogr:Longitude>-3.014995</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19952" lon="-3.015008333333334">
+  <extensions>
+    <ogr:Latitude>48.19952</ogr:Latitude>
+    <ogr:Longitude>-3.015008333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199535" lon="-3.015021666666667">
+  <extensions>
+    <ogr:Latitude>48.199535</ogr:Latitude>
+    <ogr:Longitude>-3.015021666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199545" lon="-3.015041666666666">
+  <extensions>
+    <ogr:Latitude>48.199545</ogr:Latitude>
+    <ogr:Longitude>-3.015041666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199556666666666" lon="-3.01506">
+  <extensions>
+    <ogr:Latitude>48.199556666666666</ogr:Latitude>
+    <ogr:Longitude>-3.01506</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19957" lon="-3.015076666666667">
+  <extensions>
+    <ogr:Latitude>48.19957</ogr:Latitude>
+    <ogr:Longitude>-3.015076666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199583333333337" lon="-3.015093333333333">
+  <extensions>
+    <ogr:Latitude>48.199583333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015093333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199595" lon="-3.015113333333333">
+  <extensions>
+    <ogr:Latitude>48.199595</ogr:Latitude>
+    <ogr:Longitude>-3.015113333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199606666666661" lon="-3.015131666666667">
+  <extensions>
+    <ogr:Latitude>48.199606666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015131666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19962" lon="-3.01515">
+  <extensions>
+    <ogr:Latitude>48.19962</ogr:Latitude>
+    <ogr:Longitude>-3.01515</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199631666666662" lon="-3.01517">
+  <extensions>
+    <ogr:Latitude>48.199631666666662</ogr:Latitude>
+    <ogr:Longitude>-3.01517</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199641666666672" lon="-3.015191666666666">
+  <extensions>
+    <ogr:Latitude>48.199641666666672</ogr:Latitude>
+    <ogr:Longitude>-3.015191666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19965333333333" lon="-3.015213333333334">
+  <extensions>
+    <ogr:Latitude>48.19965333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015213333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199663333333334" lon="-3.015235">
+  <extensions>
+    <ogr:Latitude>48.199663333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015235</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199673333333337" lon="-3.015258333333334">
+  <extensions>
+    <ogr:Latitude>48.199673333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015258333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199683333333333" lon="-3.015281666666667">
+  <extensions>
+    <ogr:Latitude>48.199683333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015281666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199691666666666" lon="-3.015305">
+  <extensions>
+    <ogr:Latitude>48.199691666666666</ogr:Latitude>
+    <ogr:Longitude>-3.015305</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199696666666661" lon="-3.01533">
+  <extensions>
+    <ogr:Latitude>48.199696666666661</ogr:Latitude>
+    <ogr:Longitude>-3.01533</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199705" lon="-3.015356666666667">
+  <extensions>
+    <ogr:Latitude>48.199705</ogr:Latitude>
+    <ogr:Longitude>-3.015356666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19971" lon="-3.015381666666667">
+  <extensions>
+    <ogr:Latitude>48.19971</ogr:Latitude>
+    <ogr:Longitude>-3.015381666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199716666666667" lon="-3.015408333333334">
+  <extensions>
+    <ogr:Latitude>48.199716666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015408333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199721666666662" lon="-3.015435">
+  <extensions>
+    <ogr:Latitude>48.199721666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015435</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199723333333331" lon="-3.015461666666667">
+  <extensions>
+    <ogr:Latitude>48.199723333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015461666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199725" lon="-3.015488333333333">
+  <extensions>
+    <ogr:Latitude>48.199725</ogr:Latitude>
+    <ogr:Longitude>-3.015488333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199725" lon="-3.015515">
+  <extensions>
+    <ogr:Latitude>48.199725</ogr:Latitude>
+    <ogr:Longitude>-3.015515</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199725" lon="-3.015543333333333">
+  <extensions>
+    <ogr:Latitude>48.199725</ogr:Latitude>
+    <ogr:Longitude>-3.015543333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19972" lon="-3.015568333333333">
+  <extensions>
+    <ogr:Latitude>48.19972</ogr:Latitude>
+    <ogr:Longitude>-3.015568333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199713333333328" lon="-3.015591666666666">
+  <extensions>
+    <ogr:Latitude>48.199713333333328</ogr:Latitude>
+    <ogr:Longitude>-3.015591666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199703333333339" lon="-3.015608333333334">
+  <extensions>
+    <ogr:Latitude>48.199703333333339</ogr:Latitude>
+    <ogr:Longitude>-3.015608333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19969" lon="-3.015616666666667">
+  <extensions>
+    <ogr:Latitude>48.19969</ogr:Latitude>
+    <ogr:Longitude>-3.015616666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199675" lon="-3.015615">
+  <extensions>
+    <ogr:Latitude>48.199675</ogr:Latitude>
+    <ogr:Longitude>-3.015615</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199663333333334" lon="-3.015601666666667">
+  <extensions>
+    <ogr:Latitude>48.199663333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015601666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199655" lon="-3.015578333333333">
+  <extensions>
+    <ogr:Latitude>48.199655</ogr:Latitude>
+    <ogr:Longitude>-3.015578333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199651666666661" lon="-3.015551666666667">
+  <extensions>
+    <ogr:Latitude>48.199651666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015551666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19965333333333" lon="-3.015523333333333">
+  <extensions>
+    <ogr:Latitude>48.19965333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015523333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199655" lon="-3.015495">
+  <extensions>
+    <ogr:Latitude>48.199655</ogr:Latitude>
+    <ogr:Longitude>-3.015495</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19966" lon="-3.015466666666667">
+  <extensions>
+    <ogr:Latitude>48.19966</ogr:Latitude>
+    <ogr:Longitude>-3.015466666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199668333333328" lon="-3.015441666666666">
+  <extensions>
+    <ogr:Latitude>48.199668333333328</ogr:Latitude>
+    <ogr:Longitude>-3.015441666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199676666666662" lon="-3.015418333333333">
+  <extensions>
+    <ogr:Latitude>48.199676666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015418333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199688333333341" lon="-3.015396666666667">
+  <extensions>
+    <ogr:Latitude>48.199688333333341</ogr:Latitude>
+    <ogr:Longitude>-3.015396666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19970166666667" lon="-3.015375">
+  <extensions>
+    <ogr:Latitude>48.19970166666667</ogr:Latitude>
+    <ogr:Longitude>-3.015375</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199715" lon="-3.015356666666667">
+  <extensions>
+    <ogr:Latitude>48.199715</ogr:Latitude>
+    <ogr:Longitude>-3.015356666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19973" lon="-3.015338333333333">
+  <extensions>
+    <ogr:Latitude>48.19973</ogr:Latitude>
+    <ogr:Longitude>-3.015338333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19974666666667" lon="-3.015323333333333">
+  <extensions>
+    <ogr:Latitude>48.19974666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015323333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199763333333337" lon="-3.01531">
+  <extensions>
+    <ogr:Latitude>48.199763333333337</ogr:Latitude>
+    <ogr:Longitude>-3.01531</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199781666666667" lon="-3.0153">
+  <extensions>
+    <ogr:Latitude>48.199781666666667</ogr:Latitude>
+    <ogr:Longitude>-3.0153</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.1998" lon="-3.015291666666667">
+  <extensions>
+    <ogr:Latitude>48.1998</ogr:Latitude>
+    <ogr:Longitude>-3.015291666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199818333333333" lon="-3.01529">
+  <extensions>
+    <ogr:Latitude>48.199818333333333</ogr:Latitude>
+    <ogr:Longitude>-3.01529</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199838333333339" lon="-3.015288333333333">
+  <extensions>
+    <ogr:Latitude>48.199838333333339</ogr:Latitude>
+    <ogr:Longitude>-3.015288333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199856666666662" lon="-3.015288333333333">
+  <extensions>
+    <ogr:Latitude>48.199856666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015288333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199875" lon="-3.01529">
+  <extensions>
+    <ogr:Latitude>48.199875</ogr:Latitude>
+    <ogr:Longitude>-3.01529</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199893333333328" lon="-3.015293333333333">
+  <extensions>
+    <ogr:Latitude>48.199893333333328</ogr:Latitude>
+    <ogr:Longitude>-3.015293333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199913333333342" lon="-3.015296666666667">
+  <extensions>
+    <ogr:Latitude>48.199913333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015296666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199931666666664" lon="-3.015301666666666">
+  <extensions>
+    <ogr:Latitude>48.199931666666664</ogr:Latitude>
+    <ogr:Longitude>-3.015301666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199951666666657" lon="-3.01531">
+  <extensions>
+    <ogr:Latitude>48.199951666666657</ogr:Latitude>
+    <ogr:Longitude>-3.01531</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19997" lon="-3.015318333333334">
+  <extensions>
+    <ogr:Latitude>48.19997</ogr:Latitude>
+    <ogr:Longitude>-3.015318333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199986666666668" lon="-3.01533">
+  <extensions>
+    <ogr:Latitude>48.199986666666668</ogr:Latitude>
+    <ogr:Longitude>-3.01533</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200003333333342" lon="-3.015343333333333">
+  <extensions>
+    <ogr:Latitude>48.200003333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015343333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20001833333334" lon="-3.015358333333333">
+  <extensions>
+    <ogr:Latitude>48.20001833333334</ogr:Latitude>
+    <ogr:Longitude>-3.015358333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200033333333337" lon="-3.015375">
+  <extensions>
+    <ogr:Latitude>48.200033333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015375</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200048333333342" lon="-3.01539">
+  <extensions>
+    <ogr:Latitude>48.200048333333342</ogr:Latitude>
+    <ogr:Longitude>-3.01539</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20006333333334" lon="-3.015408333333334">
+  <extensions>
+    <ogr:Latitude>48.20006333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015408333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200076666666668" lon="-3.015426666666666">
+  <extensions>
+    <ogr:Latitude>48.200076666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015426666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200088333333333" lon="-3.015448333333333">
+  <extensions>
+    <ogr:Latitude>48.200088333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015448333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.2001" lon="-3.01547">
+  <extensions>
+    <ogr:Latitude>48.2001</ogr:Latitude>
+    <ogr:Longitude>-3.01547</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20011" lon="-3.015493333333333">
+  <extensions>
+    <ogr:Latitude>48.20011</ogr:Latitude>
+    <ogr:Longitude>-3.015493333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20012" lon="-3.015516666666666">
+  <extensions>
+    <ogr:Latitude>48.20012</ogr:Latitude>
+    <ogr:Longitude>-3.015516666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200128333333332" lon="-3.01554">
+  <extensions>
+    <ogr:Latitude>48.200128333333332</ogr:Latitude>
+    <ogr:Longitude>-3.01554</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200136666666673" lon="-3.015565">
+  <extensions>
+    <ogr:Latitude>48.200136666666673</ogr:Latitude>
+    <ogr:Longitude>-3.015565</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200143333333337" lon="-3.01559">
+  <extensions>
+    <ogr:Latitude>48.200143333333337</ogr:Latitude>
+    <ogr:Longitude>-3.01559</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200146666666662" lon="-3.015615">
+  <extensions>
+    <ogr:Latitude>48.200146666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015615</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20015166666667" lon="-3.015641666666666">
+  <extensions>
+    <ogr:Latitude>48.20015166666667</ogr:Latitude>
+    <ogr:Longitude>-3.015641666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20015333333334" lon="-3.015666666666667">
+  <extensions>
+    <ogr:Latitude>48.20015333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015666666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200156666666665" lon="-3.015693333333333">
+  <extensions>
+    <ogr:Latitude>48.200156666666665</ogr:Latitude>
+    <ogr:Longitude>-3.015693333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200156666666665" lon="-3.01572">
+  <extensions>
+    <ogr:Latitude>48.200156666666665</ogr:Latitude>
+    <ogr:Longitude>-3.01572</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20015333333334" lon="-3.015746666666666">
+  <extensions>
+    <ogr:Latitude>48.20015333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015746666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20015" lon="-3.015771666666667">
+  <extensions>
+    <ogr:Latitude>48.20015</ogr:Latitude>
+    <ogr:Longitude>-3.015771666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200143333333337" lon="-3.015796666666666">
+  <extensions>
+    <ogr:Latitude>48.200143333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015796666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200133333333333" lon="-3.015818333333333">
+  <extensions>
+    <ogr:Latitude>48.200133333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015818333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200123333333337" lon="-3.015838333333334">
+  <extensions>
+    <ogr:Latitude>48.200123333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015838333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200111666666665" lon="-3.015856666666666">
+  <extensions>
+    <ogr:Latitude>48.200111666666665</ogr:Latitude>
+    <ogr:Longitude>-3.015856666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200096666666667" lon="-3.015871666666667">
+  <extensions>
+    <ogr:Latitude>48.200096666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015871666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200081666666662" lon="-3.015885">
+  <extensions>
+    <ogr:Latitude>48.200081666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015885</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200065" lon="-3.015893333333333">
+  <extensions>
+    <ogr:Latitude>48.200065</ogr:Latitude>
+    <ogr:Longitude>-3.015893333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200048333333342" lon="-3.015898333333333">
+  <extensions>
+    <ogr:Latitude>48.200048333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015898333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200031666666668" lon="-3.015898333333333">
+  <extensions>
+    <ogr:Latitude>48.200031666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015898333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20001666666667" lon="-3.015896666666667">
+  <extensions>
+    <ogr:Latitude>48.20001666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015896666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200001666666672" lon="-3.015891666666667">
+  <extensions>
+    <ogr:Latitude>48.200001666666672</ogr:Latitude>
+    <ogr:Longitude>-3.015891666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199991666666662" lon="-3.015883333333333">
+  <extensions>
+    <ogr:Latitude>48.199991666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015883333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199981666666659" lon="-3.015875">
+  <extensions>
+    <ogr:Latitude>48.199981666666659</ogr:Latitude>
+    <ogr:Longitude>-3.015875</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19997166666667" lon="-3.015863333333333">
+  <extensions>
+    <ogr:Latitude>48.19997166666667</ogr:Latitude>
+    <ogr:Longitude>-3.015863333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199963333333336" lon="-3.015851666666667">
+  <extensions>
+    <ogr:Latitude>48.199963333333336</ogr:Latitude>
+    <ogr:Longitude>-3.015851666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199953333333333" lon="-3.015836666666666">
+  <extensions>
+    <ogr:Latitude>48.199953333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015836666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199945" lon="-3.015818333333333">
+  <extensions>
+    <ogr:Latitude>48.199945</ogr:Latitude>
+    <ogr:Longitude>-3.015818333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199936666666659" lon="-3.015798333333334">
+  <extensions>
+    <ogr:Latitude>48.199936666666659</ogr:Latitude>
+    <ogr:Longitude>-3.015798333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199931666666664" lon="-3.015776666666667">
+  <extensions>
+    <ogr:Latitude>48.199931666666664</ogr:Latitude>
+    <ogr:Longitude>-3.015776666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199925" lon="-3.015755">
+  <extensions>
+    <ogr:Latitude>48.199925</ogr:Latitude>
+    <ogr:Longitude>-3.015755</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199921666666661" lon="-3.015731666666666">
+  <extensions>
+    <ogr:Latitude>48.199921666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015731666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199918333333336" lon="-3.015708333333333">
+  <extensions>
+    <ogr:Latitude>48.199918333333336</ogr:Latitude>
+    <ogr:Longitude>-3.015708333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199918333333336" lon="-3.015686666666666">
+  <extensions>
+    <ogr:Latitude>48.199918333333336</ogr:Latitude>
+    <ogr:Longitude>-3.015686666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19992" lon="-3.015665">
+  <extensions>
+    <ogr:Latitude>48.19992</ogr:Latitude>
+    <ogr:Longitude>-3.015665</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199923333333331" lon="-3.015645">
+  <extensions>
+    <ogr:Latitude>48.199923333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015645</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19992666666667" lon="-3.015626666666666">
+  <extensions>
+    <ogr:Latitude>48.19992666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015626666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199933333333334" lon="-3.01561">
+  <extensions>
+    <ogr:Latitude>48.199933333333334</ogr:Latitude>
+    <ogr:Longitude>-3.01561</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19994" lon="-3.015591666666666">
+  <extensions>
+    <ogr:Latitude>48.19994</ogr:Latitude>
+    <ogr:Longitude>-3.015591666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199946666666662" lon="-3.015575">
+  <extensions>
+    <ogr:Latitude>48.199946666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015575</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199956666666672" lon="-3.015558333333333">
+  <extensions>
+    <ogr:Latitude>48.199956666666672</ogr:Latitude>
+    <ogr:Longitude>-3.015558333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199968333333331" lon="-3.015543333333333">
+  <extensions>
+    <ogr:Latitude>48.199968333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015543333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199981666666659" lon="-3.015528333333333">
+  <extensions>
+    <ogr:Latitude>48.199981666666659</ogr:Latitude>
+    <ogr:Longitude>-3.015528333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199996666666657" lon="-3.015516666666666">
+  <extensions>
+    <ogr:Latitude>48.199996666666657</ogr:Latitude>
+    <ogr:Longitude>-3.015516666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200015" lon="-3.015508333333333">
+  <extensions>
+    <ogr:Latitude>48.200015</ogr:Latitude>
+    <ogr:Longitude>-3.015508333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200031666666668" lon="-3.015505">
+  <extensions>
+    <ogr:Latitude>48.200031666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015505</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200046666666672" lon="-3.015505">
+  <extensions>
+    <ogr:Latitude>48.200046666666672</ogr:Latitude>
+    <ogr:Longitude>-3.015505</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20006166666667" lon="-3.01551">
+  <extensions>
+    <ogr:Latitude>48.20006166666667</ogr:Latitude>
+    <ogr:Longitude>-3.01551</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200078333333337" lon="-3.015515">
+  <extensions>
+    <ogr:Latitude>48.200078333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015515</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200095" lon="-3.01552">
+  <extensions>
+    <ogr:Latitude>48.200095</ogr:Latitude>
+    <ogr:Longitude>-3.01552</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200111666666665" lon="-3.015528333333333">
+  <extensions>
+    <ogr:Latitude>48.200111666666665</ogr:Latitude>
+    <ogr:Longitude>-3.015528333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200126666666662" lon="-3.015538333333333">
+  <extensions>
+    <ogr:Latitude>48.200126666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015538333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200141666666667" lon="-3.015548333333334">
+  <extensions>
+    <ogr:Latitude>48.200141666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015548333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200155" lon="-3.015561666666666">
+  <extensions>
+    <ogr:Latitude>48.200155</ogr:Latitude>
+    <ogr:Longitude>-3.015561666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20017" lon="-3.015576666666667">
+  <extensions>
+    <ogr:Latitude>48.20017</ogr:Latitude>
+    <ogr:Longitude>-3.015576666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200181666666673" lon="-3.015593333333334">
+  <extensions>
+    <ogr:Latitude>48.200181666666673</ogr:Latitude>
+    <ogr:Longitude>-3.015593333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200195" lon="-3.015611666666666">
+  <extensions>
+    <ogr:Latitude>48.200195</ogr:Latitude>
+    <ogr:Longitude>-3.015611666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200206666666659" lon="-3.015631666666667">
+  <extensions>
+    <ogr:Latitude>48.200206666666659</ogr:Latitude>
+    <ogr:Longitude>-3.015631666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200216666666662" lon="-3.015653333333334">
+  <extensions>
+    <ogr:Latitude>48.200216666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015653333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200226666666673" lon="-3.015676666666667">
+  <extensions>
+    <ogr:Latitude>48.200226666666673</ogr:Latitude>
+    <ogr:Longitude>-3.015676666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200236666666662" lon="-3.015701666666666">
+  <extensions>
+    <ogr:Latitude>48.200236666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015701666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20024333333334" lon="-3.015726666666667">
+  <extensions>
+    <ogr:Latitude>48.20024333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015726666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20025" lon="-3.015753333333334">
+  <extensions>
+    <ogr:Latitude>48.20025</ogr:Latitude>
+    <ogr:Longitude>-3.015753333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200255" lon="-3.015778333333334">
+  <extensions>
+    <ogr:Latitude>48.200255</ogr:Latitude>
+    <ogr:Longitude>-3.015778333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200256666666668" lon="-3.015805">
+  <extensions>
+    <ogr:Latitude>48.200256666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015805</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200256666666668" lon="-3.015828333333333">
+  <extensions>
+    <ogr:Latitude>48.200256666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015828333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200256666666668" lon="-3.015848333333333">
+  <extensions>
+    <ogr:Latitude>48.200256666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015848333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200255" lon="-3.015865">
+  <extensions>
+    <ogr:Latitude>48.200255</ogr:Latitude>
+    <ogr:Longitude>-3.015865</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200253333333329" lon="-3.015878333333333">
+  <extensions>
+    <ogr:Latitude>48.200253333333329</ogr:Latitude>
+    <ogr:Longitude>-3.015878333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20025" lon="-3.015891666666667">
+  <extensions>
+    <ogr:Latitude>48.20025</ogr:Latitude>
+    <ogr:Longitude>-3.015891666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200245" lon="-3.015903333333334">
+  <extensions>
+    <ogr:Latitude>48.200245</ogr:Latitude>
+    <ogr:Longitude>-3.015903333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200238333333331" lon="-3.015916666666667">
+  <extensions>
+    <ogr:Latitude>48.200238333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015916666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20023" lon="-3.015931666666666">
+  <extensions>
+    <ogr:Latitude>48.20023</ogr:Latitude>
+    <ogr:Longitude>-3.015931666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200218333333332" lon="-3.015946666666666">
+  <extensions>
+    <ogr:Latitude>48.200218333333332</ogr:Latitude>
+    <ogr:Longitude>-3.015946666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200205" lon="-3.015956666666667">
+  <extensions>
+    <ogr:Latitude>48.200205</ogr:Latitude>
+    <ogr:Longitude>-3.015956666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200188333333337" lon="-3.015965">
+  <extensions>
+    <ogr:Latitude>48.200188333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015965</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20017" lon="-3.01597">
+  <extensions>
+    <ogr:Latitude>48.20017</ogr:Latitude>
+    <ogr:Longitude>-3.01597</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20015" lon="-3.015973333333333">
+  <extensions>
+    <ogr:Latitude>48.20015</ogr:Latitude>
+    <ogr:Longitude>-3.015973333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200131666666657" lon="-3.015973333333333">
+  <extensions>
+    <ogr:Latitude>48.200131666666657</ogr:Latitude>
+    <ogr:Longitude>-3.015973333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200113333333334" lon="-3.015971666666667">
+  <extensions>
+    <ogr:Latitude>48.200113333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015971666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200095" lon="-3.015968333333333">
+  <extensions>
+    <ogr:Latitude>48.200095</ogr:Latitude>
+    <ogr:Longitude>-3.015968333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200076666666668" lon="-3.015961666666667">
+  <extensions>
+    <ogr:Latitude>48.200076666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015961666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20006" lon="-3.015951666666667">
+  <extensions>
+    <ogr:Latitude>48.20006</ogr:Latitude>
+    <ogr:Longitude>-3.015951666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200043333333333" lon="-3.01594">
+  <extensions>
+    <ogr:Latitude>48.200043333333333</ogr:Latitude>
+    <ogr:Longitude>-3.01594</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20003" lon="-3.015925">
+  <extensions>
+    <ogr:Latitude>48.20003</ogr:Latitude>
+    <ogr:Longitude>-3.015925</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20001666666667" lon="-3.01591">
+  <extensions>
+    <ogr:Latitude>48.20001666666667</ogr:Latitude>
+    <ogr:Longitude>-3.01591</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200005" lon="-3.015891666666667">
+  <extensions>
+    <ogr:Latitude>48.200005</ogr:Latitude>
+    <ogr:Longitude>-3.015891666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199993333333332" lon="-3.015871666666667">
+  <extensions>
+    <ogr:Latitude>48.199993333333332</ogr:Latitude>
+    <ogr:Longitude>-3.015871666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199983333333329" lon="-3.01585">
+  <extensions>
+    <ogr:Latitude>48.199983333333329</ogr:Latitude>
+    <ogr:Longitude>-3.01585</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199975" lon="-3.015828333333333">
+  <extensions>
+    <ogr:Latitude>48.199975</ogr:Latitude>
+    <ogr:Longitude>-3.015828333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199966666666661" lon="-3.015803333333333">
+  <extensions>
+    <ogr:Latitude>48.199966666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015803333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199961666666667" lon="-3.01578">
+  <extensions>
+    <ogr:Latitude>48.199961666666667</ogr:Latitude>
+    <ogr:Longitude>-3.01578</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199955" lon="-3.015755">
+  <extensions>
+    <ogr:Latitude>48.199955</ogr:Latitude>
+    <ogr:Longitude>-3.015755</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199953333333333" lon="-3.015728333333333">
+  <extensions>
+    <ogr:Latitude>48.199953333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015728333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199953333333333" lon="-3.015701666666666">
+  <extensions>
+    <ogr:Latitude>48.199953333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015701666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199955" lon="-3.015675">
+  <extensions>
+    <ogr:Latitude>48.199955</ogr:Latitude>
+    <ogr:Longitude>-3.015675</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199956666666672" lon="-3.01565">
+  <extensions>
+    <ogr:Latitude>48.199956666666672</ogr:Latitude>
+    <ogr:Longitude>-3.01565</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199961666666667" lon="-3.015623333333334">
+  <extensions>
+    <ogr:Latitude>48.199961666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015623333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199968333333331" lon="-3.015598333333334">
+  <extensions>
+    <ogr:Latitude>48.199968333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015598333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199976666666664" lon="-3.015576666666667">
+  <extensions>
+    <ogr:Latitude>48.199976666666664</ogr:Latitude>
+    <ogr:Longitude>-3.015576666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199986666666668" lon="-3.015558333333333">
+  <extensions>
+    <ogr:Latitude>48.199986666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015558333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199996666666657" lon="-3.015543333333333">
+  <extensions>
+    <ogr:Latitude>48.199996666666657</ogr:Latitude>
+    <ogr:Longitude>-3.015543333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200008333333336" lon="-3.01553">
+  <extensions>
+    <ogr:Latitude>48.200008333333336</ogr:Latitude>
+    <ogr:Longitude>-3.01553</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20002" lon="-3.01552">
+  <extensions>
+    <ogr:Latitude>48.20002</ogr:Latitude>
+    <ogr:Longitude>-3.01552</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200033333333337" lon="-3.015511666666667">
+  <extensions>
+    <ogr:Latitude>48.200033333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015511666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20005" lon="-3.015501666666666">
+  <extensions>
+    <ogr:Latitude>48.20005</ogr:Latitude>
+    <ogr:Longitude>-3.015501666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200068333333334" lon="-3.0155">
+  <extensions>
+    <ogr:Latitude>48.200068333333334</ogr:Latitude>
+    <ogr:Longitude>-3.0155</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200086666666657" lon="-3.0155">
+  <extensions>
+    <ogr:Latitude>48.200086666666657</ogr:Latitude>
+    <ogr:Longitude>-3.0155</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200105" lon="-3.015501666666666">
+  <extensions>
+    <ogr:Latitude>48.200105</ogr:Latitude>
+    <ogr:Longitude>-3.015501666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200121666666668" lon="-3.015505">
+  <extensions>
+    <ogr:Latitude>48.200121666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015505</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200138333333342" lon="-3.015511666666667">
+  <extensions>
+    <ogr:Latitude>48.200138333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015511666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200156666666665" lon="-3.01552">
+  <extensions>
+    <ogr:Latitude>48.200156666666665</ogr:Latitude>
+    <ogr:Longitude>-3.01552</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200173333333332" lon="-3.01553">
+  <extensions>
+    <ogr:Latitude>48.200173333333332</ogr:Latitude>
+    <ogr:Longitude>-3.01553</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200188333333337" lon="-3.015543333333333">
+  <extensions>
+    <ogr:Latitude>48.200188333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015543333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200203333333334" lon="-3.015558333333333">
+  <extensions>
+    <ogr:Latitude>48.200203333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015558333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200216666666662" lon="-3.015573333333333">
+  <extensions>
+    <ogr:Latitude>48.200216666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015573333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20023" lon="-3.015591666666666">
+  <extensions>
+    <ogr:Latitude>48.20023</ogr:Latitude>
+    <ogr:Longitude>-3.015591666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20024166666667" lon="-3.015611666666666">
+  <extensions>
+    <ogr:Latitude>48.20024166666667</ogr:Latitude>
+    <ogr:Longitude>-3.015611666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200253333333329" lon="-3.015631666666667">
+  <extensions>
+    <ogr:Latitude>48.200253333333329</ogr:Latitude>
+    <ogr:Longitude>-3.015631666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200261666666663" lon="-3.015655">
+  <extensions>
+    <ogr:Latitude>48.200261666666663</ogr:Latitude>
+    <ogr:Longitude>-3.015655</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20027" lon="-3.01568">
+  <extensions>
+    <ogr:Latitude>48.20027</ogr:Latitude>
+    <ogr:Longitude>-3.01568</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200276666666667" lon="-3.015703333333334">
+  <extensions>
+    <ogr:Latitude>48.200276666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015703333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20028" lon="-3.015728333333333">
+  <extensions>
+    <ogr:Latitude>48.20028</ogr:Latitude>
+    <ogr:Longitude>-3.015728333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200283333333331" lon="-3.015755">
+  <extensions>
+    <ogr:Latitude>48.200283333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015755</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200285" lon="-3.015778333333334">
+  <extensions>
+    <ogr:Latitude>48.200285</ogr:Latitude>
+    <ogr:Longitude>-3.015778333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200285" lon="-3.015803333333333">
+  <extensions>
+    <ogr:Latitude>48.200285</ogr:Latitude>
+    <ogr:Longitude>-3.015803333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200283333333331" lon="-3.015826666666666">
+  <extensions>
+    <ogr:Latitude>48.200283333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015826666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200281666666662" lon="-3.015848333333333">
+  <extensions>
+    <ogr:Latitude>48.200281666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015848333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200278333333337" lon="-3.015868333333333">
+  <extensions>
+    <ogr:Latitude>48.200278333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015868333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200273333333342" lon="-3.015886666666666">
+  <extensions>
+    <ogr:Latitude>48.200273333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015886666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200265" lon="-3.015905">
+  <extensions>
+    <ogr:Latitude>48.200265</ogr:Latitude>
+    <ogr:Longitude>-3.015905</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200255" lon="-3.015923333333333">
+  <extensions>
+    <ogr:Latitude>48.200255</ogr:Latitude>
+    <ogr:Longitude>-3.015923333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200245" lon="-3.015941666666667">
+  <extensions>
+    <ogr:Latitude>48.200245</ogr:Latitude>
+    <ogr:Longitude>-3.015941666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200233333333337" lon="-3.015956666666667">
+  <extensions>
+    <ogr:Latitude>48.200233333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015956666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200218333333332" lon="-3.015971666666667">
+  <extensions>
+    <ogr:Latitude>48.200218333333332</ogr:Latitude>
+    <ogr:Longitude>-3.015971666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200205" lon="-3.015981666666667">
+  <extensions>
+    <ogr:Latitude>48.200205</ogr:Latitude>
+    <ogr:Longitude>-3.015981666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200186666666667" lon="-3.015986666666667">
+  <extensions>
+    <ogr:Latitude>48.200186666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015986666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200168333333338" lon="-3.01599">
+  <extensions>
+    <ogr:Latitude>48.200168333333338</ogr:Latitude>
+    <ogr:Longitude>-3.01599</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20015" lon="-3.015988333333333">
+  <extensions>
+    <ogr:Latitude>48.20015</ogr:Latitude>
+    <ogr:Longitude>-3.015988333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200131666666657" lon="-3.015985">
+  <extensions>
+    <ogr:Latitude>48.200131666666657</ogr:Latitude>
+    <ogr:Longitude>-3.015985</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200113333333334" lon="-3.01598">
+  <extensions>
+    <ogr:Latitude>48.200113333333334</ogr:Latitude>
+    <ogr:Longitude>-3.01598</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200096666666667" lon="-3.015973333333333">
+  <extensions>
+    <ogr:Latitude>48.200096666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015973333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20008" lon="-3.015961666666667">
+  <extensions>
+    <ogr:Latitude>48.20008</ogr:Latitude>
+    <ogr:Longitude>-3.015961666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20006333333334" lon="-3.01595">
+  <extensions>
+    <ogr:Latitude>48.20006333333334</ogr:Latitude>
+    <ogr:Longitude>-3.01595</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200048333333342" lon="-3.015936666666667">
+  <extensions>
+    <ogr:Latitude>48.200048333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015936666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200035" lon="-3.01592">
+  <extensions>
+    <ogr:Latitude>48.200035</ogr:Latitude>
+    <ogr:Longitude>-3.01592</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200023333333334" lon="-3.015903333333334">
+  <extensions>
+    <ogr:Latitude>48.200023333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015903333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200011666666661" lon="-3.015885">
+  <extensions>
+    <ogr:Latitude>48.200011666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015885</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200003333333342" lon="-3.015863333333333">
+  <extensions>
+    <ogr:Latitude>48.200003333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015863333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199993333333332" lon="-3.015841666666666">
+  <extensions>
+    <ogr:Latitude>48.199993333333332</ogr:Latitude>
+    <ogr:Longitude>-3.015841666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199986666666668" lon="-3.015818333333333">
+  <extensions>
+    <ogr:Latitude>48.199986666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015818333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199981666666659" lon="-3.015795">
+  <extensions>
+    <ogr:Latitude>48.199981666666659</ogr:Latitude>
+    <ogr:Longitude>-3.015795</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199976666666664" lon="-3.01577">
+  <extensions>
+    <ogr:Latitude>48.199976666666664</ogr:Latitude>
+    <ogr:Longitude>-3.01577</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199975" lon="-3.015743333333333">
+  <extensions>
+    <ogr:Latitude>48.199975</ogr:Latitude>
+    <ogr:Longitude>-3.015743333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199975" lon="-3.015716666666667">
+  <extensions>
+    <ogr:Latitude>48.199975</ogr:Latitude>
+    <ogr:Longitude>-3.015716666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199976666666664" lon="-3.01569">
+  <extensions>
+    <ogr:Latitude>48.199976666666664</ogr:Latitude>
+    <ogr:Longitude>-3.01569</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19998" lon="-3.015663333333333">
+  <extensions>
+    <ogr:Latitude>48.19998</ogr:Latitude>
+    <ogr:Longitude>-3.015663333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199985" lon="-3.015636666666667">
+  <extensions>
+    <ogr:Latitude>48.199985</ogr:Latitude>
+    <ogr:Longitude>-3.015636666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199991666666662" lon="-3.015611666666666">
+  <extensions>
+    <ogr:Latitude>48.199991666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015611666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.2" lon="-3.015586666666667">
+  <extensions>
+    <ogr:Latitude>48.2</ogr:Latitude>
+    <ogr:Longitude>-3.015586666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200011666666661" lon="-3.015566666666667">
+  <extensions>
+    <ogr:Latitude>48.200011666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015566666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200021666666665" lon="-3.015548333333334">
+  <extensions>
+    <ogr:Latitude>48.200021666666665</ogr:Latitude>
+    <ogr:Longitude>-3.015548333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200033333333337" lon="-3.015533333333333">
+  <extensions>
+    <ogr:Latitude>48.200033333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015533333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200043333333333" lon="-3.015521666666667">
+  <extensions>
+    <ogr:Latitude>48.200043333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015521666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200055" lon="-3.015513333333333">
+  <extensions>
+    <ogr:Latitude>48.200055</ogr:Latitude>
+    <ogr:Longitude>-3.015513333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200066666666665" lon="-3.015506666666667">
+  <extensions>
+    <ogr:Latitude>48.200066666666665</ogr:Latitude>
+    <ogr:Longitude>-3.015506666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200078333333337" lon="-3.015501666666666">
+  <extensions>
+    <ogr:Latitude>48.200078333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015501666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200093333333342" lon="-3.015503333333334">
+  <extensions>
+    <ogr:Latitude>48.200093333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015503333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20010666666667" lon="-3.015505">
+  <extensions>
+    <ogr:Latitude>48.20010666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015505</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200121666666668" lon="-3.015508333333333">
+  <extensions>
+    <ogr:Latitude>48.200121666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015508333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200138333333342" lon="-3.015515">
+  <extensions>
+    <ogr:Latitude>48.200138333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015515</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200155" lon="-3.015523333333333">
+  <extensions>
+    <ogr:Latitude>48.200155</ogr:Latitude>
+    <ogr:Longitude>-3.015523333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20017" lon="-3.015533333333333">
+  <extensions>
+    <ogr:Latitude>48.20017</ogr:Latitude>
+    <ogr:Longitude>-3.015533333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200185" lon="-3.015546666666666">
+  <extensions>
+    <ogr:Latitude>48.200185</ogr:Latitude>
+    <ogr:Longitude>-3.015546666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.2002" lon="-3.01556">
+  <extensions>
+    <ogr:Latitude>48.2002</ogr:Latitude>
+    <ogr:Longitude>-3.01556</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200215" lon="-3.015576666666667">
+  <extensions>
+    <ogr:Latitude>48.200215</ogr:Latitude>
+    <ogr:Longitude>-3.015576666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200226666666673" lon="-3.015593333333334">
+  <extensions>
+    <ogr:Latitude>48.200226666666673</ogr:Latitude>
+    <ogr:Longitude>-3.015593333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20024" lon="-3.015613333333333">
+  <extensions>
+    <ogr:Latitude>48.20024</ogr:Latitude>
+    <ogr:Longitude>-3.015613333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20025" lon="-3.015635">
+  <extensions>
+    <ogr:Latitude>48.20025</ogr:Latitude>
+    <ogr:Longitude>-3.015635</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20026" lon="-3.015656666666666">
+  <extensions>
+    <ogr:Latitude>48.20026</ogr:Latitude>
+    <ogr:Longitude>-3.015656666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200268333333334" lon="-3.01568">
+  <extensions>
+    <ogr:Latitude>48.200268333333334</ogr:Latitude>
+    <ogr:Longitude>-3.01568</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200276666666667" lon="-3.015703333333334">
+  <extensions>
+    <ogr:Latitude>48.200276666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015703333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200281666666662" lon="-3.015726666666667">
+  <extensions>
+    <ogr:Latitude>48.200281666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015726666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200283333333331" lon="-3.015751666666667">
+  <extensions>
+    <ogr:Latitude>48.200283333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015751666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200285" lon="-3.015776666666667">
+  <extensions>
+    <ogr:Latitude>48.200285</ogr:Latitude>
+    <ogr:Longitude>-3.015776666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200285" lon="-3.015801666666667">
+  <extensions>
+    <ogr:Latitude>48.200285</ogr:Latitude>
+    <ogr:Longitude>-3.015801666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200285" lon="-3.015823333333334">
+  <extensions>
+    <ogr:Latitude>48.200285</ogr:Latitude>
+    <ogr:Longitude>-3.015823333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200283333333331" lon="-3.015845">
+  <extensions>
+    <ogr:Latitude>48.200283333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015845</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20028" lon="-3.015866666666667">
+  <extensions>
+    <ogr:Latitude>48.20028</ogr:Latitude>
+    <ogr:Longitude>-3.015866666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200275" lon="-3.015885">
+  <extensions>
+    <ogr:Latitude>48.200275</ogr:Latitude>
+    <ogr:Longitude>-3.015885</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200268333333334" lon="-3.015905">
+  <extensions>
+    <ogr:Latitude>48.200268333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015905</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200258333333338" lon="-3.015923333333333">
+  <extensions>
+    <ogr:Latitude>48.200258333333338</ogr:Latitude>
+    <ogr:Longitude>-3.015923333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200248333333334" lon="-3.01594">
+  <extensions>
+    <ogr:Latitude>48.200248333333334</ogr:Latitude>
+    <ogr:Longitude>-3.01594</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200235" lon="-3.015955">
+  <extensions>
+    <ogr:Latitude>48.200235</ogr:Latitude>
+    <ogr:Longitude>-3.015955</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200221666666657" lon="-3.015966666666667">
+  <extensions>
+    <ogr:Latitude>48.200221666666657</ogr:Latitude>
+    <ogr:Longitude>-3.015966666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200205" lon="-3.015975">
+  <extensions>
+    <ogr:Latitude>48.200205</ogr:Latitude>
+    <ogr:Longitude>-3.015975</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200188333333337" lon="-3.01598">
+  <extensions>
+    <ogr:Latitude>48.200188333333337</ogr:Latitude>
+    <ogr:Longitude>-3.01598</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200171666666662" lon="-3.015983333333333">
+  <extensions>
+    <ogr:Latitude>48.200171666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015983333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200155" lon="-3.01598">
+  <extensions>
+    <ogr:Latitude>48.200155</ogr:Latitude>
+    <ogr:Longitude>-3.01598</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200135" lon="-3.015975">
+  <extensions>
+    <ogr:Latitude>48.200135</ogr:Latitude>
+    <ogr:Longitude>-3.015975</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200116666666659" lon="-3.01597">
+  <extensions>
+    <ogr:Latitude>48.200116666666659</ogr:Latitude>
+    <ogr:Longitude>-3.01597</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200098333333337" lon="-3.015961666666667">
+  <extensions>
+    <ogr:Latitude>48.200098333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015961666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200081666666662" lon="-3.015951666666667">
+  <extensions>
+    <ogr:Latitude>48.200081666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015951666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200066666666665" lon="-3.015938333333333">
+  <extensions>
+    <ogr:Latitude>48.200066666666665</ogr:Latitude>
+    <ogr:Longitude>-3.015938333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200051666666667" lon="-3.015925">
+  <extensions>
+    <ogr:Latitude>48.200051666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015925</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200038333333332" lon="-3.015908333333333">
+  <extensions>
+    <ogr:Latitude>48.200038333333332</ogr:Latitude>
+    <ogr:Longitude>-3.015908333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200025" lon="-3.015893333333333">
+  <extensions>
+    <ogr:Latitude>48.200025</ogr:Latitude>
+    <ogr:Longitude>-3.015893333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200011666666661" lon="-3.015873333333333">
+  <extensions>
+    <ogr:Latitude>48.200011666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015873333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200001666666672" lon="-3.015853333333333">
+  <extensions>
+    <ogr:Latitude>48.200001666666672</ogr:Latitude>
+    <ogr:Longitude>-3.015853333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199991666666662" lon="-3.015833333333333">
+  <extensions>
+    <ogr:Latitude>48.199991666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015833333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199983333333329" lon="-3.01581">
+  <extensions>
+    <ogr:Latitude>48.199983333333329</ogr:Latitude>
+    <ogr:Longitude>-3.01581</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199978333333334" lon="-3.015786666666667">
+  <extensions>
+    <ogr:Latitude>48.199978333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015786666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19997333333334" lon="-3.015763333333334">
+  <extensions>
+    <ogr:Latitude>48.19997333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015763333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19997166666667" lon="-3.015738333333333">
+  <extensions>
+    <ogr:Latitude>48.19997166666667</ogr:Latitude>
+    <ogr:Longitude>-3.015738333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19997" lon="-3.015711666666667">
+  <extensions>
+    <ogr:Latitude>48.19997</ogr:Latitude>
+    <ogr:Longitude>-3.015711666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19997" lon="-3.015686666666666">
+  <extensions>
+    <ogr:Latitude>48.19997</ogr:Latitude>
+    <ogr:Longitude>-3.015686666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19997166666667" lon="-3.01566">
+  <extensions>
+    <ogr:Latitude>48.19997166666667</ogr:Latitude>
+    <ogr:Longitude>-3.01566</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199975" lon="-3.015636666666667">
+  <extensions>
+    <ogr:Latitude>48.199975</ogr:Latitude>
+    <ogr:Longitude>-3.015636666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199981666666659" lon="-3.015611666666666">
+  <extensions>
+    <ogr:Latitude>48.199981666666659</ogr:Latitude>
+    <ogr:Longitude>-3.015611666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19999" lon="-3.015588333333333">
+  <extensions>
+    <ogr:Latitude>48.19999</ogr:Latitude>
+    <ogr:Longitude>-3.015588333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.2" lon="-3.015568333333333">
+  <extensions>
+    <ogr:Latitude>48.2</ogr:Latitude>
+    <ogr:Longitude>-3.015568333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200011666666661" lon="-3.01555">
+  <extensions>
+    <ogr:Latitude>48.200011666666661</ogr:Latitude>
+    <ogr:Longitude>-3.01555</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200023333333334" lon="-3.015536666666667">
+  <extensions>
+    <ogr:Latitude>48.200023333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015536666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200033333333337" lon="-3.015525">
+  <extensions>
+    <ogr:Latitude>48.200033333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015525</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200046666666672" lon="-3.015516666666666">
+  <extensions>
+    <ogr:Latitude>48.200046666666672</ogr:Latitude>
+    <ogr:Longitude>-3.015516666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200058333333331" lon="-3.01551">
+  <extensions>
+    <ogr:Latitude>48.200058333333331</ogr:Latitude>
+    <ogr:Longitude>-3.01551</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200071666666659" lon="-3.015505">
+  <extensions>
+    <ogr:Latitude>48.200071666666659</ogr:Latitude>
+    <ogr:Longitude>-3.015505</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200086666666657" lon="-3.015503333333334">
+  <extensions>
+    <ogr:Latitude>48.200086666666657</ogr:Latitude>
+    <ogr:Longitude>-3.015503333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200103333333331" lon="-3.015503333333334">
+  <extensions>
+    <ogr:Latitude>48.200103333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015503333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200118333333329" lon="-3.015506666666667">
+  <extensions>
+    <ogr:Latitude>48.200118333333329</ogr:Latitude>
+    <ogr:Longitude>-3.015506666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200133333333333" lon="-3.015513333333333">
+  <extensions>
+    <ogr:Latitude>48.200133333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015513333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20015" lon="-3.015521666666667">
+  <extensions>
+    <ogr:Latitude>48.20015</ogr:Latitude>
+    <ogr:Longitude>-3.015521666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200165" lon="-3.015533333333333">
+  <extensions>
+    <ogr:Latitude>48.200165</ogr:Latitude>
+    <ogr:Longitude>-3.015533333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200181666666673" lon="-3.015546666666666">
+  <extensions>
+    <ogr:Latitude>48.200181666666673</ogr:Latitude>
+    <ogr:Longitude>-3.015546666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200195" lon="-3.015563333333334">
+  <extensions>
+    <ogr:Latitude>48.200195</ogr:Latitude>
+    <ogr:Longitude>-3.015563333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20021" lon="-3.015578333333333">
+  <extensions>
+    <ogr:Latitude>48.20021</ogr:Latitude>
+    <ogr:Longitude>-3.015578333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200221666666657" lon="-3.015596666666666">
+  <extensions>
+    <ogr:Latitude>48.200221666666657</ogr:Latitude>
+    <ogr:Longitude>-3.015596666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200233333333337" lon="-3.015616666666667">
+  <extensions>
+    <ogr:Latitude>48.200233333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015616666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20024333333334" lon="-3.015638333333334">
+  <extensions>
+    <ogr:Latitude>48.20024333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015638333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200253333333329" lon="-3.01566">
+  <extensions>
+    <ogr:Latitude>48.200253333333329</ogr:Latitude>
+    <ogr:Longitude>-3.01566</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200261666666663" lon="-3.015683333333333">
+  <extensions>
+    <ogr:Latitude>48.200261666666663</ogr:Latitude>
+    <ogr:Longitude>-3.015683333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200268333333334" lon="-3.015708333333333">
+  <extensions>
+    <ogr:Latitude>48.200268333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015708333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200275" lon="-3.015731666666666">
+  <extensions>
+    <ogr:Latitude>48.200275</ogr:Latitude>
+    <ogr:Longitude>-3.015731666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200278333333337" lon="-3.015755">
+  <extensions>
+    <ogr:Latitude>48.200278333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015755</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200281666666662" lon="-3.01578">
+  <extensions>
+    <ogr:Latitude>48.200281666666662</ogr:Latitude>
+    <ogr:Longitude>-3.01578</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200283333333331" lon="-3.015803333333333">
+  <extensions>
+    <ogr:Latitude>48.200283333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015803333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200291666666665" lon="-3.01586">
+  <extensions>
+    <ogr:Latitude>48.200291666666665</ogr:Latitude>
+    <ogr:Longitude>-3.01586</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200293333333335" lon="-3.01586">
+  <extensions>
+    <ogr:Latitude>48.200293333333335</ogr:Latitude>
+    <ogr:Longitude>-3.01586</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200295" lon="-3.01586">
+  <extensions>
+    <ogr:Latitude>48.200295</ogr:Latitude>
+    <ogr:Longitude>-3.01586</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200296666666659" lon="-3.015863333333333">
+  <extensions>
+    <ogr:Latitude>48.200296666666659</ogr:Latitude>
+    <ogr:Longitude>-3.015863333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200295" lon="-3.015876666666667">
+  <extensions>
+    <ogr:Latitude>48.200295</ogr:Latitude>
+    <ogr:Longitude>-3.015876666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200283333333331" lon="-3.015883333333333">
+  <extensions>
+    <ogr:Latitude>48.200283333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015883333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20027" lon="-3.015878333333333">
+  <extensions>
+    <ogr:Latitude>48.20027</ogr:Latitude>
+    <ogr:Longitude>-3.015878333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200256666666668" lon="-3.015865">
+  <extensions>
+    <ogr:Latitude>48.200256666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015865</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200245" lon="-3.01585">
+  <extensions>
+    <ogr:Latitude>48.200245</ogr:Latitude>
+    <ogr:Longitude>-3.01585</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200233333333337" lon="-3.015836666666666">
+  <extensions>
+    <ogr:Latitude>48.200233333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015836666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200221666666657" lon="-3.015825">
+  <extensions>
+    <ogr:Latitude>48.200221666666657</ogr:Latitude>
+    <ogr:Longitude>-3.015825</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200208333333329" lon="-3.015813333333333">
+  <extensions>
+    <ogr:Latitude>48.200208333333329</ogr:Latitude>
+    <ogr:Longitude>-3.015813333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20019666666667" lon="-3.015801666666667">
+  <extensions>
+    <ogr:Latitude>48.20019666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015801666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200183333333342" lon="-3.01579">
+  <extensions>
+    <ogr:Latitude>48.200183333333342</ogr:Latitude>
+    <ogr:Longitude>-3.01579</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200171666666662" lon="-3.015778333333334">
+  <extensions>
+    <ogr:Latitude>48.200171666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015778333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20016" lon="-3.015765">
+  <extensions>
+    <ogr:Latitude>48.20016</ogr:Latitude>
+    <ogr:Longitude>-3.015765</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200146666666662" lon="-3.015753333333334">
+  <extensions>
+    <ogr:Latitude>48.200146666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015753333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200135" lon="-3.01574">
+  <extensions>
+    <ogr:Latitude>48.200135</ogr:Latitude>
+    <ogr:Longitude>-3.01574</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200123333333337" lon="-3.015726666666667">
+  <extensions>
+    <ogr:Latitude>48.200123333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015726666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200111666666665" lon="-3.015715">
+  <extensions>
+    <ogr:Latitude>48.200111666666665</ogr:Latitude>
+    <ogr:Longitude>-3.015715</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.2001" lon="-3.015701666666666">
+  <extensions>
+    <ogr:Latitude>48.2001</ogr:Latitude>
+    <ogr:Longitude>-3.015701666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200088333333333" lon="-3.015688333333334">
+  <extensions>
+    <ogr:Latitude>48.200088333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015688333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200076666666668" lon="-3.015676666666667">
+  <extensions>
+    <ogr:Latitude>48.200076666666668</ogr:Latitude>
+    <ogr:Longitude>-3.015676666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200065" lon="-3.015665">
+  <extensions>
+    <ogr:Latitude>48.200065</ogr:Latitude>
+    <ogr:Longitude>-3.015665</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200053333333337" lon="-3.015651666666666">
+  <extensions>
+    <ogr:Latitude>48.200053333333337</ogr:Latitude>
+    <ogr:Longitude>-3.015651666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20004" lon="-3.015641666666666">
+  <extensions>
+    <ogr:Latitude>48.20004</ogr:Latitude>
+    <ogr:Longitude>-3.015641666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200028333333329" lon="-3.015628333333333">
+  <extensions>
+    <ogr:Latitude>48.200028333333329</ogr:Latitude>
+    <ogr:Longitude>-3.015628333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.20001666666667" lon="-3.015616666666667">
+  <extensions>
+    <ogr:Latitude>48.20001666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015616666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.200005" lon="-3.015603333333333">
+  <extensions>
+    <ogr:Latitude>48.200005</ogr:Latitude>
+    <ogr:Longitude>-3.015603333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199993333333332" lon="-3.015591666666666">
+  <extensions>
+    <ogr:Latitude>48.199993333333332</ogr:Latitude>
+    <ogr:Longitude>-3.015591666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199981666666659" lon="-3.01558">
+  <extensions>
+    <ogr:Latitude>48.199981666666659</ogr:Latitude>
+    <ogr:Longitude>-3.01558</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19997" lon="-3.015568333333333">
+  <extensions>
+    <ogr:Latitude>48.19997</ogr:Latitude>
+    <ogr:Longitude>-3.015568333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199958333333342" lon="-3.015556666666667">
+  <extensions>
+    <ogr:Latitude>48.199958333333342</ogr:Latitude>
+    <ogr:Longitude>-3.015556666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199945" lon="-3.015543333333333">
+  <extensions>
+    <ogr:Latitude>48.199945</ogr:Latitude>
+    <ogr:Longitude>-3.015543333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199933333333334" lon="-3.015531666666666">
+  <extensions>
+    <ogr:Latitude>48.199933333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015531666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199921666666661" lon="-3.01552">
+  <extensions>
+    <ogr:Latitude>48.199921666666661</ogr:Latitude>
+    <ogr:Longitude>-3.01552</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19991" lon="-3.01551">
+  <extensions>
+    <ogr:Latitude>48.19991</ogr:Latitude>
+    <ogr:Longitude>-3.01551</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199898333333337" lon="-3.0155">
+  <extensions>
+    <ogr:Latitude>48.199898333333337</ogr:Latitude>
+    <ogr:Longitude>-3.0155</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199885" lon="-3.01549">
+  <extensions>
+    <ogr:Latitude>48.199885</ogr:Latitude>
+    <ogr:Longitude>-3.01549</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199873333333336" lon="-3.015478333333333">
+  <extensions>
+    <ogr:Latitude>48.199873333333336</ogr:Latitude>
+    <ogr:Longitude>-3.015478333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19986" lon="-3.015466666666667">
+  <extensions>
+    <ogr:Latitude>48.19986</ogr:Latitude>
+    <ogr:Longitude>-3.015466666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199848333333328" lon="-3.015455">
+  <extensions>
+    <ogr:Latitude>48.199848333333328</ogr:Latitude>
+    <ogr:Longitude>-3.015455</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199835" lon="-3.015441666666666">
+  <extensions>
+    <ogr:Latitude>48.199835</ogr:Latitude>
+    <ogr:Longitude>-3.015441666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199823333333342" lon="-3.01543">
+  <extensions>
+    <ogr:Latitude>48.199823333333342</ogr:Latitude>
+    <ogr:Longitude>-3.01543</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199811666666662" lon="-3.015418333333333">
+  <extensions>
+    <ogr:Latitude>48.199811666666662</ogr:Latitude>
+    <ogr:Longitude>-3.015418333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199798333333334" lon="-3.015408333333334">
+  <extensions>
+    <ogr:Latitude>48.199798333333334</ogr:Latitude>
+    <ogr:Longitude>-3.015408333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199786666666661" lon="-3.015396666666667">
+  <extensions>
+    <ogr:Latitude>48.199786666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015396666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199773333333333" lon="-3.015385">
+  <extensions>
+    <ogr:Latitude>48.199773333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015385</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19976" lon="-3.015373333333333">
+  <extensions>
+    <ogr:Latitude>48.19976</ogr:Latitude>
+    <ogr:Longitude>-3.015373333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19974666666667" lon="-3.015363333333334">
+  <extensions>
+    <ogr:Latitude>48.19974666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015363333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199735" lon="-3.015351666666667">
+  <extensions>
+    <ogr:Latitude>48.199735</ogr:Latitude>
+    <ogr:Longitude>-3.015351666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199723333333331" lon="-3.01534">
+  <extensions>
+    <ogr:Latitude>48.199723333333331</ogr:Latitude>
+    <ogr:Longitude>-3.01534</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19971" lon="-3.015328333333333">
+  <extensions>
+    <ogr:Latitude>48.19971</ogr:Latitude>
+    <ogr:Longitude>-3.015328333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199696666666661" lon="-3.015316666666666">
+  <extensions>
+    <ogr:Latitude>48.199696666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015316666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199685" lon="-3.015305">
+  <extensions>
+    <ogr:Latitude>48.199685</ogr:Latitude>
+    <ogr:Longitude>-3.015305</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199671666666667" lon="-3.015293333333333">
+  <extensions>
+    <ogr:Latitude>48.199671666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015293333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19966" lon="-3.015281666666667">
+  <extensions>
+    <ogr:Latitude>48.19966</ogr:Latitude>
+    <ogr:Longitude>-3.015281666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199648333333336" lon="-3.01527">
+  <extensions>
+    <ogr:Latitude>48.199648333333336</ogr:Latitude>
+    <ogr:Longitude>-3.01527</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199636666666656" lon="-3.01526">
+  <extensions>
+    <ogr:Latitude>48.199636666666656</ogr:Latitude>
+    <ogr:Longitude>-3.01526</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199623333333328" lon="-3.015248333333333">
+  <extensions>
+    <ogr:Latitude>48.199623333333328</ogr:Latitude>
+    <ogr:Longitude>-3.015248333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199613333333339" lon="-3.015238333333334">
+  <extensions>
+    <ogr:Latitude>48.199613333333339</ogr:Latitude>
+    <ogr:Longitude>-3.015238333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.1996" lon="-3.015228333333333">
+  <extensions>
+    <ogr:Latitude>48.1996</ogr:Latitude>
+    <ogr:Longitude>-3.015228333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199588333333331" lon="-3.015216666666667">
+  <extensions>
+    <ogr:Latitude>48.199588333333331</ogr:Latitude>
+    <ogr:Longitude>-3.015216666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199575" lon="-3.015208333333334">
+  <extensions>
+    <ogr:Latitude>48.199575</ogr:Latitude>
+    <ogr:Longitude>-3.015208333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199561666666661" lon="-3.0152">
+  <extensions>
+    <ogr:Latitude>48.199561666666661</ogr:Latitude>
+    <ogr:Longitude>-3.0152</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199548333333333" lon="-3.015191666666666">
+  <extensions>
+    <ogr:Latitude>48.199548333333333</ogr:Latitude>
+    <ogr:Longitude>-3.015191666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199536666666667" lon="-3.015181666666667">
+  <extensions>
+    <ogr:Latitude>48.199536666666667</ogr:Latitude>
+    <ogr:Longitude>-3.015181666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199525" lon="-3.015176666666667">
+  <extensions>
+    <ogr:Latitude>48.199525</ogr:Latitude>
+    <ogr:Longitude>-3.015176666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199513333333336" lon="-3.01517">
+  <extensions>
+    <ogr:Latitude>48.199513333333336</ogr:Latitude>
+    <ogr:Longitude>-3.01517</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.1995" lon="-3.015163333333334">
+  <extensions>
+    <ogr:Latitude>48.1995</ogr:Latitude>
+    <ogr:Longitude>-3.015163333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199488333333328" lon="-3.015156666666667">
+  <extensions>
+    <ogr:Latitude>48.199488333333328</ogr:Latitude>
+    <ogr:Longitude>-3.015156666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199476666666669" lon="-3.015146666666666">
+  <extensions>
+    <ogr:Latitude>48.199476666666669</ogr:Latitude>
+    <ogr:Longitude>-3.015146666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199463333333341" lon="-3.015136666666667">
+  <extensions>
+    <ogr:Latitude>48.199463333333341</ogr:Latitude>
+    <ogr:Longitude>-3.015136666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199451666666661" lon="-3.015126666666667">
+  <extensions>
+    <ogr:Latitude>48.199451666666661</ogr:Latitude>
+    <ogr:Longitude>-3.015126666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19944" lon="-3.015116666666666">
+  <extensions>
+    <ogr:Latitude>48.19944</ogr:Latitude>
+    <ogr:Longitude>-3.015116666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19942833333333" lon="-3.015106666666667">
+  <extensions>
+    <ogr:Latitude>48.19942833333333</ogr:Latitude>
+    <ogr:Longitude>-3.015106666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199416666666671" lon="-3.015096666666667">
+  <extensions>
+    <ogr:Latitude>48.199416666666671</ogr:Latitude>
+    <ogr:Longitude>-3.015096666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199405" lon="-3.015085">
+  <extensions>
+    <ogr:Latitude>48.199405</ogr:Latitude>
+    <ogr:Longitude>-3.015085</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199391666666664" lon="-3.015075">
+  <extensions>
+    <ogr:Latitude>48.199391666666664</ogr:Latitude>
+    <ogr:Longitude>-3.015075</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19938" lon="-3.015063333333333">
+  <extensions>
+    <ogr:Latitude>48.19938</ogr:Latitude>
+    <ogr:Longitude>-3.015063333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199366666666677" lon="-3.015053333333334">
+  <extensions>
+    <ogr:Latitude>48.199366666666677</ogr:Latitude>
+    <ogr:Longitude>-3.015053333333334</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199355" lon="-3.015043333333333">
+  <extensions>
+    <ogr:Latitude>48.199355</ogr:Latitude>
+    <ogr:Longitude>-3.015043333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199341666666669" lon="-3.015031666666667">
+  <extensions>
+    <ogr:Latitude>48.199341666666669</ogr:Latitude>
+    <ogr:Longitude>-3.015031666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19933" lon="-3.015021666666667">
+  <extensions>
+    <ogr:Latitude>48.19933</ogr:Latitude>
+    <ogr:Longitude>-3.015021666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199316666666661" lon="-3.01501">
+  <extensions>
+    <ogr:Latitude>48.199316666666661</ogr:Latitude>
+    <ogr:Longitude>-3.01501</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199305" lon="-3.014998333333333">
+  <extensions>
+    <ogr:Latitude>48.199305</ogr:Latitude>
+    <ogr:Longitude>-3.014998333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199291666666674" lon="-3.014988333333333">
+  <extensions>
+    <ogr:Latitude>48.199291666666674</ogr:Latitude>
+    <ogr:Longitude>-3.014988333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199278333333332" lon="-3.014976666666667">
+  <extensions>
+    <ogr:Latitude>48.199278333333332</ogr:Latitude>
+    <ogr:Longitude>-3.014976666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199265" lon="-3.014965">
+  <extensions>
+    <ogr:Latitude>48.199265</ogr:Latitude>
+    <ogr:Longitude>-3.014965</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199253333333338" lon="-3.014955">
+  <extensions>
+    <ogr:Latitude>48.199253333333338</ogr:Latitude>
+    <ogr:Longitude>-3.014955</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19924" lon="-3.014945">
+  <extensions>
+    <ogr:Latitude>48.19924</ogr:Latitude>
+    <ogr:Longitude>-3.014945</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19922833333333" lon="-3.014935">
+  <extensions>
+    <ogr:Latitude>48.19922833333333</ogr:Latitude>
+    <ogr:Longitude>-3.014935</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199215" lon="-3.014925">
+  <extensions>
+    <ogr:Latitude>48.199215</ogr:Latitude>
+    <ogr:Longitude>-3.014925</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199201666666674" lon="-3.014915">
+  <extensions>
+    <ogr:Latitude>48.199201666666674</ogr:Latitude>
+    <ogr:Longitude>-3.014915</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199188333333332" lon="-3.014905">
+  <extensions>
+    <ogr:Latitude>48.199188333333332</ogr:Latitude>
+    <ogr:Longitude>-3.014905</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199175" lon="-3.014896666666667">
+  <extensions>
+    <ogr:Latitude>48.199175</ogr:Latitude>
+    <ogr:Longitude>-3.014896666666667</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199161666666669" lon="-3.014888333333333">
+  <extensions>
+    <ogr:Latitude>48.199161666666669</ogr:Latitude>
+    <ogr:Longitude>-3.014888333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19915" lon="-3.014878333333333">
+  <extensions>
+    <ogr:Latitude>48.19915</ogr:Latitude>
+    <ogr:Longitude>-3.014878333333333</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199136666666661" lon="-3.014871666666666">
+  <extensions>
+    <ogr:Latitude>48.199136666666661</ogr:Latitude>
+    <ogr:Longitude>-3.014871666666666</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.199123333333333" lon="-3.01486">
+  <extensions>
+    <ogr:Latitude>48.199123333333333</ogr:Latitude>
+    <ogr:Longitude>-3.01486</ogr:Longitude>
+  </extensions>
+</wpt>
+<wpt lat="48.19911" lon="-3.01485">
+  <extensions>
+    <ogr:Latitude>48.19911</ogr:Latitude>
+    <ogr:Longitude>-3.01485</ogr:Longitude>
+  </extensions>
+</wpt>
+</gpx>

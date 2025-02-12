@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import time
 
 def cercle(t, lat_boue, long_boue, k=0):
@@ -62,5 +62,9 @@ def tracer_trajectoire(lat_boue=0, long_boue=0, durée=500):
     
     plt.show()
 
-# Exécuter la simulation
-tracer_trajectoire()
+p_tilde_coord=np.load("coord_ptilde.npy")
+p_coord=np.load("coord_p.npy")
+print(p_tilde_coord)
+print(p_tilde_coord[0,0,0])
+print(p_tilde_coord[0,1,0])
+print(p_tilde_coord[:, 0, 0])

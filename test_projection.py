@@ -5,6 +5,7 @@ import numpy as np
 import csv
 import quoicouroblib as rb
 
+
 # Assure-toi que les modules sont correctement importés
 sys.path.append(os.path.join(os.path.dirname(__file__), 'drivers-ddboat-v2'))
 
@@ -31,8 +32,34 @@ Fonctions utilisées dans quoicouroblib.py:
 
 """
 
+import numpy as np
+from pyproj import Proj, transform
+
+projdegrestometers = Proj("+proj=utm +zone=30, +north +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+
+def projection(lat, long, lat_m=48.199014999999996, long_m=-3.0147983333333336):
+    """
+    Convertit les coordonnées GPS (latitude, longitude en format degrés décimaux) 
+    en coordonnées cartésiennes locales (x, y en mètres) par rapport à un point de référence.
+    
+    Input: lat (float), long (float), lat_m (float), long_m (float)
+    Output: p (np.array) - coordonnées locales en mètres
+    """
+
+    # Convertir le point de référence en mètres
+    x_m, y_m = projdegrestometers(long_m, lat_m)
+    x_p, y_p = projdegrestometers(long,lat)
+    
+    # Calculer les coordonnées relatives
+    x = x_p - x_m
+    y = y_p - y_m
+    p = np.array([x, y])
+    return p
+
+
+
 lat_a, long_a = 48.19891500000001, -3.013958333333333
-a = rb.projection(lat_a, long_a)
+a = projection(lat_a, long_a)
 
 print("Le point GPS voulu est : lattitude = {}, longitude = {}".format(lat_a, long_a))
 print("Ces coordonnées dans le plan sont : x = {}, y = {}".format(a[0], a[1]))
@@ -49,7 +76,7 @@ with open(filename, mode='w', newline='') as file:
             time.sleep(0.1)
             lat, long = rb.gps_dd()
             print("Mesure GPS du point p: lx ={}, ly ={}".format(lat, long))
-            p = rb.projection(lat, long)
+            p = projection(lat, long)
             writer.writerow([p[0], p[1]]) # Écrire les coordonnées
             print("Les coordonnées de P dans le plan : {}".format(p))
             print("Les coordonnées de A dans le plan : {}".format(a))
