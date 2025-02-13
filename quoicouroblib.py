@@ -6,7 +6,6 @@ import numpy as np
 import datetime
 import csv
 import json
-#from filtre import *
 import socket
 
 # Assure-toi que les modules sont correctement importés
@@ -21,7 +20,6 @@ imu = imudrv.Imu9IO()
 ard = arddrv.ArduinoIO()
 gps=gpsdrv.GpsIO()
 gps.set_filter_speed("0")
-
 
 def depart():
     """
@@ -100,12 +98,9 @@ def accel():
     y = np.dot(A_inv,(x+b))
     return y # [x, y, z]
 
-# def gyro(filtre):
-#     xgyro, ygyro, zgyro = imu.read_gyro_raw()
-#     filtered_x = filtre.update_x(xgyro)
-#     filtered_y = filtre.update_y(ygyro)
-#     filtered_z = filtre.update_z(zgyro)
-#     return np.array([filtered_x, filtered_y, filtered_z])/938.0
+def gyro(filtre):
+    xgyro, ygyro, zgyro = imu.read_gyro_raw()
+    return np.array([xgyro, ygyro, zgyro])/938.0
 
 def angles_euler(acc, mag):
     """
@@ -225,8 +220,6 @@ def dms_to_dd(dms, direction): # format: dms = '{}°{}\'{:.2f}"'.format(int(dd),
         dd *= -1
     return dd
 
-import os
-
 def mesure_gps(fichier="gps_data.txt"):
     """
     Lit les données GPS brutes et les écrit dans un fichier .txt.
@@ -251,8 +244,7 @@ def gps_dd():
     lat= dm_to_dd(lat,dir_lat)
     long = dm_to_dd(long,dir_long)
     return lat,long
-
-    
+   
 def create_csv(input_file, output_csv_path):
     """
     Convertir un fichier .txt contenant des données GPS brutes en un fichier CSV
@@ -493,7 +485,6 @@ def distance_droite(a, n, p):
     distance = np.cross(n, vecteur_pa) / np.linalg.norm(n)
     return distance
 
-
 def maintien_cap(acc,mag,cap,spd_base,debug=True):
     """
     Maintient le cap du bateau en ajustant la vitesse des moteurs en fonction de l'erreur entre le cap actuel et le cap voulu.
@@ -573,14 +564,6 @@ def maintien_cap_2(rb,cap,spd_base,debug=True):
     ard.send_arduino_cmd_motor(spd_left,spd_right)
     time.sleep(0.1)
 
-
-def give_cap():
-    bouss = mag()
-    #print("Boussole : {}".format(mag))
-    acc = accel()
-    psi = angles_euler(acc,mag)[2]
-    return psi
-
 def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=330,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
@@ -628,7 +611,6 @@ def suivre_vecteur(n,t0,lat_m,long_m,boucle = True):
             return p_tilde ,p
 
             return p_tilde ,p
-
 
 def robot2_client_onetime(server_ip):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

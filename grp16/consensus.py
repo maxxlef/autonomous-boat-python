@@ -31,7 +31,7 @@ def mission_jour_2():
     long_m=-3.01573
     rb.suivre_vecteur(int(numero_bateau), t0,lat_m,long_m)
 
-while True:
+while time.time() - t0  < 400:
     try:
         mission_jour_2()
     except :

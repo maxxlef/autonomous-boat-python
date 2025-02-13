@@ -1,11 +1,13 @@
-AAAAAAAH
-## Notes ##
+# Notes #
+
 Les données GPS sont automatiquement sauvegardées à la suite d'un fichier .txt avec `mesure_gps()`, il faut donc penser à le supprimer avant de vouloir faire une mesure propre.
 ![Coordonnées](Image_rapport/Notes1.png)
 ![Projection](Image_rapport/Notes2.png)
 ![Suivi_de_ligne](Image_rapport/Notes3.png)
 ![TO_DO](Image_rapport/Notes4.png)
 
+## grp16 ##
+Ce dossier est prêt à être envoyé sur n'importe quel bateau à condition d'avoir son fichier calib_xx.txt, le fichier à executer est `consensus.py`.
 
 ## **quoicouroblib.py**
 ### `depart()`
@@ -76,6 +78,24 @@ Retourne la rotation avec l'angle minimal tel que \( v = R \cdot u \).
 
 ---
 
+### `scalarprod(u,v)`:
+Fait un produit scalaire entre u et v
+- **Input**: 
+  - `u` : Vecteur 3D
+  - `v` : Vecteur 3D
+- **Output**: Scalaire
+
+---
+
+### `adjoint(w)`:
+Retourne l'Adjoint de w
+- **Input**: 
+  - `w`: Scalaire ou matrice 
+- **Output**:
+  - retourne une matrice (2,2) ou (3,3)
+
+---
+
 ### `angles_euler_2(a1, y1, w1, g1_hat)`:
 Calcule les angles d'Euler (tangage, roulis, cap) à partir des données d'accélération, de magnétomètre et de gyroscope.
 - **Input**: 
@@ -84,17 +104,6 @@ Calcule les angles d'Euler (tangage, roulis, cap) à partir des données d'accé
   - `w1` : Vecteur gyroscope
   - `g1_hat` : Estimation précédente de \( g_1 \)
 - **Output**: Angles d'Euler \( \varphi \) (tangage), \( \theta \) (roulis), et \( \psi \) (cap)
-
-
-### `maintien_cap(acc, mag, cap, spd_base, debug=False)`:
-Maintient le cap en ajustant la vitesse des moteurs gauche et droite pour compenser l'erreur angulaire.
-- **Input**:
-  - `acc` (np.array): Vecteur d'accélération corrigé [x, y, z]
-  - `mag` (np.array): Vecteur de champ magnétique corrigé [x, y, z]
-  - `cap` (float): Cap désiré en radians
-  - `spd_base` (int): Vitesse de base des moteurs
-  - `debug` (bool): Affichage des informations de débogage (facultatif)
-- **Output**: Aucun
 
 ---
 
@@ -134,6 +143,15 @@ Récupère les données GPS (GLL) et les écrit dans un fichier.
   - `fichier` (str): Chemin du fichier où les données GPS doivent être enregistrées
 - **Output**: 
   - `gll_data` (tuple) - Données GPS sous forme de tuple
+
+---
+
+### `gps_dd()`:
+Récupère les données GPS en degrés décimaux
+- **Input**:
+  - None
+- **Output**: 
+  - `lat`,`long` (float)
 
 ---
 
@@ -252,3 +270,114 @@ Calcule la distance entre un point P et une droite définie par un point A et un
 - **Output**: 
   - `distance` (float): Distance entre le point P et la droite. La distance est positive si P est à gauche de la droite dans le sens du vecteur n.
 
+---
+
+### `maintien_cap(acc, mag, cap, spd_base, debug=False)`:
+Maintient le cap en ajustant la vitesse des moteurs gauche et droite pour compenser l'erreur angulaire.
+- **Input**:
+  - `acc` (np.array): Vecteur d'accélération corrigé [x, y, z]
+  - `mag` (np.array): Vecteur de champ magnétique corrigé [x, y, z]
+  - `cap` (float): Cap désiré en radians
+  - `spd_base` (int): Vitesse de base des moteurs
+  - `debug` (bool): Affichage des informations de débogage (facultatif)
+- **Output**: Aucun
+
+---
+
+### `maintien_cap_2(acc, mag, cap, spd_base, debug=False)`:
+Fonctionne moins bien que le `maintien_cap` du premier Guerlédan donc il est préférable d'utiliser l'ancien.
+
+---
+
+### `cercle()`:
+Calcule les consignes de vitesse et de cap pour faire évoluer un bateau sur une trajectoire circulaire.  
+- **Input**:  
+  - `n`: Indice du bateau  
+  - `t`: Temps  
+  - `lat_boue`, `long_boue`: Position cible  
+  - `k1`, `k2`: Coefficients de régulation  
+  - `r`: Rayon de la trajectoire circulaire  
+  - `T`: Période  
+  - `debug`: Affiche des informations supplémentaires si activé  
+- **Output**:  
+  - `speed`: Vitesse du bateau  
+  - `cap_d`: Cap désiré  
+  - `p_tilde`: Position cible intermédiaire  
+  - `p`: Position actuelle  
+
+---
+
+### `suivre_vecteur()`:
+Fait suivre au bateau un vecteur de direction calculé par `cercle()`.  
+- **Input**:  
+  - `n`: Indice du bateau  
+  - `t0`: Temps initial  
+  - `lat_m`, `long_m`: Position cible  
+  - `boucle`: Exécution continue (`True`) ou unique (`False`)  
+- **Output**:  
+  - `p_tilde`: Position cible intermédiaire  
+  - `p`: Position actuelle  
+
+---
+
+### `robot2_client_onetime()`:
+Connecte le client au serveur pour recevoir une position GPS unique et la convertir en latitude et longitude.  
+- **Input**:  
+  - `server_ip`: Adresse IP du serveur  
+- **Output**:  
+  - `lat`: Latitude en degrés décimaux  
+  - `long`: Longitude en degrés décimaux  
+
+---
+
+### `calc_b_A_from_file()`:
+Calcule le biais magnétique `b` et la matrice de calibration `A` à partir des données d’un fichier `.txt`.  
+- **Input**:  
+  - `filename`: Nom du fichier `.txt` contenant les données de mesure  
+- **Output**:  
+  - `b`: Vecteur de biais 3x1  
+  - `A`: Matrice de calibration 3x3  
+
+## `calibration.py`:
+Permet de faire une calibration de l'accéléromètre et de la boussole et on enregistre les coefs A et b en format .npy.
+
+Les mesures pour la calibration de la boussole sont enregistrées dans calib_16.txt.
+
+## `consensus.py`:
+Permet de lancer la mission du jour 2 sur n'importe quel bateau.
+
+## `geojson.py`:
+Permet à partir du fichier `gps_data.txt` de récupérer un fichier .geojson.
+
+## `gpx.py`:
+Permet à partir du fichier `gps_data.txt` de récupérer un fichier .gpx (fait une trace gps avec un trait et non des points).
+
+## `jour_1.py`:
+Permet de suivre un cap Ouest puis Nord
+
+## `jour_2_matin.py`:
+Permet de faire un cercle autour d'un point GPS fixe.
+
+## `jour3.py`:
+Permet de suivre un autre DDboat.
+
+## `stop.py`:
+Arrete le bateau
+
+## `test_cap.py`:
+Permet de tester la correction de cap de la fonction `maintien_cap`
+
+## `test_gps.py`:
+Permet de tester le gps et les conversions de coordonnées.
+
+## `test_heure.py`:
+Test de la fonction `attendre_exact_heure()`
+
+## `test_mesures.py`:
+Test les mesures de l'accéléromètre et de la boussole. On peut vérifier la calibration avec ce code
+
+## `test_projection.py`:
+Permet de tester la projection et enregistre un fichier `points_projection.csv`. Ce fichier peut être tracé avec `tracer_csv.py` pour vérifier l'orientation de nos axes. Notre axe x était orienté vers le Sud.
+
+## `test_regulation_vitesse.py`:
+Ce fichier nous permet de rapidement choisir la régulation en vitesse de notre bateau et de la tester en affichant la tanh.
