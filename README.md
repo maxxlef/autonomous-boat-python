@@ -343,14 +343,20 @@ Permet de faire une calibration de l'accéléromètre et de la boussole et on en
 
 Les mesures pour la calibration de la boussole sont enregistrées dans calib_16.txt.
 
-## `consensus.py`:
-Permet de lancer la mission du jour 2 sur n'importe quel bateau.
 
 ## `geojson.py`:
 Permet à partir du fichier `gps_data.txt` de récupérer un fichier .geojson.
 
+Exemple:
+
+![Projection](Image_rapport/geojson_jour2.png)
+
 ## `gpx.py`:
 Permet à partir du fichier `gps_data.txt` de récupérer un fichier .gpx (fait une trace gps avec un trait et non des points).
+
+Exemple:
+
+![Projection](Image_rapport/gpx_jour2.png)
 
 ## `jour_1.py`:
 Permet de suivre un cap Ouest puis Nord
@@ -358,8 +364,17 @@ Permet de suivre un cap Ouest puis Nord
 ## `jour_2_matin.py`:
 Permet de faire un cercle autour d'un point GPS fixe.
 
+![Projection](Image_rapport/gpx_jour2.png)
+
 ## `jour3.py`:
 Permet de suivre un autre DDboat.
+
+## `consensus.py`:
+Permet de lancer la mission du jour 2 sur n'importe quel bateau.
+
+Exemple:
+
+![Projection](Image_rapport/jour4.png)
 
 ## `stop.py`:
 Arrete le bateau
@@ -378,6 +393,10 @@ Test les mesures de l'accéléromètre et de la boussole. On peut vérifier la c
 
 ## `test_projection.py`:
 Permet de tester la projection et enregistre un fichier `points_projection.csv`. Ce fichier peut être tracé avec `tracer_csv.py` pour vérifier l'orientation de nos axes. Notre axe x était orienté vers le Sud.
+
+Exemple: Déplacement vers le nord puis vers l’est (petit tour sur 1m), déplacment vers l’ouest puis vers le sud.
+
+![Projection](Image_rapport/Test_projection.png)
 
 ## `test_regulation_vitesse.py`:
 Ce fichier nous permet de rapidement choisir la régulation en vitesse de notre bateau et de la tester en affichant la tanh.
