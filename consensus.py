@@ -1,3 +1,4 @@
+import socket
 import sys
 import os
 import time
@@ -17,11 +18,24 @@ imu = imudrv.Imu9IO()
 ard = arddrv.ArduinoIO()
 
 print("Debut")
+numero_bateau = socket.gethostname()[6:8]
+
+filename ="calib_" + numero_bateau + ".txt"
+print(int(numero_bateau))
+print(filename)
+rb.calc_b_A_from_file(filename)
+t0=time.time()
 
 def mission_jour_2():
-    t0=time.time()
     lat_m=48.20010  
     long_m=-3.01573
-    rb.suivre_vecteur(t0,lat_m,long_m)
-mission_jour_2()
-#rb.reach_point(48.199014999999996, -3.0147983333333332)
+    rb.suivre_vecteur(int(numero_bateau), t0,lat_m,long_m)
+
+while True:
+    try:
+        mission_jour_2()
+    except :
+        if KeyboardInterrupt:
+            break
+        else:
+            pass

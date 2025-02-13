@@ -2,23 +2,13 @@ import numpy as np
 import time
 
 
-def cercle(t,lat_boue,long_boue,k=0):
-    lx,ly=30,30
-    r=10 # en m
-    T=450 # en s
-    N=10
-    m = np.array([[50],[50]])
-    p = np.array([[lx],[ly]])
-    p_tilde= m +r * np.array([[np.cos(2*np.pi*((t)/T+k/N))],
-                             [np.sin(2*np.pi*((t)/T+k/N))]])
-    
-    v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T+k/N))],
-                                         [np.cos(2*np.pi*((t)/T+k/N))]])
-    
-    w= np.tanh(p_tilde - p) + v_tilde
-    print("p_tilde : {} \n p : {} \n v_tilde : {} \n w : {}".format(p_tilde,p,v_tilde,w))
-    return w
-for i in range (100):
-    cercle(i,0,0)
-    time.sleep(0.5)    
-    print("i : {}".format(i))
+x=np.array([1.0 / 10, 2.0 / 10, 3.0 / 10])
+y=np.array([1.0 / 10, 2.0 / 10, 4.0 / 10])
+z=np.array([1.0 / 10, 2.0 / 10, 5.0 / 10])
+
+
+with open("calib_16.txt", "w") as f:
+    np.savetxt(f, x.reshape(-1, 1))
+    np.savetxt(f, y.reshape(-1, 1))
+    np.savetxt(f,z.reshape(-1, 1))
+    np.savetxt(f, z.reshape(-1, 1))

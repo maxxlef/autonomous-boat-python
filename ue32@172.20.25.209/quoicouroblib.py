@@ -100,12 +100,12 @@ def accel():
     y = np.dot(A_inv,(x+b))
     return y # [x, y, z]
 
-# def gyro(filtre):
-#     xgyro, ygyro, zgyro = imu.read_gyro_raw()
-#     filtered_x = filtre.update_x(xgyro)
-#     filtered_y = filtre.update_y(ygyro)
-#     filtered_z = filtre.update_z(zgyro)
-#     return np.array([filtered_x, filtered_y, filtered_z])/938.0
+def gyro(filtre):
+    xgyro, ygyro, zgyro = imu.read_gyro_raw()
+    filtered_x = filtre.update_x(xgyro)
+    filtered_y = filtre.update_y(ygyro)
+    filtered_z = filtre.update_z(zgyro)
+    return np.array([filtered_x, filtered_y, filtered_z])/938.0
 
 def angles_euler(acc, mag):
     """
@@ -581,21 +581,20 @@ def give_cap():
     psi = angles_euler(acc,mag)[2]
     return psi
 
-def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=330,debug=True):
+def cercle(t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=330,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
-    N=20
 
     lat_boue,long_boue = projection(lat_boue,long_boue)
     m = np.array([[lat_boue],[long_boue]])
 
     p = np.array([[lx],[ly]])
-    p_tilde= m +r * np.array([[np.cos(2*np.pi*((t)/T + n/N))],
-                             [np.sin(2*np.pi*((t)/T +n/N))]])
+    p_tilde= m +r * np.array([[np.cos(2*np.pi*((t)/T))],
+                             [np.sin(2*np.pi*((t)/T))]])
     e = p_tilde - p
     
-    v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T +n/N))],
-                                         [np.cos(2*np.pi*((t)/T +n/N))]])
+    v_tilde= r * (2*np.pi/T) * np.array([[-np.sin(2*np.pi*((t)/T))],
+                                         [np.cos(2*np.pi*((t)/T))]])
     
     speed = k1 * np.linalg.norm(v_tilde) + regulation_vitesse(np.linalg.norm(p_tilde-p), vmax=170, vmin=35, coef=0.3, middle=10)
     
@@ -615,11 +614,11 @@ def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=330,debug=True):
     return speed, cap_d , p_tilde , p
     return speed, cap_d , p_tilde , p
 
-def suivre_vecteur(n,t0,lat_m,long_m,boucle = True):
+def suivre_vecteur(t0,lat_m,long_m,boucle = True):
     while True:
         t=time.time()-t0
-        speed, cap_d, p_tilde,p= cercle(n,t,lat_m,long_m)
-        speed, cap_d, p_tilde,p= cercle(n,t,lat_m,long_m)
+        speed, cap_d, p_tilde,p= cercle(t,lat_m,long_m)
+        speed, cap_d, p_tilde,p= cercle(t,lat_m,long_m)
         bouss = mag()
         acc = accel()   
         maintien_cap(acc,bouss,cap_d,speed)
