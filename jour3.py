@@ -35,7 +35,7 @@ def mission_jour_3():
             if i%10==0:
                 print("new point")
                 lat_m, long_m = rb.robot2_client_onetime(ip_adresse) #En degrés décimaux
-            p_tilde,p=rb.suivre_vecteur(t0,lat_m,long_m,boucle = False)
+            p_tilde,p=rb.suivre_vecteur(n,t0,lat_m,long_m,boucle = False)
             coord_p_tilde.append(p_tilde)
             coord_p.append(p)
     finally:
