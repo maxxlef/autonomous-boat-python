@@ -26,15 +26,16 @@ print(filename)
 rb.calc_b_A_from_file(filename)
 t0=time.time()
 
-def mission_jour_2(t0,lat_m=48.20010 ,long_m=-3.01573):
-    rb.suivre_vecteur(int(numero_bateau),t0,lat_m,long_m)
+def mission_jour_2():
+    lat_m=48.20010  
+    long_m=-3.01573
+    rb.suivre_vecteur(int(numero_bateau), t0,lat_m,long_m)
 
-def full_mission(t0):
-    t0=time.time()
-    mission_jour_2(t0,48.1944,-3.01556)
-    t0=time.time()
-    mission_jour_2(t0,lat_m=48.20010 ,long_m=-3.01573)
-    rb.reach_point(48.1944,-3.01556) # point 1
-    rb.reach_point(48.19901,-3.014798) # point ponton
-
-full_mission(t0)
+while True:
+    try:
+        mission_jour_2()
+    except :
+        if KeyboardInterrupt:
+            break
+        else:
+            pass
