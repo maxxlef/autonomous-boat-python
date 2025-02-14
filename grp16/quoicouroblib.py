@@ -627,8 +627,11 @@ def suivre_vecteur(n,t0,lat_m,long_m,boucle = True):
             time.sleep(0.1)
             if not boucle:
                 return p_tilde ,p
-        except:
-            pass
+        except :
+            if KeyboardInterrupt:
+                break
+            else:
+                pass
 
 def robot2_client_onetime(server_ip):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
