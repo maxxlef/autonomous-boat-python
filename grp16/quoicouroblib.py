@@ -581,7 +581,7 @@ def give_cap():
     psi = angles_euler(acc,mag)[2]
     return psi
 
-def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=200,debug=True):
+def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=20, T=120,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
     N=20
@@ -616,7 +616,7 @@ def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=200,debug=True):
     return speed, cap_d , p_tilde , p
 
 def suivre_vecteur(n,t0,lat_m,long_m,boucle = True):
-    while time.time() - t0  < 400:
+    while time.time() - t0  < 160:
         try : 
             t=time.time()-t0
             speed, cap_d, p_tilde,p= cercle(n,t,lat_m,long_m)
