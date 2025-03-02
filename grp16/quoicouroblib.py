@@ -581,7 +581,7 @@ def give_cap():
     psi = angles_euler(acc,mag)[2]
     return psi
 
-def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=200,debug=True):
+def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=20, T=120,debug=True):
     lat,long = gps_dd()
     lx,ly=projection(lat,long)
     N=20
@@ -616,19 +616,22 @@ def cercle(n,t,lat_boue,long_boue,k1=20,k2 = 20, r=30, T=200,debug=True):
     return speed, cap_d , p_tilde , p
 
 def suivre_vecteur(n,t0,lat_m,long_m,boucle = True):
-    while time.time() - t0  < 400:
-        t=time.time()-t0
-        speed, cap_d, p_tilde,p= cercle(n,t,lat_m,long_m)
-        speed, cap_d, p_tilde,p= cercle(n,t,lat_m,long_m)
-        bouss = mag()
-        acc = accel()   
-        maintien_cap(acc,bouss,cap_d,speed)
-        time.sleep(0.1)
-        if not boucle:
-            return p_tilde ,p
-
-            return p_tilde ,p
-
+    while time.time() - t0  < 160:
+        try : 
+            t=time.time()-t0
+            speed, cap_d, p_tilde,p= cercle(n,t,lat_m,long_m)
+            speed, cap_d, p_tilde,p= cercle(n,t,lat_m,long_m)
+            bouss = mag()
+            acc = accel()   
+            maintien_cap(acc,bouss,cap_d,speed)
+            time.sleep(0.1)
+            if not boucle:
+                return p_tilde ,p
+        except :
+            if KeyboardInterrupt:
+                break
+            else:
+                pass
 
 def robot2_client_onetime(server_ip):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

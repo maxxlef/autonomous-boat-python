@@ -285,12 +285,13 @@ Maintient le cap en ajustant la vitesse des moteurs gauche et droite pour compen
 ---
 
 ### `maintien_cap_2(acc, mag, cap, spd_base, debug=False)`:
-Fonctionne moins bien que le `maintien_cap` du premier Guerlédan donc il est préférable d'utiliser l'ancien.
+Cette fonction fonctionne moins bien que la suivante: `maintien_cap` provenant du premier Guerlédan. Nous avons alors décidé de ne pas nous servir de cette seconde fonction par la suite.  
 
 ---
 
 ### `cercle()`:
-Calcule les consignes de vitesse et de cap pour faire évoluer un bateau sur une trajectoire circulaire.  
+Calcule les consignes de vitesse et de cap pour faire évoluer un bateau sur une trajectoire définie.    
+Notre bateau suit une cible dont la position est `p_tilde`. La cible suit ici une trajectoire circulaire.  
 - **Input**:  
   - `n`: Indice du bateau  
   - `t`: Temps  
@@ -308,7 +309,7 @@ Calcule les consignes de vitesse et de cap pour faire évoluer un bateau sur une
 ---
 
 ### `suivre_vecteur()`:
-Fait suivre au bateau un vecteur de direction calculé par `cercle()`.  
+Cette fonction fait suivre au bateau un vecteur de direction calculé par `cercle()` grâce à la fonction `maintien_cap` durant une durée définie, ici 3min.
 - **Input**:  
   - `n`: Indice du bateau  
   - `t0`: Temps initial  
@@ -359,15 +360,19 @@ Exemple:
 ![Projection](Image_rapport/gpx_jour2.png)
 
 ## `jour_1.py`:
-Permet de suivre un cap Ouest puis Nord
+Le but de la première journée était de faire suivre un cap à notre bateau.  
+Nous avons donc créé ce code permet de suivre un cap Ouest pendant 30s puis ensuite de suivre le cap Nord à nouveau pendant 30s.  
+Ce code utilise et teste les fonctions `maintien_cap` et `maintien_cap_2` évoquées ultérieurement.  
 
 ## `jour_2_matin.py`:
-Permet de faire un cercle autour d'un point GPS fixe.
+La mission du jour 2 était de tourner autour d'une bouée.
+Nous avons alors créé ce code qui utilise la fonction `suivre_vecteur` évoquées ultérieurement afin de réaliser des cercles autour de la bouée dont nous avions les coordonnées.  
 
 ![Projection](Image_rapport/gpx_jour2.png)
 
 ## `jour3.py`:
-Permet de suivre un autre DDboat.
+On a `mission_jour_3`, qui consiste à réaliser des cercles autour d'un bateau. Dans cette partie le bateau cible était immobile. Cette mission nous a permis de prendre en main la communication entre les bateaux. En effet le bateau cible émettait sa position ce qui nous permettait de la recevoir.  
+Nous avons également `mission2_jour_3`, qui consiste à cette fois ci suivre un bateau cible en mouvement via la fonction `maintien_cap`.
 
 ## `consensus.py`:
 Permet de lancer la mission du jour 2 sur n'importe quel bateau.
