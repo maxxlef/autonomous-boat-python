@@ -405,14 +405,3 @@ Exemple: Déplacement vers le nord puis vers l’est (petit tour sur 1m), dépla
 
 ## `test_regulation_vitesse.py`:
 Ce fichier nous permet de rapidement choisir la régulation en vitesse de notre bateau et de la tester en affichant la tanh.
-
-## Critique de notre semaine:
-
-Nous sommes globalement très satisfaits de notre travail réalisé lors de cette semaine à Guerledan. En effet, lors de notre toute première semaine en début d'année, nous avions eu énormément de problèmes. Nous avions eu du mal à réaliser les missions au jour le jour. Ainsi du retard s'était accumulé et c'était assez difficile à gérer bien que finalement nous ayons pu réaliser à peu près toutes les missions en travaillant notamment beaucoup le soir.  
-Cette semaine ci fut complétement différente. En effet, nous avons mieux su nous organiser et mieux nous répartir les tâches ce qui a conduit à une semaine presque parfaite. Cela vient peut-être également de notre maîtrise de git qui s'est fortement consolidée cette semaine mais qui était nulle en septembre. Nous avons réussi toutes les missions le jour même. Ainsi, nous avons eu le temps de nous reposer, de faire du sport, etc. De plus, le lendemain nous étions prêts à réaliser de nouvelles missions et non à essayer de finir celles de la veille...  
-Notre seule déception est le dernier jour. En effet, la mission était alors de réaliser une performance avec tous les bateaux en même temps. Nous avions pu la veille réaliser une performance qui consistait à réaliser des cercles autour d'un point fixe avec plusieurs bateaux en même temps, grâce à `consensus.py`, depuis l'ordinateur de Mr. Zerr. Cela a très bien marché. Nous aurions pu nous contenter de cela pour le lendemain mais nous avons été un peu plus, peut-être même trop ambitieux. 
-En effet, nous avons eu l'idée de faire rejoindre un même point à tous les bateaux, puis de faire un cercle autour de ce point. Il fallait ensuite répéter l'opération autour d'un autre point pour finalement que tous les bateaux reviennent au ponton.  
-Cependant, nous avons modifié beaucoup de nos fonctions pour réaliser cela, notamment car la veille les bateaux ne s'arrêtaient jamais de tourner, ce qui n'était pas possible ici.  
-Ce n'était pas de gros changements à faire mais nous n'avons pas pu retester notre code avant la démonstration et elle a malheureusement échoué, nous ne savons pas vraiment pourquoi.  
-  
-Comme nous l'avons déjà dit précédemment, nous sommes tout de même très satisfaits de notre travail. Nous avons en soi réaliser notre démonstration la veille donc nous sommes tout de même fiers. Malgré tout, nous retenons que le fait de tenter un code pour la première fois comme nous l'avons fait ici en démonstration n'est pas vraiment une bonne idée ...  
