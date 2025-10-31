@@ -1,6 +1,6 @@
 # Autonomous Boat 
 Projet réalisé dans le cadre de la 2ᵉ année à l’ENSTA Bretagne. 
-⚠️ Ce dépôt donne une idée générale du projet réalisé, mais il n’est pas parfaitement structuré ni documenté. Il s’agit d’un travail étudiant partagé à titre illustratif, conscient qu’il pourrait être mieux organisé. Vous pouvez voir [notre rapport](./RAPPORT/) pour le détail de la semaine d'expérimentation.
+⚠️ Ce dépôt donne une idée générale du projet réalisé, mais il n’est pas parfaitement structuré ni documenté. Il s’agit d’un travail étudiant partagé à titre illustratif, conscient qu’il pourrait être mieux organisé. Vous pouvez voir [notre rapport](./RAPPORT/QuoicouBoat_LEFEVRE_VIDAL_BOURGEOIS.pdf) pour plus de détails.
 
 # Notes #
 
