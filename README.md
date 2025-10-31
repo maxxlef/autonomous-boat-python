@@ -1,3 +1,7 @@
+# Autonomous Boat 
+Projet réalisé dans le cadre de la 2ᵉ année à l’ENSTA Bretagne. 
+⚠️ Ce dépôt donne une idée générale du projet réalisé, mais il n’est pas parfaitement structuré ni documenté. Il s’agit d’un travail étudiant partagé à titre illustratif, conscient qu’il pourrait être mieux organisé.
+
 # Notes #
 
 Les données GPS sont automatiquement sauvegardées à la suite d'un fichier .txt avec `mesure_gps()`, il faut donc penser à le supprimer avant de vouloir faire une mesure propre.
